@@ -158,6 +158,7 @@ public class PlayerController : MonoBehaviour
         {
             if (canDash)
             {
+                
                 rigid.gravityScale = 0f;
                 rigid.velocity = new Vector2(rigid.velocity.x, 0);
                 ghostDash.makeGhost = true;
