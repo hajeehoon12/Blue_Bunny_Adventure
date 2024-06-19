@@ -1,18 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MonsterAnimationData : MonoBehaviour
+[SerializeField]
+public class MonsterAnimationData
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private string groundParameterName = "@Ground";
+    [SerializeField] private string idleParameterName = "Idle";
+    [SerializeField] private string walkParameterName = "Walk";
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private string attackParameterName = "@Attack";
+    [SerializeField] private string baseAttackParameterName = "BaseAttack";
+
+    public int GroundParameterHash { get; private set; }
+    public int IdleParameterHash { get; private set; }
+    public int WalkParameterHash { get; private set; }
+    public int AttackParameterHash { get; private set; }
+    public int BaseAttackParameterHash { get; private set; }
+
+    public void Initialize()
     {
-        
+        GroundParameterHash = Animator.StringToHash(groundParameterName);
+        IdleParameterHash = Animator.StringToHash(idleParameterName);
+        WalkParameterHash = Animator.StringToHash(walkParameterName);
+        AttackParameterHash = Animator.StringToHash(attackParameterName);
+        BaseAttackParameterHash = Animator.StringToHash(baseAttackParameterName);
     }
 }

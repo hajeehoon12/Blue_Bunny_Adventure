@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 584037539}
   - component: {fileID: 584037540}
+  - component: {fileID: 584037541}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Monster
@@ -201,6 +202,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8115743, y: 0.43472248}
   m_EdgeRadius: 0
+--- !u!114 &584037541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584037538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81a0278df2d44e04b9b4c58479e2185d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &778117431
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1072444951}
   - component: {fileID: 1072444952}
+  - component: {fileID: 1072444953}
   m_Layer: 0
   m_Name: tile_0056
   m_TagString: Untagged
@@ -377,6 +391,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1072444953
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072444950}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79ca1f03a723fb347ac2c208a6b22c3e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1614022913
 GameObject:
   m_ObjectHideFlags: 0
