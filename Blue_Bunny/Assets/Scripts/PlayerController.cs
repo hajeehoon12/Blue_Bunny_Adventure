@@ -41,10 +41,7 @@ public class PlayerController : MonoBehaviour
         Move();
     }
 
-    private void Update()
-    {
-        
-    }
+
 
     public void OnAttack(InputAction.CallbackContext context)
     {
@@ -59,10 +56,10 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Attack!!");
         float dir = spriteRenderer.flipX ? -1 : 1;
-        Debug.DrawRay(transform.position + new Vector3(boundPlayer.x * dir, 0, 0), new Vector2(1, 0) * 3 * dir, Color.red);
+        Debug.DrawRay(transform.position + new Vector3(boundPlayer.x * dir, boundPlayer.y, 0), new Vector2(1, 0) * 3 * dir, Color.red);
         GameObject bullet = PoolManager.Instance.Get(0);
         AudioManager.instance.PlayPitchSFX("Shot", 0.03f);// Change Pitch
-        bullet.transform.position = transform.position + new Vector3(boundPlayer.x * dir, 0);
+        bullet.transform.position = transform.position + new Vector3(boundPlayer.x * dir, boundPlayer.y);
         bullet.transform.eulerAngles = new Vector3(0, 0, 90 - dir * 90);
         StartCoroutine(BulletLifeTime(bullet, dir));
         
@@ -140,7 +137,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(boundPlayer.y);
         if (canJump) return;
         
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0, boundPlayer.y, 0), new Vector2(0, -1), 0.1f, groundLayerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position , new Vector2(0, -1), 0.1f, groundLayerMask);
         //Debug.Log(hit.collider?.name);
 
         if (hit.collider?.name != null)
