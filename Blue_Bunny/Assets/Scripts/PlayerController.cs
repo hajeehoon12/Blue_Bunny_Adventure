@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
     void BulletAttack()
     {
-        Debug.Log("Attack!!");
+        //Debug.Log("Attack!!");
         float dir = spriteRenderer.flipX ? -1 : 1;
         Debug.DrawRay(transform.position + new Vector3(boundPlayer.x * dir, boundPlayer.y, 0), new Vector2(1, 0) * 3 * dir, Color.red);
         GameObject bullet = PoolManager.Instance.Get(0);
