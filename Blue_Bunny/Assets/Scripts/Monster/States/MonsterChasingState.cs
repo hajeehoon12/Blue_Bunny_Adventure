@@ -33,15 +33,10 @@ public class MonsterChasingState : MonsterBaseState
         }
 
         UpdateDirection();
-        UpdateMove();
+        UpdateChasingMove();
     }
-
-    protected bool IsInAttackRange()
+    private void UpdateChasingMove()
     {
-        float playerDistanceSqr = (stateMachine.Target.transform.position - stateMachine.Monster.transform.position).sqrMagnitude;
-
-        return playerDistanceSqr <= stateMachine.Monster.Data.AttackRange * stateMachine.Monster.Data.AttackRange;
+        stateMachine.Monster.transform.position += stateMachine.MovementDirection * stateMachine.Monster.Data.BaseSpeed * Time.deltaTime;
     }
-
-    
 }

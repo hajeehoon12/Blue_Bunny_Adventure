@@ -28,6 +28,14 @@ public class MonsterIdleState : MonsterBaseState
         if (IsInChasingRange())
         {
             stateMachine.ChangeState(stateMachine.ChasingState);
+            return;
         }
+
+        UpdateIdleMove();
+    }
+
+    private void UpdateIdleMove()
+    {
+
     }
 }
