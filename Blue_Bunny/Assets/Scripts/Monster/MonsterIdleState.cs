@@ -10,7 +10,6 @@ public class MonsterIdleState : MonsterBaseState
         Debug.Log("MonsterIdleState::Enter()");
 
         base.Enter();
-        StartAnimation(stateMachine.Monster.AnimationData.GroundParameterHash);
         StartAnimation(stateMachine.Monster.AnimationData.IdleParameterHash);
     }
 
@@ -19,7 +18,6 @@ public class MonsterIdleState : MonsterBaseState
         Debug.Log("MonsterIdleState::Exit()");
 
         base.Exit();
-        StopAnimation(stateMachine.Monster.AnimationData.GroundParameterHash);
         StopAnimation(stateMachine.Monster.AnimationData.IdleParameterHash);
     }
 
