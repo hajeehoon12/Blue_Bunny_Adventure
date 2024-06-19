@@ -36,8 +36,17 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawRay(transform.position + new Vector3(boundPlayer.x, 0, 0), new Vector2(1, 0) * 3, Color.red);
+        
     }
+
+
+    void BulletAttack()
+    {
+        float dir = spriteRenderer.flipX ? -1 : 1;
+
+        Debug.DrawRay(transform.position + new Vector3(boundPlayer.x * dir, 0, 0), new Vector2(1, 0) * 3 * dir, Color.red);
+    }
+
 
 
 
