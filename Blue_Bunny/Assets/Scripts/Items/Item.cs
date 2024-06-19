@@ -6,18 +6,23 @@ using UnityEngine;
 public interface iHeal
 {
     public void Heal();
+    public void PlayHealSound();
 }
 
 public interface iStatUpgrade
 { 
     public void UpgradeStat();
+
+    public void GotoInventoryTab();
+    public void PlayUpgradeSound();
 }
 
 public class Item : MonoBehaviour
 {
-    protected void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("충돌이 발생했습니다만..");   
+        //효과 적용
+        Destroy(this.gameObject);
     }
 }
 

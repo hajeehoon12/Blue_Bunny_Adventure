@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MonsterAnimationData : MonoBehaviour
+[SerializeField]
+public class MonsterAnimationData
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private string idleParameterName = "Idle";
+    [SerializeField] private string walkParameterName = "Chasing";
 
-    // Update is called once per frame
-    void Update()
+    public int IdleParameterHash { get; private set; }
+    public int ChasingParameterHash { get; private set; }
+
+    public void Initialize()
     {
-        
+        IdleParameterHash = Animator.StringToHash(idleParameterName);
+        ChasingParameterHash = Animator.StringToHash(walkParameterName);
     }
 }
