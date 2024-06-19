@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Rigidbody2D rigid;
     Collider2D playerCollider;
+    Animator animator;
+
+    private static readonly int isMoving = Animator.StringToHash("IsMoving");
 
     [SerializeField]LayerMask groundLayerMask;
     [SerializeField] private float bulletLifeTime;
@@ -25,6 +28,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();   
         playerCollider = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -59,6 +63,7 @@ public class PlayerController : MonoBehaviour
         GameObject bullet = PoolManager.Instance.Get(0);
         AudioManager.instance.PlayPitchSFX("Shot", 0.03f);// Change Pitch
         bullet.transform.position = transform.position + new Vector3(boundPlayer.x * dir, 0);
+        bullet.transform.eulerAngles = new Vector3(0, 0, 90 - dir * 90);
         StartCoroutine(BulletLifeTime(bullet, dir));
         
     }
@@ -87,13 +92,19 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
+            if(canJump) animator.SetBool(isMoving, true);
             moveVelocity = Vector3.right;
             spriteRenderer.flipX = false;
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
+            if(canJump) animator.SetBool(isMoving, true);
             moveVelocity = Vector3.left;
             spriteRenderer.flipX = true;
+        }
+        else
+        {
+            animator.SetBool(isMoving, false);
         }
 
         transform.position += moveVelocity * playerSpeed * Time.deltaTime;          
@@ -105,6 +116,7 @@ public class PlayerController : MonoBehaviour
         {
             if (canJump)
             {
+                animator.SetBool(isMoving, false);
                 rigid.AddForce(Vector2.up * jumpPower * rigid.mass, ForceMode2D.Impulse);
                 StartCoroutine(ChangeJumpBool());
             }
@@ -115,6 +127,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.01f);
         canJump = false;
+        animator.SetBool(isMoving, false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) // Check if player get on floor
