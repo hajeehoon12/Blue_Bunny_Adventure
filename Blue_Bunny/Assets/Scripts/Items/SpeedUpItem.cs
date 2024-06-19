@@ -13,10 +13,17 @@ public class SpeedUpItem : Item, iStatUpgrade
         //AudioManager.instance.PlayBGM("");
     }
 
+    public void GotoInventoryTab()
+    {
+        //인벤토리 탭에 표시되는 기능 구현하기.
+    }
+
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         UpgradeStat();
         base.OnTriggerEnter2D(collision);
     }
+
+
 }
 
