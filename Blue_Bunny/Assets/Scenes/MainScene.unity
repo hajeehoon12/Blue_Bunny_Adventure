@@ -699,6 +699,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1456087364}
   render: {fileID: 1809941995}
+  cameraPosition: {x: 0, y: 0, z: 0}
+  center: {x: 5.5, y: 0}
+  mapSize: {x: 16.5, y: 10}
 --- !u!1 &685365362
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &849662620
 Grid:
   m_ObjectHideFlags: 0
@@ -2975,13 +2978,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
+      propertyPath: attackRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
+      propertyPath: attackDamage
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7596478851436730474, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7596478851436730474, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

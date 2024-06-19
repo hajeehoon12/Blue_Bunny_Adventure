@@ -38,11 +38,11 @@ public class CameraManager : MonoBehaviour
 
     void LimitCameraArea()
     {
-        float lx = mapSize.x - screenWidth;
-        float clampX = Mathf.Clamp(transform.position.x, -lx + center.x, lx + center.x);
+        float borderx = mapSize.x - screenWidth;
+        float clampX = Mathf.Clamp(transform.position.x, -borderx + center.x, borderx + center.x);
 
-        float ly = mapSize.y - screenHeight;
-        float clampY = Mathf.Clamp(transform.position.y, -ly + center.y, ly + center.y);
+        float bordery = mapSize.y - screenHeight;
+        float clampY = Mathf.Clamp(transform.position.y, -bordery + center.y, bordery + center.y);
 
         transform.position = new Vector3(clampX, clampY, -10f);
     }
