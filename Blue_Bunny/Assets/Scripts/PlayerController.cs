@@ -41,10 +41,7 @@ public class PlayerController : MonoBehaviour
         Move();
     }
 
-    private void Update()
-    {
-        Debug.Log(boundPlayer.y * 0.1f);
-    }
+
 
     public void OnAttack(InputAction.CallbackContext context)
     {
