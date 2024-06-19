@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -39,13 +40,19 @@ public class PlayerController : MonoBehaviour
         
     }
 
-
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            BulletAttack();
+        }
+    }
 
 
     void BulletAttack()
     {
+        Debug.Log("Attack!!");
         float dir = spriteRenderer.flipX ? -1 : 1;
-
         Debug.DrawRay(transform.position + new Vector3(boundPlayer.x * dir, 0, 0), new Vector2(1, 0) * 3 * dir, Color.red);
     }
 
@@ -71,12 +78,15 @@ public class PlayerController : MonoBehaviour
         transform.position += moveVelocity * playerSpeed * Time.deltaTime;          
     }
 
-    private void OnJump() // space
+    public void OnJump(InputAction.CallbackContext context) // space
     {
-        if (canJump)
+        if (context.phase == InputActionPhase.Performed)
         {
-            rigid.AddForce(Vector2.up * jumpPower * rigid.mass, ForceMode2D.Impulse);
-            StartCoroutine(ChangeJumpBool());
+            if (canJump)
+            {
+                rigid.AddForce(Vector2.up * jumpPower * rigid.mass, ForceMode2D.Impulse);
+                StartCoroutine(ChangeJumpBool());
+            }
         }
     }
 
