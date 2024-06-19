@@ -1,8 +1,22 @@
-﻿public class HealItem : Item, iHeal
+﻿using UnityEngine;
+
+public class HealItem : Item, iHeal
 {
     public void Heal()
     {
-        // 플레이어의 체력 증가 로직을 추가.
+        Debug.Log("체력이 회복되었다!");
     }
+    public void PlayHealSound()
+    {
+        Debug.Log("체력 회복 소리 재생!");
+        //AudioManager.instance.PlayBGM("");
+    }
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        Heal();
+        base.OnTriggerEnter2D(collision);
+    }
+
 }
 
