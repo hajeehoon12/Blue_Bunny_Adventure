@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
     }
 
 
+
+
     void BulletAttack()
     {
         float dir = spriteRenderer.flipX ? -1 : 1;
@@ -51,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-    private void Move()
+    private void Move() // basic Move
     {
         Vector3 moveVelocity = Vector3.zero;
 
@@ -69,7 +71,7 @@ public class PlayerController : MonoBehaviour
         transform.position += moveVelocity * playerSpeed * Time.deltaTime;          
     }
 
-    private void OnJump()
+    private void OnJump() // space
     {
         if (canJump)
         {
@@ -84,18 +86,18 @@ public class PlayerController : MonoBehaviour
         canJump = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) // Check if player get on floor
     {
         JumpCheck();
     }
 
-    private void JumpCheck()
+    private void JumpCheck() // Check if can jump
     {
         //Debug.Log(boundPlayer.y);
         if (canJump) return;
         
         RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0, boundPlayer.y, 0), new Vector2(0, -1), 0.1f, groundLayerMask);
-        Debug.Log(hit.collider?.name);
+        //Debug.Log(hit.collider?.name);
 
         if (hit.collider?.name != null)
         {

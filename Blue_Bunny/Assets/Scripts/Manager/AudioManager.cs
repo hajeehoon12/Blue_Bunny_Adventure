@@ -41,8 +41,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        PlayBGM("Peace", 0.3f);
-        PlaySFX("Bird", 0.2f);
+        PlayBGM("SuperMario", 0.1f);
     }
 
     public void PlayBGM(string p_bgmName)
