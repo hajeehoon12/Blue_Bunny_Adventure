@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 7748403737667137366}
   - component: {fileID: 7675288079411936360}
   - component: {fileID: 1698128626999075974}
+  - component: {fileID: 4326917618531217044}
+  - component: {fileID: 6500976779576107061}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -106,9 +108,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   bulletLifeTime: 3
-  playerSpeed: 5
-  jumpPower: 12
-  bulletSpeed: 10
 --- !u!50 &7013075663424530611
 Rigidbody2D:
   serializedVersion: 4
@@ -228,6 +227,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: fbe5e6fc-f3eb-4c05-8ffd-77eb0ab63215
     m_ActionName: Player/Attack[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1541885961567742381}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4647814c-c53d-4acc-9633-bb9a9dd6d129
+    m_ActionName: Player/Dash[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -246,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  stats: {fileID: 0}
 --- !u!95 &1698128626999075974
 Animator:
   serializedVersion: 5
@@ -267,3 +283,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4326917618531217044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596478851436730474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54786554417cd54d890405b6da8e136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostDelay: 0.05
+  fadeDuration: 0.4
+  ghost: {fileID: 4756001575955945410, guid: ba99e2b62c370ac4cb3b19a355e6fb80, type: 3}
+  makeGhost: 0
+--- !u!114 &6500976779576107061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596478851436730474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 582aa398169eb414eb0f2aa2051b676a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 5
+  jumpPower: 10
+  bulletSpeed: 12
