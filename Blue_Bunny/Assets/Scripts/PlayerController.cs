@@ -6,18 +6,27 @@ public class PlayerController : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
     Rigidbody2D rigid;
+    Collider2D playerCollider;
 
+    [SerializeField]LayerMask groundLayerMask;
+
+    Vector2 boundPlayer;
 
     public float playerSpeed;
     public float jumpPower;
 
-    private bool canJump;
+    private bool canJump = true;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        rigid = GetComponent<Rigidbody2D>();
-        
+        rigid = GetComponent<Rigidbody2D>();   
+        playerCollider = GetComponent<Collider2D>();
+    }
+
+    private void Start()
+    {
+        boundPlayer = playerCollider.bounds.extents;
     }
 
     private void FixedUpdate()
@@ -27,8 +36,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        JumpCheck();
+        Debug.DrawRay(transform.position + new Vector3(boundPlayer.x, 0, 0), new Vector2(1, 0) * 3, Color.red);
     }
+
+
 
 
     private void Move()
@@ -51,13 +62,38 @@ public class PlayerController : MonoBehaviour
 
     private void OnJump()
     {
-        rigid.AddForce(Vector2.up * jumpPower * rigid.mass, ForceMode2D.Impulse);
+        if (canJump)
+        {
+            rigid.AddForce(Vector2.up * jumpPower * rigid.mass, ForceMode2D.Impulse);
+            StartCoroutine(ChangeJumpBool());
+        }
+    }
 
+    IEnumerator ChangeJumpBool()
+    {
+        yield return new WaitForSeconds(0.01f);
+        canJump = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        JumpCheck();
     }
 
     private void JumpCheck()
-    { 
+    {
+        //Debug.Log(boundPlayer.y);
+        if (canJump) return;
         
+        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0, boundPlayer.y, 0), new Vector2(0, -1), 0.1f, groundLayerMask);
+        Debug.Log(hit.collider?.name);
+
+        if (hit.collider?.name != null)
+        {
+            //Debug.Log("onGround");
+            canJump = true;
+        }
+
     }
 
 
