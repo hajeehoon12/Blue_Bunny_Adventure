@@ -1,4 +1,12 @@
 ﻿using UnityEngine;
+public interface IState
+{
+    public void Enter();
+    public void Exit();
+    public void HandleInput();
+    public void Update();
+    public void FixedUpdate();
+}
 
 public class MonsterBaseState : IState
 {
@@ -73,12 +81,6 @@ public class MonsterBaseState : IState
         {
             Debug.Log($"MonsterBaseState::IsInChasingRange() : Target is null");
 
-            stateMachine.FindTarget();
-            if(stateMachine.Target == null)
-            {
-                stateMachine.ChangeState(stateMachine.IdleState);
-            }
-
             return false;
         }
 
@@ -93,13 +95,9 @@ public class MonsterBaseState : IState
         stateMachine.Monster.SpriteRenderer.flipX = Mathf.Abs(rotZ) > 90f;
     }
 
-    protected void UpdateMove()
-    {
-        stateMachine.Monster.transform.position += stateMachine.MovementDirection * stateMachine.Monster.Data.BaseSpeed * Time.deltaTime;
-    }
-
     protected void UpdateDirection()
     {
         stateMachine.MovementDirection = (stateMachine.Target.transform.position - stateMachine.Monster.transform.position).normalized;
+        RotateSprite(stateMachine.MovementDirection);
     }
 }

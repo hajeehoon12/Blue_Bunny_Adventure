@@ -12,16 +12,14 @@ public class MonsterChasingState : MonsterBaseState
     {
         Debug.Log("MonsterChasingState::Enter()");
         base.Enter();
-        StartAnimation(stateMachine.Monster.AnimationData.GroundParameterHash);
-        StartAnimation(stateMachine.Monster.AnimationData.WalkParameterHash);
+        StartAnimation(stateMachine.Monster.AnimationData.ChasingParameterHash);
     }
 
     public override void Exit()
     {
         Debug.Log("MonsterChasingState::Exit()");
         base.Exit();
-        StopAnimation(stateMachine.Monster.AnimationData.GroundParameterHash);
-        StopAnimation(stateMachine.Monster.AnimationData.WalkParameterHash);
+        StopAnimation(stateMachine.Monster.AnimationData.ChasingParameterHash);
     }
 
     public override void Update()
@@ -35,15 +33,10 @@ public class MonsterChasingState : MonsterBaseState
         }
 
         UpdateDirection();
-        UpdateMove();
+        UpdateChasingMove();
     }
-
-    protected bool IsInAttackRange()
+    private void UpdateChasingMove()
     {
-        float playerDistanceSqr = (stateMachine.Target.transform.position - stateMachine.Monster.transform.position).sqrMagnitude;
-
-        return playerDistanceSqr <= stateMachine.Monster.Data.AttackRange * stateMachine.Monster.Data.AttackRange;
+        stateMachine.Monster.transform.position += stateMachine.MovementDirection * stateMachine.Monster.Data.BaseSpeed * Time.deltaTime;
     }
-
-    
 }
