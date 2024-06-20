@@ -1,4 +1,5 @@
 using UnityEngine;
+
 public interface IState
 {
     public void Enter();
@@ -95,7 +96,7 @@ public class MonsterBaseState : IState
         stateMachine.Monster.SpriteRenderer.flipX = Mathf.Abs(rotZ) > 90f;
     }
 
-    protected bool IsGround(Vector3 moveDirection)
+    protected bool IsCliff(Vector3 moveDirection)
     {
         Vector2 frontVec = stateMachine.Monster.transform.position + moveDirection;
         float distance = 1f;
@@ -111,12 +112,25 @@ public class MonsterBaseState : IState
 
     protected bool IsNearGround(Vector3 moveDirection)
     {
-        Vector2 frontVec = stateMachine.Monster.transform.position + moveDirection;
+        Vector2 frontVec = stateMachine.Monster.transform.position;
 
-        float distance = 5;
+        float distance = 3;
         Debug.DrawRay(frontVec, Vector3.down * distance, new Color(0, 0, 1));
 
         RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, distance, LayerMask.GetMask(Define.GROUND_Layer));
+        if (rayHit.collider == null)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    protected bool IsGroundForAir(Vector3 moveDirection)
+    {
+        float distance = 0.5f;
+
+        Debug.DrawRay(stateMachine.Monster.transform.position, Vector3.down * distance, new Color(0, 0, 1));
+        RaycastHit2D rayHit = Physics2D.Raycast(stateMachine.Monster.transform.position, Vector3.down, distance, LayerMask.GetMask(Define.GROUND_Layer));
         if (rayHit.collider == null)
         {
             return false;
