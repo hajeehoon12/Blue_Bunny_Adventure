@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Collider2D playerCollider;
     Animator animator;
     GhostDash ghostDash;
+    PlayerBattle playerBattle;
 
     private static readonly int isMoving = Animator.StringToHash("IsMoving");
 
@@ -31,13 +34,18 @@ public class PlayerController : MonoBehaviour
         playerCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         ghostDash = GetComponent<GhostDash>();
+        playerBattle = GetComponent<PlayerBattle>();
     }
 
     private void Start()
     {
         boundPlayer = playerCollider.bounds.extents;
         playerGravityScale = rigid.gravityScale;
+
+        playerBattle.OnDamage += GetAttacked;
     }
+
+    
 
     private void FixedUpdate()
     {
@@ -130,10 +138,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool(isMoving, false);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) // Check if player get on floor
-    {
-        JumpCheck();
-    }
+    
 
     private void JumpCheck() // Check if can jump
     {
@@ -194,7 +199,44 @@ public class PlayerController : MonoBehaviour
         ghostDash.makeGhost = false;
     }
 
+    void HitCheck(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Monster"))
+        {
+            playerBattle.ChangeHealth(-3); // Need to Change : magic number -> monster Damage
+            //Debug.Log("Get Hit by Monster!!");
+        }
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision) // Check if player get on floor
+    {
+        JumpCheck();
 
+        HitCheck(collision);
+        //Debug.Log("Hit");
+        
+    }
+
+    private void GetAttacked()
+    {
+        Debug.Log("Do Red");
+
+        float knockBackPower = 5f;
+        float Dir = spriteRenderer.flipX ? -1 : 1;
+
+        StartCoroutine(ColorChanged());
+        rigid.AddForce( (Vector2.up + Dir * new Vector2(1, 0)) * rigid.mass * knockBackPower , ForceMode2D.Impulse);
+        
+        
+    }
+
+    IEnumerator ColorChanged()
+    {
+        float durTime = playerBattle.healthChangeDelay / 2;
+        spriteRenderer.DOColor(Color.red, durTime);
+        yield return new WaitForSeconds(durTime);
+        spriteRenderer.DOColor(Color.white, durTime);
+
+    }
 
 }

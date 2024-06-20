@@ -8,4 +8,5 @@ public class Define
     public const string MONSTER_TAG = "Monster";
     public const string BULLET_TAG = "Bullet";
     public const string ITEM_TAG = "Item";
+    public const string GROUND_Layer = "Ground";
 }
