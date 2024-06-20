@@ -202,6 +202,8 @@ public class PlayerController : MonoBehaviour
     }
 
 
+
+
     private void OnCollisionEnter2D(Collision2D collision) // Check if player get on floor
     {
         JumpCheck();
@@ -229,6 +231,7 @@ public class PlayerController : MonoBehaviour
         float Dir = spriteRenderer.flipX ? -1 : 1;
 
         StartCoroutine(ColorChanged());
+        rigid.velocity = Vector3.zero;
         rigid.AddForce( (Vector2.up + Dir * new Vector2(1.5f, 0)) * rigid.mass * knockBackPower , ForceMode2D.Impulse);
         
         

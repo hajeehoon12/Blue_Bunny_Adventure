@@ -7,6 +7,8 @@ TagManager:
   - Monster
   - Bullet
   - Item
+  - Floor
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - 
   - Ground
   - 
-  - 
+  - Player
   - 
   - 
   - 

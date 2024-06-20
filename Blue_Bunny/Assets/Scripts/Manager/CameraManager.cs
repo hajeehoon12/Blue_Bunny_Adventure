@@ -7,6 +7,8 @@ public class CameraManager : MonoBehaviour
     public Transform _player;
     public MeshRenderer render;
 
+    public GameObject map;
+
     private Vector2 _firstPos;
 
     [SerializeField]
@@ -14,7 +16,7 @@ public class CameraManager : MonoBehaviour
 
     [SerializeField]
     Vector2 center;
-    [SerializeField]
+    
     Vector2 mapSize;
 
     float screenHeight;
@@ -26,12 +28,14 @@ public class CameraManager : MonoBehaviour
 
         screenHeight = Camera.main.orthographicSize;
         screenWidth = screenHeight * Screen.width / Screen.height;
+
+        mapSize = map.GetComponent<Collider2D>().bounds.extents + new Vector3(0, 2, 0);
     }
 
     private void Update()
     {
         transform.position = new Vector3(_player.transform.position.x, _player.transform.position.y + 3f, -10);
-        render.material.mainTextureOffset = new Vector2((_firstPos.x - _player.position.x) / 100, 0);
+        render.material.mainTextureOffset = new Vector2((_firstPos.x - _player.position.x) / 300, 0);
 
         LimitCameraArea();
     }
