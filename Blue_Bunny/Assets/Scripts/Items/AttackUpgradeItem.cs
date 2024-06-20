@@ -3,10 +3,11 @@
 public class AttackUpgradeItem : Item, iStatUpgrade
 {
     public float attackUpgradeAmount = 1f;
+    public string explainPhrase;
     public void UpgradeStat()
     {
         CharacterManager.Instance.Player.stats.attackDamage += attackUpgradeAmount;
-        Debug.Log("공격력 증가");
+        Debug.Log(explainPhrase);
         PlayUpgradeSound();
     }
 

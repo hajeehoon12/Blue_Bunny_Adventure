@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedUpgradeAmount: 1
+  explainPhrase: "\uC9C8\uC8FC \uBCF8\uB2A5\uC744 \uC790\uADF9\uD558\uB294 \uD578\uB4E4\uC785\uB2C8\uB2E4.
+    \uC190\uC5D0 \uC950\uB294 \uAC83 \uB9CC\uC73C\uB85C\uB3C4 \uBE68\uB77C\uC9C0\uB294
+    \uB290\uB08C\uC774 \uB4ED\uB2C8\uB2E4."
 --- !u!61 &7872043418378933001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -79,7 +82,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.003740549, y: 0.0018702745}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -90,7 +93,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.3142047, y: 1.3029833}
   m_EdgeRadius: 0
 --- !u!1 &9202817423484030915
 GameObject:
