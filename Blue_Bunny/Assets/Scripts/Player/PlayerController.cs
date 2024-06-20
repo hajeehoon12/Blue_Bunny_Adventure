@@ -201,10 +201,12 @@ public class PlayerController : MonoBehaviour
 
     void HitCheck(Collision2D collision)
     {
+        
         if (collision.gameObject.CompareTag(Define.MONSTER_TAG))
         {
+            Debug.Log("Check");
             Monster monster = collision.gameObject.GetComponent<Monster>();
-            playerBattle.ChangeHealth(monster.Data.AttackDamage); // Need to Change : magic number -> monster Damage
+            playerBattle.ChangeHealth(-monster.Data.AttackDamage); // Need to Change : magic number -> monster Damage
             //Debug.Log("Get Hit by Monster!!");
         }
     }
@@ -220,13 +222,13 @@ public class PlayerController : MonoBehaviour
 
     private void GetAttacked()
     {
-        Debug.Log("Do Red");
+        //Debug.Log("Do Red");
 
         float knockBackPower = 5f;
         float Dir = spriteRenderer.flipX ? -1 : 1;
 
         StartCoroutine(ColorChanged());
-        rigid.AddForce( (Vector2.up + Dir * new Vector2(1, 0)) * rigid.mass * knockBackPower , ForceMode2D.Impulse);
+        rigid.AddForce( (Vector2.up + Dir * new Vector2(1.5f, 0)) * rigid.mass * knockBackPower , ForceMode2D.Impulse);
         
         
     }
