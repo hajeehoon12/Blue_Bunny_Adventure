@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rigid;
     Collider2D playerCollider;
     Animator animator;
+    GhostDash ghostDash;
 
     private static readonly int isMoving = Animator.StringToHash("IsMoving");
 
@@ -17,11 +18,11 @@ public class PlayerController : MonoBehaviour
 
     Vector2 boundPlayer;
 
-    public float playerSpeed;
-    public float jumpPower;
-    public float bulletSpeed;
+
+    private float playerGravityScale;
 
     private bool canJump = true;
+    private bool canDash = true;
 
     private void Awake()
     {
@@ -29,11 +30,13 @@ public class PlayerController : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();   
         playerCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
+        ghostDash = GetComponent<GhostDash>();
     }
 
     private void Start()
     {
         boundPlayer = playerCollider.bounds.extents;
+        playerGravityScale = rigid.gravityScale;
     }
 
     private void FixedUpdate()
@@ -54,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
     void BulletAttack()
     {
-        Debug.Log("Attack!!");
+        //Debug.Log("Attack!!");
         float dir = spriteRenderer.flipX ? -1 : 1;
         Debug.DrawRay(transform.position + new Vector3(boundPlayer.x * dir, boundPlayer.y, 0), new Vector2(1, 0) * 3 * dir, Color.red);
         GameObject bullet = PoolManager.Instance.Get(0);
@@ -72,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
         while (time < bulletLifeTime)
         {
-            bullet.transform.position = bullet.transform.position + new Vector3(dir * 0.02f * bulletSpeed, 0, 0);
+            bullet.transform.position = bullet.transform.position + new Vector3(dir * 0.02f * CharacterManager.Instance.Player.stats.bulletSpeed, 0, 0);
             time += moveTime;
             yield return new WaitForSeconds(moveTime);
         }
@@ -104,7 +107,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool(isMoving, false);
         }
 
-        transform.position += moveVelocity * playerSpeed * Time.deltaTime;          
+        transform.position += moveVelocity * CharacterManager.Instance.Player.stats.playerSpeed * Time.deltaTime;          
     }
 
     public void OnJump(InputAction.CallbackContext context) // space
@@ -114,7 +117,7 @@ public class PlayerController : MonoBehaviour
             if (canJump)
             {
                 animator.SetBool(isMoving, false);
-                rigid.AddForce(Vector2.up * jumpPower * rigid.mass, ForceMode2D.Impulse);
+                rigid.AddForce(Vector2.up * CharacterManager.Instance.Player.stats.jumpPower * rigid.mass, ForceMode2D.Impulse);
                 StartCoroutine(ChangeJumpBool());
             }
         }
@@ -148,6 +151,47 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            if (canDash)
+            {
+                rigid.gravityScale = 0f;
+                rigid.velocity = new Vector2(rigid.velocity.x, 0);
+                ghostDash.makeGhost = true;
+                StartCoroutine(DoingDash());
+                StartCoroutine(DashOff());
+            }
+        }
+    }
+
+    IEnumerator DoingDash()
+    {
+        
+        while (ghostDash.makeGhost)
+        {
+            if (spriteRenderer.flipX)
+            {
+                transform.position -= new Vector3(0.2f, 0, 0);
+            }
+            else
+            {
+                transform.position += new Vector3(0.2f, 0, 0);
+            }
+            yield return new WaitForSeconds(0.02f);
+        }
+
+        yield return null;
+    }
+
+    IEnumerator DashOff()
+    {
+        yield return new WaitForSeconds(0.2f);
+        rigid.gravityScale = playerGravityScale;
+        ghostDash.makeGhost = false;
+    }
 
 
 
