@@ -9,7 +9,7 @@ public class MonsterDeadEffect : MonoBehaviour
 
     private void Start()
     {
-        Invoke("Dead", 0.2f);
+        Invoke("Dead", 2f);
     }
 
     public void Dead()
@@ -21,7 +21,7 @@ public class MonsterDeadEffect : MonoBehaviour
 
     IEnumerator FadeOut()
     {
-        GameObject Light  = Instantiate(_monsterEffect);
+        Instantiate(_monsterEffect, transform.position, Quaternion.identity);
         
         GetComponentInChildren<SpriteRenderer>().DOFade(0, 2f); // .OnComplete(() =>);
         yield return new WaitForSeconds(2.5f);

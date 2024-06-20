@@ -9,7 +9,7 @@ public class LightEffect : MonoBehaviour
     void Start()
     {
         transform.position += new Vector3(0, 0, -2);
-        Debug.Log("Hello");
+        //Debug.Log("Hello");
         MoveToPlayer();
     }
 
@@ -25,9 +25,9 @@ public class LightEffect : MonoBehaviour
         Transform target = CharacterManager.Instance.Player.controller.pet.transform;
         //transform.LookAt(target);
 
-        transform.DOLocalMove(target.position, 3).SetEase(Ease.InCirc);
+        transform.DOLocalMove(target.position, 4).SetEase(Ease.OutCirc);
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         Destroy(gameObject);
     }
 
