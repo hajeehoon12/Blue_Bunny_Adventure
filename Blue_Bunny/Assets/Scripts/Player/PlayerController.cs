@@ -204,8 +204,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag(Define.MONSTER_TAG))
         {
             Monster monster = collision.gameObject.GetComponent<Monster>();
-            playerBattle.ChangeHealth(monster.Data.AttackDamage); // Need to Change : magic number -> monster Damage
-            //Debug.Log("Get Hit by Monster!!");
+            playerBattle.ChangeHealth(-monster.Data.AttackDamage); 
         }
     }
 

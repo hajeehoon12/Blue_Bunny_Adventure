@@ -15,7 +15,7 @@ public class MonsterIdleState : MonsterBaseState
 
         base.Enter();
         StartAnimation(stateMachine.Monster.AnimationData.IdleParameterHash);
-        directionCoroutine = stateMachine.Monster.StartCoroutine(SetDirectionCoroutine()); // ÄÚ·çÆ¾ ½ÃÀÛ
+        directionCoroutine = stateMachine.Monster.StartCoroutine(SetDirectionCoroutine()); // ì½”ë£¨í‹´ ì‹œì‘
     }
 
     public override void Exit()
@@ -38,7 +38,7 @@ public class MonsterIdleState : MonsterBaseState
 
         UpdateIdleMove();
 
-        if(stateMachine.Monster.Data.MonsterType == MonsterType.Horizontal)
+        if (stateMachine.Monster.Data.MonsterType == MonsterType.Horizontal)
         {
             UpdateHorizontalMove();
         }
@@ -50,7 +50,7 @@ public class MonsterIdleState : MonsterBaseState
     }
 
     /// <summary>
-    /// 5ÃÊ¸¶´Ù ¹æÇâÀ» ¹Ù²Ù´Â ÄÚ·çÆ¾
+    /// 5ì´ˆë§ˆë‹¤ ë°©í–¥ì„ ë°”ê¾¸ëŠ” ì½”ë£¨í‹´
     /// </summary>
     /// <returns></returns>
     private IEnumerator SetDirectionCoroutine()
@@ -59,7 +59,7 @@ public class MonsterIdleState : MonsterBaseState
         {
             int randomValue = Random.Range(-1, 2);
 
-            if(stateMachine.Monster.Data.MonsterType == MonsterType.Horizontal)
+            if (stateMachine.Monster.Data.MonsterType == MonsterType.Horizontal)
             {
                 idleMoveDirection = new Vector3(randomValue, 0, 0);
                 RotateSprite(idleMoveDirection);
@@ -75,11 +75,7 @@ public class MonsterIdleState : MonsterBaseState
 
     private void UpdateHorizontalMove()
     {
-        Vector2 frontVec = stateMachine.Monster.transform.position + idleMoveDirection;
-        Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
-
-        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, LayerMask.GetMask(Define.GROUND_Layer));
-        if (rayHit.collider == null)
+        if (IsCliff(idleMoveDirection))
         {
             idleMoveDirection *= -1;
             RotateSprite(idleMoveDirection);

@@ -919,6 +919,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster_Ground_Red
       objectReference: {fileID: 0}
+    - target: {fileID: 2205024189343875690, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2481413214452548724, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.91
@@ -1122,6 +1126,7 @@ MonoBehaviour:
     ChasingSpeed: 2
     IdleSpeed: 0.5
     IdleChangeDirectionSecond: 1
+    AttackDamage: 1
 --- !u!114 &6953872891672806000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1140,6 +1145,7 @@ MonoBehaviour:
     ChasingSpeed: 3
     IdleSpeed: 0.7
     IdleChangeDirectionSecond: 1
+    AttackDamage: 1
 --- !u!95 &7883009349914817541
 Animator:
   serializedVersion: 5

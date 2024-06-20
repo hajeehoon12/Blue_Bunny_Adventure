@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 public interface IState
 {
     public void Enter();
@@ -95,5 +95,15 @@ public class MonsterBaseState : IState
         stateMachine.Monster.SpriteRenderer.flipX = Mathf.Abs(rotZ) > 90f;
     }
 
-    
+    protected bool IsCliff(Vector3 moveDirection)
+    {
+        Vector2 frontVec = stateMachine.Monster.transform.position + moveDirection;
+        Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
+        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, LayerMask.GetMask(Define.GROUND_Layer));
+        if (rayHit.collider == null)
+        {
+            return true;
+        }
+        return false;
+    }
 }
