@@ -6,10 +6,20 @@ using DG.Tweening;
 public class MonsterDeadEffect : MonoBehaviour
 {
     public GameObject _monsterEffect;
+    public float tempHealth = 1f;
 
-    private void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Invoke("Dead", 2f);
+        Debug.Log("Trigger!");
+        if (collision.gameObject.CompareTag(Define.BULLET_TAG))
+        {
+            Debug.Log("Bullet Hit!!");
+            tempHealth--;
+            if (tempHealth <= 0)
+            {
+                Dead();
+            }
+        }
     }
 
     public void Dead()
