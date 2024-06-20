@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+
+
+    public static CameraManager Instance;
+
     public Transform _player;
     public MeshRenderer render;
 
@@ -17,10 +21,23 @@ public class CameraManager : MonoBehaviour
     [SerializeField]
     Vector2 center;
     
-    Vector2 mapSize;
+    public Vector2 mapSize;
 
     float screenHeight;
     float screenWidth;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
@@ -29,7 +46,7 @@ public class CameraManager : MonoBehaviour
         screenHeight = Camera.main.orthographicSize;
         screenWidth = screenHeight * Screen.width / Screen.height;
 
-        mapSize = map.GetComponent<Collider2D>().bounds.extents + new Vector3(0, 2, 0);
+        //mapSize = map.GetComponent<Collider2D>().bounds.extents + new Vector3(0, 2, 0);
     }
 
     private void Update()

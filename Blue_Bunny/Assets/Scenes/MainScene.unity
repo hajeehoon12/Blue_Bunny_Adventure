@@ -702,6 +702,7 @@ MonoBehaviour:
   map: {fileID: 1761359564}
   cameraPosition: {x: 0, y: 0, z: 0}
   center: {x: 0, y: 0}
+  mapSize: {x: 0, y: 0}
 --- !u!1 &685365362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1047,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7618061358946158606, guid: 974c7f854180ea542a5d2aa3899defc3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1761359566}
   m_SourcePrefab: {fileID: 100100000, guid: 974c7f854180ea542a5d2aa3899defc3, type: 3}
 --- !u!1 &1104493383 stripped
 GameObject:
@@ -2897,6 +2901,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7618061358946158606, guid: 974c7f854180ea542a5d2aa3899defc3, type: 3}
   m_PrefabInstance: {fileID: 918262476}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1761359566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761359564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd08d84cc40b844a998c18742da0c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1796842191 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2205024189343875690, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
