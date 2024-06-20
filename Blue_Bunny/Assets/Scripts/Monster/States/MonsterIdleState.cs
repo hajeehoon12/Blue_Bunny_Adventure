@@ -37,6 +37,11 @@ public class MonsterIdleState : MonsterBaseState
         }
 
         UpdateIdleMove();
+
+        if(stateMachine.Monster.Data.MonsterType == MonsterType.Horizontal)
+        {
+            UpdateHorizontalMove();
+        }
     }
 
     private void UpdateIdleMove()
@@ -65,6 +70,19 @@ public class MonsterIdleState : MonsterBaseState
             }
 
             yield return new WaitForSeconds(stateMachine.Monster.Data.IdleChangeDirectionSecond);
+        }
+    }
+
+    private void UpdateHorizontalMove()
+    {
+        Vector2 frontVec = stateMachine.Monster.transform.position + idleMoveDirection;
+        Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
+
+        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, LayerMask.GetMask(Define.GROUND_Layer));
+        if (rayHit.collider == null)
+        {
+            idleMoveDirection *= -1;
+            RotateSprite(idleMoveDirection);
         }
     }
 }
