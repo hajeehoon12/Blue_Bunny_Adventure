@@ -42,8 +42,8 @@ public class MonsterChasingState : MonsterBaseState
         {
             Vector3 moveDirection = new Vector3(stateMachine.MovementDirection.x, 0, 0);
 
-            // 몬스터가 절벽이면 Idle 상태로 전환
-            if (IsCliff(moveDirection) == false)
+            // 몬스터가 절벽이면 이동하지 않음
+            if (IsGround(moveDirection))
             {
                 stateMachine.Monster.transform.position += moveDirection * stateMachine.Monster.Data.ChasingSpeed * Time.deltaTime;
             }
@@ -52,7 +52,10 @@ public class MonsterChasingState : MonsterBaseState
         // 세로 몬스터 -> 4방향으로 이동
         else if(stateMachine.Monster.Data.MonsterType == MonsterType.Vertical)
         {
-            stateMachine.Monster.transform.position += stateMachine.MovementDirection * stateMachine.Monster.Data.ChasingSpeed * Time.deltaTime;
+            if(IsNearGround(stateMachine.MovementDirection) && IsGround(stateMachine.MovementDirection) == false)
+            {
+                stateMachine.Monster.transform.position += stateMachine.MovementDirection * stateMachine.Monster.Data.ChasingSpeed * Time.deltaTime;
+            }
         }
     }
 
