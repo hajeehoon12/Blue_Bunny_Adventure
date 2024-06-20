@@ -6,7 +6,8 @@ public class Monster : MonoBehaviour
 {
     [field: Header("Animations")]
     [field: SerializeField] public MonsterAnimationData AnimationData { get; private set; }
-    [field: SerializeField] public MonsterData Data { get; private set; }
+    [field: SerializeField] private MonsterData data;
+    public MonsterData Data => data;
     public Animator Animator { get; private set; }
     public BoxCollider2D BoxCollider2D { get; private set; }
     public SpriteRenderer SpriteRenderer { get; private set; }
@@ -17,7 +18,6 @@ public class Monster : MonoBehaviour
     {
         AnimationData = new MonsterAnimationData();
         AnimationData.Initialize();
-        Data = new MonsterData();
 
         Animator = GetComponentInChildren<Animator>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
