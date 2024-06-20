@@ -12,7 +12,6 @@ public interface iHeal
 public interface iStatUpgrade
 { 
     public void UpgradeStat();
-
     public void GotoInventoryTab();
     public void PlayUpgradeSound();
 }
