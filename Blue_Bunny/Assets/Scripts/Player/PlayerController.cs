@@ -208,6 +208,11 @@ public class PlayerController : MonoBehaviour
     {
         JumpCheck();
 
+        if (collision.gameObject.CompareTag(Define.BOSS_TAG))
+        {
+            playerBattle.ChangeHealth(-5);
+        }
+
     }
 
     /// <summary>
@@ -216,7 +221,7 @@ public class PlayerController : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(Define.MONSTER_TAG))
+        if (collision.gameObject.CompareTag(Define.MONSTER_TAG) )
         {
             Monster monster = collision.gameObject.GetComponent<Monster>();
             playerBattle.ChangeHealth(-monster.Data.AttackDamage); 

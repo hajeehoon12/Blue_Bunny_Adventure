@@ -2090,7 +2090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2205024189343875690, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
       propertyPath: m_TagString
-      value: Boss
+      value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 2481413214452548724, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2874,6 +2874,10 @@ PrefabInstance:
     - target: {fileID: 4383326105621255411, guid: 94dbbcc79ce198945a9a2c34846ae397, type: 3}
       propertyPath: maxSpeed
       value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331020171092748524, guid: 94dbbcc79ce198945a9a2c34846ae397, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7964954611461161073, guid: 94dbbcc79ce198945a9a2c34846ae397, type: 3}
       propertyPath: ghost
