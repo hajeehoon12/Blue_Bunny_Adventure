@@ -94,43 +94,14 @@ public class MonsterBaseState : IState
     {
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         stateMachine.Monster.SpriteRenderer.flipX = Mathf.Abs(rotZ) > 90f;
+
+        Debug.Log($"MonsterBaseState::RotateSprite()");
     }
 
-    protected bool IsCliff(Vector3 moveDirection)
+    protected bool IsRayHitGround(float distance, Vector3 offset, Vector3 toward, Color color)
     {
-        Vector2 frontVec = stateMachine.Monster.transform.position + moveDirection;
-        float distance = 1f;
-
-        Debug.DrawRay(frontVec, Vector3.down * distance, new Color(0, 1, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, distance, LayerMask.GetMask(Define.GROUND_Layer));
-        if (rayHit.collider == null)
-        {
-            return false;
-        }
-        return true;
-    }
-
-    protected bool IsNearGround(Vector3 moveDirection)
-    {
-        Vector2 frontVec = stateMachine.Monster.transform.position;
-
-        float distance = 3;
-        Debug.DrawRay(frontVec, Vector3.down * distance, new Color(0, 0, 1));
-
-        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, distance, LayerMask.GetMask(Define.GROUND_Layer));
-        if (rayHit.collider == null)
-        {
-            return false;
-        }
-        return true;
-    }
-
-    protected bool IsGroundForAir(Vector3 moveDirection)
-    {
-        float distance = 0.5f;
-
-        Debug.DrawRay(stateMachine.Monster.transform.position, Vector3.down * distance, new Color(0, 0, 1));
-        RaycastHit2D rayHit = Physics2D.Raycast(stateMachine.Monster.transform.position, Vector3.down, distance, LayerMask.GetMask(Define.GROUND_Layer));
+        Debug.DrawRay(stateMachine.Monster.transform.position + offset, toward * distance, color);
+        RaycastHit2D rayHit = Physics2D.Raycast(stateMachine.Monster.transform.position + offset, toward, distance, LayerMask.GetMask(Define.GROUND_Layer));
         if (rayHit.collider == null)
         {
             return false;

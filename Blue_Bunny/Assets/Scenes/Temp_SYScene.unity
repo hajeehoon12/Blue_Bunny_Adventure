@@ -437,13 +437,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2111094259497162953, guid: 672f0d8c01b1fce4b8102f5c62b59be0, type: 3}
+      propertyPath: data.IdleChangeDirectionSecond
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4664839029870562829, guid: 672f0d8c01b1fce4b8102f5c62b59be0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.91
+      value: 8.87
       objectReference: {fileID: 0}
     - target: {fileID: 4664839029870562829, guid: 672f0d8c01b1fce4b8102f5c62b59be0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.75
+      value: -2.94
       objectReference: {fileID: 0}
     - target: {fileID: 4664839029870562829, guid: 672f0d8c01b1fce4b8102f5c62b59be0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -481,6 +485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster_Air_Yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 6089313879609324528, guid: 672f0d8c01b1fce4b8102f5c62b59be0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -500,11 +508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2205024189343875690, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2481413214452548724, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.91
+      value: 5.01
       objectReference: {fileID: 0}
     - target: {fileID: 2481413214452548724, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
       propertyPath: m_LocalPosition.y
@@ -561,7 +569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1064301147246969813, guid: adcfe63392d97c5499f75dd8e41f4c5f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4818183275202674584, guid: adcfe63392d97c5499f75dd8e41f4c5f, type: 3}
       propertyPath: m_LocalPosition.x
