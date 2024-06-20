@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using UnityEngine;
+
 public interface IState
 {
     public void Enter();
@@ -93,7 +94,18 @@ public class MonsterBaseState : IState
     {
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         stateMachine.Monster.SpriteRenderer.flipX = Mathf.Abs(rotZ) > 90f;
+
+        Debug.Log($"MonsterBaseState::RotateSprite()");
     }
 
-    
+    protected bool IsRayHitGround(float distance, Vector3 offset, Vector3 toward, Color color)
+    {
+        Debug.DrawRay(stateMachine.Monster.transform.position + offset, toward * distance, color);
+        RaycastHit2D rayHit = Physics2D.Raycast(stateMachine.Monster.transform.position + offset, toward, distance, LayerMask.GetMask(Define.GROUND_Layer));
+        if (rayHit.collider == null)
+        {
+            return false;
+        }
+        return true;
+    }
 }

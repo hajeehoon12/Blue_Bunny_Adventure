@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 2481413214452548724}
   - component: {fileID: 3792266665201970588}
   - component: {fileID: 5537678433754394873}
+  - component: {fileID: 4228102997463288486}
   m_Layer: 0
   m_Name: Monster_Ground_Red
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2481413214452548724
 Transform:
   m_ObjectHideFlags: 0
@@ -63,7 +64,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.03623578, y: -0.28263876}
@@ -97,6 +98,21 @@ MonoBehaviour:
     ChasingSpeed: 4
     IdleSpeed: 1
     IdleChangeDirectionSecond: 1
+    AttackDamage: 1
+--- !u!114 &4228102997463288486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205024189343875690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0f498d0a4eeb94bb18563dd9870560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterEffect: {fileID: 2643489189189102077, guid: 00ad2d6671a9c614880130b022b01a0a, type: 3}
+  tempHealth: 1
 --- !u!1 &2766608028159097290
 GameObject:
   m_ObjectHideFlags: 0

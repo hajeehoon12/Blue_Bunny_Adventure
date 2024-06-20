@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     GhostDash ghostDash;
     PlayerBattle playerBattle;
+    public Pet pet;
 
     private static readonly int isMoving = Animator.StringToHash("IsMoving");
 
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         ghostDash = GetComponent<GhostDash>();
         playerBattle = GetComponent<PlayerBattle>();
+        
     }
 
     private void Start()
@@ -199,25 +201,24 @@ public class PlayerController : MonoBehaviour
         ghostDash.makeGhost = false;
     }
 
-    void HitCheck(Collision2D collision)
-    {
-        
-        if (collision.gameObject.CompareTag(Define.MONSTER_TAG))
-        {
-            Debug.Log("Check");
-            Monster monster = collision.gameObject.GetComponent<Monster>();
-            playerBattle.ChangeHealth(-monster.Data.AttackDamage); // Need to Change : magic number -> monster Damage
-            //Debug.Log("Get Hit by Monster!!");
-        }
-    }
 
     private void OnCollisionEnter2D(Collision2D collision) // Check if player get on floor
     {
         JumpCheck();
 
-        HitCheck(collision);
-        //Debug.Log("Hit");
-        
+    }
+
+    /// <summary>
+    /// 몬스터 Trigger 이다
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag(Define.MONSTER_TAG))
+        {
+            Monster monster = collision.gameObject.GetComponent<Monster>();
+            playerBattle.ChangeHealth(-monster.Data.AttackDamage); 
+        }
     }
 
     private void GetAttacked()

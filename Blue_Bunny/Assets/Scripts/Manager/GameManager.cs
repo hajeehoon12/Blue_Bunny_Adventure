@@ -4,15 +4,41 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager Instance;
+
+    public SpawnManager spawnManager;
+
+    public GameObject[] mapPrefabs;
+    public int stageIdx = 0;
+
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
+        ChangeMap();
+    }
+
+    public void ChangeMap()
+    {
+        GameObject go = Instantiate(mapPrefabs[stageIdx]);
         
+        if(spawnManager.nowMap != null)
+        {
+            Destroy(spawnManager.nowMap.gameObject);
+        }
+        spawnManager.nowMap = go.GetComponent<Map>();
+        spawnManager.SpawnMonster();
+        stageIdx++;
     }
 }

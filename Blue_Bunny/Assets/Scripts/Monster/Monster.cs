@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Monster Data / StateMachin 갖고있다
+/// </summary>
 public class Monster : MonoBehaviour
 {
     [field: Header("Animations")]

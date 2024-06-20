@@ -15,7 +15,7 @@ public class MonsterIdleState : MonsterBaseState
 
         base.Enter();
         StartAnimation(stateMachine.Monster.AnimationData.IdleParameterHash);
-        directionCoroutine = stateMachine.Monster.StartCoroutine(SetDirectionCoroutine()); // �ڷ�ƾ ����
+        directionCoroutine = stateMachine.Monster.StartCoroutine(SetDirectionCoroutine());
     }
 
     public override void Exit()
@@ -24,6 +24,7 @@ public class MonsterIdleState : MonsterBaseState
 
         base.Exit();
         StopAnimation(stateMachine.Monster.AnimationData.IdleParameterHash);
+        stateMachine.Monster.StopCoroutine(directionCoroutine); 
     }
 
     public override void Update()
@@ -37,20 +38,42 @@ public class MonsterIdleState : MonsterBaseState
         }
 
         UpdateIdleMove();
-
-        if(stateMachine.Monster.Data.MonsterType == MonsterType.Horizontal)
-        {
-            UpdateHorizontalMove();
-        }
     }
 
     private void UpdateIdleMove()
     {
-        stateMachine.Monster.transform.position += idleMoveDirection * stateMachine.Monster.Data.IdleSpeed * Time.deltaTime;
+        // 좌우 몬스터
+        if (stateMachine.Monster.Data.MonsterType == MonsterType.Horizontal)
+        {
+            // 이동방향 레이가 땅에 안 닿으면 반대 방향으로 가기
+            if (IsRayHitGround(1, idleMoveDirection, Vector3.down, Color.green) == false)
+            {
+                idleMoveDirection *= -1;
+                RotateSprite(idleMoveDirection);
+            }
+
+            stateMachine.Monster.transform.position += idleMoveDirection * stateMachine.Monster.Data.IdleSpeed * Time.deltaTime;
+        }
+        // 상하 몬스터
+        else if (stateMachine.Monster.Data.MonsterType == MonsterType.Vertical)
+        {
+            // 땅 위면 방향 뒤집기
+            if (IsRayHitGround(1f, Vector3.zero, Vector3.down, Color.yellow) == true)
+            {
+                idleMoveDirection *= -1;
+            }
+
+            // 너무 위에 있으면 방향 바꾸기
+            if (IsRayHitGround(4f, Vector3.zero, Vector3.down, Color.green) == false)
+            {
+                idleMoveDirection *= -1;
+            }
+            stateMachine.Monster.transform.position += idleMoveDirection * stateMachine.Monster.Data.IdleSpeed * Time.deltaTime;
+        }
     }
 
     /// <summary>
-    /// 5�ʸ��� ������ �ٲٴ� �ڷ�ƾ
+    /// 1초마다 방향을 바꾸는 코루틴
     /// </summary>
     /// <returns></returns>
     private IEnumerator SetDirectionCoroutine()
@@ -59,9 +82,10 @@ public class MonsterIdleState : MonsterBaseState
         {
             int randomValue = Random.Range(-1, 2);
 
-            if(stateMachine.Monster.Data.MonsterType == MonsterType.Horizontal)
+            if (stateMachine.Monster.Data.MonsterType == MonsterType.Horizontal)
             {
                 idleMoveDirection = new Vector3(randomValue, 0, 0);
+                Debug.Log($"MonsterIdleState::SetDirectionCoroutine() : {idleMoveDirection}");
                 RotateSprite(idleMoveDirection);
             }
             else
@@ -70,19 +94,6 @@ public class MonsterIdleState : MonsterBaseState
             }
 
             yield return new WaitForSeconds(stateMachine.Monster.Data.IdleChangeDirectionSecond);
-        }
-    }
-
-    private void UpdateHorizontalMove()
-    {
-        Vector2 frontVec = stateMachine.Monster.transform.position + idleMoveDirection;
-        Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
-
-        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, LayerMask.GetMask(Define.GROUND_Layer));
-        if (rayHit.collider == null)
-        {
-            idleMoveDirection *= -1;
-            RotateSprite(idleMoveDirection);
         }
     }
 }

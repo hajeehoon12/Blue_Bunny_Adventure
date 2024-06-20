@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Monster_Air_Yellow_AnimatorController
+  m_Controller: {fileID: 9100000, guid: 79ca1f03a723fb347ac2c208a6b22c3e, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: b2ed19be5eb63a54daac7b0410493d35, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8fef816f9d85d6e418ba01e409a20b6a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0187fc52d197e724bbea81db6b93d8ef, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d05649e4a400c5f4c9a2c3850d532568, type: 2}
