@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     Collider2D playerCollider;
     Animator animator;
     GhostDash ghostDash;
+    PlayerBattle playerBattle;
 
     private static readonly int isMoving = Animator.StringToHash("IsMoving");
 
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
         playerCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         ghostDash = GetComponent<GhostDash>();
+        playerBattle = GetComponent<PlayerBattle>();
     }
 
     private void Start()
@@ -130,10 +132,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool(isMoving, false);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) // Check if player get on floor
-    {
-        JumpCheck();
-    }
+    
 
     private void JumpCheck() // Check if can jump
     {
@@ -158,6 +157,7 @@ public class PlayerController : MonoBehaviour
         {
             if (canDash)
             {
+                
                 rigid.gravityScale = 0f;
                 rigid.velocity = new Vector2(rigid.velocity.x, 0);
                 ghostDash.makeGhost = true;
@@ -193,7 +193,23 @@ public class PlayerController : MonoBehaviour
         ghostDash.makeGhost = false;
     }
 
+    void HitCheck(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Monster"))
+        {
+            playerBattle.ChangeHealth(-3); // Need to Change : magic number -> monster Damage
+            //Debug.Log("Get Hit by Monster!!");
+        }
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision) // Check if player get on floor
+    {
+        JumpCheck();
+
+        HitCheck(collision);
+        //Debug.Log("Hit");
+        
+    }
 
 
 }
