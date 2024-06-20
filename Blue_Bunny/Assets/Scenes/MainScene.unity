@@ -2084,17 +2084,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster_Ground
       objectReference: {fileID: 0}
-    - target: {fileID: 2205024189343875690, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2481413214452548724, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.46
+      value: 10.49
       objectReference: {fileID: 0}
     - target: {fileID: 2481413214452548724, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.48
+      value: 1.69
       objectReference: {fileID: 0}
     - target: {fileID: 2481413214452548724, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3038,6 +3034,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1541885961567742381, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
+      propertyPath: pet
+      value: 
+      objectReference: {fileID: 9034139993402074299}
     - target: {fileID: 3304743241754844544, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.04
@@ -3191,6 +3191,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1727101349215544916d78221e891e9, type: 3}
+--- !u!114 &9034139993402074299 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1227751264725410830, guid: a1727101349215544916d78221e891e9, type: 3}
+  m_PrefabInstance: {fileID: 9034139993402074298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf854907a69d274ab92532aa7241f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
