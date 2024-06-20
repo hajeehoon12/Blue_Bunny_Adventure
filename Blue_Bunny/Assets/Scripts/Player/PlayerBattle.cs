@@ -73,7 +73,7 @@ public class PlayerBattle : MonoBehaviour
         }
         else // When Damage to Player
         {
-            Debug.Log("Damage Motion called");
+            //Debug.Log("Damage Motion called");
             OnDamage?.Invoke();
             //isAttacked = true;
 
