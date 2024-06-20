@@ -8,4 +8,6 @@ public class PlayerStat:MonoBehaviour
     public float jumpPower;
     public float bulletSpeed;
     public float attackDamage;
+    public float playerHP;
+    public float playerMP;
 }
