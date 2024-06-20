@@ -10,15 +10,20 @@ public class MonsterDeadEffect : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Trigger!");
-        if (collision.gameObject.CompareTag(Define.BULLET_TAG))
+        
+        if (collision.gameObject.CompareTag(Define.BULLET_TAG)) // When Hit by Bullet
         {
-            Debug.Log("Bullet Hit!!");
+            //if(invincible) return // when hit by bullet by near time return
             tempHealth--;
             if (tempHealth <= 0)
             {
                 Dead();
             }
+            else
+            { 
+                // monster get attacked motion; 
+            }
+
         }
     }
 
