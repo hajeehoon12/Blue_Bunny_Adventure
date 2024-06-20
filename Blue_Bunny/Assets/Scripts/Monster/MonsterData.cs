@@ -16,4 +16,5 @@ public class MonsterData
     [SerializeField] public float ChasingSpeed  = 5.0f;
     [SerializeField] public float IdleSpeed = 1.0f;
     [SerializeField] public float IdleChangeDirectionSecond = 1.0f;
+    [SerializeField] public float AttackDamage = 1.0f;
 }
