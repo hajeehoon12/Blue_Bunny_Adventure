@@ -44,7 +44,7 @@ public class MonsterIdleState : MonsterBaseState
         // 좌우 몬스터 땅에 있으면 움직이기
         if (stateMachine.Monster.Data.MonsterType == MonsterType.Horizontal)
         {
-            if (IsGround(idleMoveDirection))
+            if (IsCliff(idleMoveDirection))
             {
                 stateMachine.Monster.transform.position += idleMoveDirection * stateMachine.Monster.Data.IdleSpeed * Time.deltaTime;
             }
@@ -52,7 +52,7 @@ public class MonsterIdleState : MonsterBaseState
         // 상하 몬스터 땅 근처, 땅 바로 근처 아닐 때 움직이기
         else if (stateMachine.Monster.Data.MonsterType == MonsterType.Vertical)
         {
-            if (IsNearGround(idleMoveDirection) && IsGround(idleMoveDirection) == false)
+            if (IsNearGround(idleMoveDirection) && IsGroundForAir(idleMoveDirection) == false)
             {
                 stateMachine.Monster.transform.position += idleMoveDirection * stateMachine.Monster.Data.IdleSpeed * Time.deltaTime;
             }

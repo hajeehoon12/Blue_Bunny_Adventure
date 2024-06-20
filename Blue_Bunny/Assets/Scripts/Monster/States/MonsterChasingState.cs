@@ -43,19 +43,28 @@ public class MonsterChasingState : MonsterBaseState
             Vector3 moveDirection = new Vector3(stateMachine.MovementDirection.x, 0, 0);
 
             // 몬스터가 절벽이면 이동하지 않음
-            if (IsGround(moveDirection))
+            if (IsCliff(moveDirection) == false)
             {
-                stateMachine.Monster.transform.position += moveDirection * stateMachine.Monster.Data.ChasingSpeed * Time.deltaTime;
+                return;
             }
 
+            stateMachine.Monster.transform.position += moveDirection * stateMachine.Monster.Data.ChasingSpeed * Time.deltaTime;
         }
         // 세로 몬스터 -> 4방향으로 이동
         else if(stateMachine.Monster.Data.MonsterType == MonsterType.Vertical)
         {
-            if(IsNearGround(stateMachine.MovementDirection) && IsGround(stateMachine.MovementDirection) == false)
+            // 몬스터가 땅에 닿으면 이동하지 않음
+            if (IsGroundForAir(stateMachine.MovementDirection))
             {
-                stateMachine.Monster.transform.position += stateMachine.MovementDirection * stateMachine.Monster.Data.ChasingSpeed * Time.deltaTime;
+                stateMachine.MovementDirection = Vector3.up;
             }
+            // 몬스터가 너무 위면 이동하지 않음
+            if(IsNearGround(stateMachine.MovementDirection) == false)
+            {
+                stateMachine.MovementDirection = Vector3.down;
+            }
+
+            stateMachine.Monster.transform.position += stateMachine.MovementDirection * stateMachine.Monster.Data.ChasingSpeed * Time.deltaTime;
         }
     }
 
