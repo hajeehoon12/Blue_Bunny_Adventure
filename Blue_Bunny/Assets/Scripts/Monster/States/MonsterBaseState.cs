@@ -95,9 +95,5 @@ public class MonsterBaseState : IState
         stateMachine.Monster.SpriteRenderer.flipX = Mathf.Abs(rotZ) > 90f;
     }
 
-    protected void UpdateDirection()
-    {
-        stateMachine.MovementDirection = (stateMachine.Target.transform.position - stateMachine.Monster.transform.position).normalized;
-        RotateSprite(stateMachine.MovementDirection);
-    }
+    
 }

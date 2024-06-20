@@ -2,15 +2,16 @@
 
 public class SpeedUpItem : Item, iStatUpgrade
 {
+    public float speedUpgradeAmount = 1f;
     public void UpgradeStat()
     {
-        Debug.Log("속도 증가!");
+        CharacterManager.Instance.Player.stats.playerSpeed += speedUpgradeAmount;
+        Debug.Log("스피드 증가");
         PlayUpgradeSound();
     }
     public void PlayUpgradeSound()
     {
-        Debug.Log("스피드 업 소리 재생!");
-        //AudioManager.instance.PlayBGM("");
+        AudioManager.instance.PlaySFX("GetItem", 0.2f);
     }
 
     public void GotoInventoryTab()
