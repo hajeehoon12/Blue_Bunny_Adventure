@@ -1,17 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
-using System.Threading;
 using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Image icon;
-    //¾ÆÀÌÅÛ Á¤º¸ º¯¼ö
+    //ì•„ì´í…œ ì •ë³´ ë³€ìˆ˜
     public bool IsExist;//test
     private bool OnToolTip;
 
@@ -32,21 +26,21 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 
-    //½½·ÔÀ» ¼¼ÆÃÇÏ´Â ÇÔ¼ö
+    //ìŠ¬ë¡¯ì„ ì„¸íŒ…í•˜ëŠ” í•¨ìˆ˜
     public void Set()
     {
         icon.gameObject.SetActive(true);
         IsExist = true;
-        //¾ÆÀÌÄÜ »ğÀÔ
+        //ì•„ì´ì½˜ ì‚½ì…
 
     }
 
-    //½½·ÔÀ» ºñ¿öÁÖ´Â ÇÔ¼ö
+    //ìŠ¬ë¡¯ì„ ë¹„ì›Œì£¼ëŠ” í•¨ìˆ˜
     public void Clear()
     {
         icon.gameObject.SetActive(false);
         IsExist = false;
-        //¾ÆÀÌÅÛ Á¤º¸ »èÁ¦
+        //ì•„ì´í…œ ì •ë³´ ì‚­ì œ
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -58,7 +52,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             OnToolTip = true;
             ToolTip.SetActive(true);
 
-            //ÅøÆÁ ÅØ½ºÆ® ¼³Á¤
+            //íˆ´íŒ í…ìŠ¤íŠ¸ ì„¤ì •
         }
     }
 

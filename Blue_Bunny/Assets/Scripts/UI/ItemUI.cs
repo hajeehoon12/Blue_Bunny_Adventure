@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class ItemUI : MonoBehaviour
@@ -6,11 +5,11 @@ public class ItemUI : MonoBehaviour
     public GameObject MenuUI;//Test
     private bool isMenuOn = false;//Test
 
-    private bool isOn = false;      //¾ÆÀÌÅÛUI On, Off
-    private bool isMoving = false;  //¾ÆÀÌÅÛUI°¡ ¿òÁ÷ÀÌ°í ÀÖ´Â ÁßÀÎÁö
+    private bool isOn = false;      //ì•„ì´í…œUI On, Off
+    private bool isMoving = false;  //ì•„ì´í…œUIê°€ ì›€ì§ì´ê³  ìˆëŠ” ì¤‘ì¸ì§€
 
-    public Slot[] slots;            //¾ÆÀÌÅÛ ½½·Ô ¹è¿­
-    public Transform slotPanel;     //½½·Ô ÆĞ³Î
+    public Slot[] slots;            //ì•„ì´í…œ ìŠ¬ë¡¯ ë°°ì—´
+    public Transform slotPanel;     //ìŠ¬ë¡¯ íŒ¨ë„
 
     private void Start()
     {
@@ -52,14 +51,14 @@ public class ItemUI : MonoBehaviour
         if (gameObject.transform.position.x <= -499.0f || gameObject.transform.position.x >= -1.0f) isMoving = false;
     }
 
-    public void AddItem()//item ¸Å°³º¯¼ö ³Ö¾îÁà¾ßÇÔ
+    public void AddItem()//item ë§¤ê°œë³€ìˆ˜ ë„£ì–´ì¤˜ì•¼í•¨
     {
         Slot emptySlot = GetEmptySlot();
-        //¾ÆÀÌÄÜ Ãß°¡
-        //µ¥ÀÌÅÍ Ãß°¡
+        //ì•„ì´ì½˜ ì¶”ê°€
+        //ë°ì´í„° ì¶”ê°€
     }
 
-    //¾÷µ¥ÀÌÆ®UI
+    //ì—…ë°ì´íŠ¸UI
     void UIUpdate()
     {
         foreach (Slot slot in slots)
@@ -75,12 +74,12 @@ public class ItemUI : MonoBehaviour
         }
     }
 
-    //ºñ¾îÀÖ´Â °÷¿¡ ³Ö¾îÁÖ´Â ·ÎÁ÷
+    //ë¹„ì–´ìˆëŠ” ê³³ì— ë„£ì–´ì£¼ëŠ” ë¡œì§
     Slot GetEmptySlot()
     {
         foreach (Slot slot in slots)
         {
-            //½½·ÔÀÌ ºñ¾î ÀÖ´Ù¸é return ÇØÁØ´Ù
+            //ìŠ¬ë¡¯ì´ ë¹„ì–´ ìˆë‹¤ë©´ return í•´ì¤€ë‹¤
             if (slot.IsExist) return slot;
         }
 
