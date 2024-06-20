@@ -74,6 +74,4 @@ public class LightEffect : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
-
 }
