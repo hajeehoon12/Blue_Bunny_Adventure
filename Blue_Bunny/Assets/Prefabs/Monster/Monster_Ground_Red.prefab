@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 3792266665201970588}
   - component: {fileID: 5537678433754394873}
   m_Layer: 0
-  m_Name: Monster_Ground
+  m_Name: Monster_Ground_Red
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2481413214452548724
 Transform:
   m_ObjectHideFlags: 0
@@ -91,6 +91,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a0278df2d44e04b9b4c58479e2185d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data:
+    MonsterType: 0
+    ChasingRange: 5
+    ChasingSpeed: 4
+    IdleSpeed: 1
+    IdleChangeDirectionSecond: 1
 --- !u!1 &2766608028159097290
 GameObject:
   m_ObjectHideFlags: 0

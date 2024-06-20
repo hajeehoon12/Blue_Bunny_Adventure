@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public enum MonsterType
 {
@@ -6,13 +7,14 @@ public enum MonsterType
     Vertical,
 }
 
-[SerializeField]
+[Serializable]
 public class MonsterData
 {
-    [SerializeField] public float ChasingRange { get; private set; } = 5.0f;
-    [SerializeField] public float ChasingSpeed { get; private set; } = 5.0f;
-    [SerializeField] public float IdleSpeed { get; private set; } = 1.0f;
-    [SerializeField] public MonsterType MonsterType { get; private set; } = MonsterType.Horizontal;
-    [SerializeField] public float IdleChangeDirectionSecond { get; private set; } = 1.0f;
+    [SerializeField] public MonsterType MonsterType = MonsterType.Horizontal;
 
+    [SerializeField] public float ChasingRange = 5.0f;
+    [SerializeField] public float ChasingSpeed  = 5.0f;
+    [SerializeField] public float IdleSpeed = 1.0f;
+    [SerializeField] public float IdleChangeDirectionSecond = 1.0f;
+    [SerializeField] public float AttackDamage = 1.0f;
 }

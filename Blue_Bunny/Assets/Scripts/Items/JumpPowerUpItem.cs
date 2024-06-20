@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 
-public class SpeedUpItem : Item, iStatUpgrade
+public class JumpPowerUpItem : Item, iStatUpgrade
 {
-    public float speedUpgradeAmount = 1f;
+    public float jumpPowerUpgradeAmount = 1f;
     public string explainPhrase;
     public void UpgradeStat()
     {
-        CharacterManager.Instance.Player.stats.playerSpeed += speedUpgradeAmount;
+        CharacterManager.Instance.Player.stats.jumpPower += jumpPowerUpgradeAmount;
         Debug.Log(explainPhrase);
         PlayUpgradeSound();
     }
+
     public void PlayUpgradeSound()
     {
         AudioManager.instance.PlaySFX("GetItem", 0.2f);
@@ -25,7 +26,5 @@ public class SpeedUpItem : Item, iStatUpgrade
         UpgradeStat();
         base.OnTriggerEnter2D(collision);
     }
-
-
 }
 
