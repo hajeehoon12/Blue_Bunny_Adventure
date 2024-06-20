@@ -95,15 +95,32 @@ public class MonsterBaseState : IState
         stateMachine.Monster.SpriteRenderer.flipX = Mathf.Abs(rotZ) > 90f;
     }
 
-    protected bool IsCliff(Vector3 moveDirection)
+    protected bool IsGround(Vector3 moveDirection)
     {
         Vector2 frontVec = stateMachine.Monster.transform.position + moveDirection;
-        Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, LayerMask.GetMask(Define.GROUND_Layer));
+        float distance = 1f;
+
+        Debug.DrawRay(frontVec, Vector3.down * distance, new Color(0, 1, 0));
+        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, distance, LayerMask.GetMask(Define.GROUND_Layer));
         if (rayHit.collider == null)
         {
-            return true;
+            return false;
         }
-        return false;
+        return true;
+    }
+
+    protected bool IsNearGround(Vector3 moveDirection)
+    {
+        Vector2 frontVec = stateMachine.Monster.transform.position + moveDirection;
+
+        float distance = 5;
+        Debug.DrawRay(frontVec, Vector3.down * distance, new Color(0, 0, 1));
+
+        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, distance, LayerMask.GetMask(Define.GROUND_Layer));
+        if (rayHit.collider == null)
+        {
+            return false;
+        }
+        return true;
     }
 }
