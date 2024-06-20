@@ -699,9 +699,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1456087364}
   render: {fileID: 1809941995}
+  map: {fileID: 1761359564}
   cameraPosition: {x: 0, y: 0, z: 0}
-  center: {x: 5.5, y: 0}
-  mapSize: {x: 16.5, y: 10}
+  center: {x: 0, y: 0}
 --- !u!1 &685365362
 GameObject:
   m_ObjectHideFlags: 0
@@ -2807,6 +2807,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1761359564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7618061358946158606, guid: 974c7f854180ea542a5d2aa3899defc3, type: 3}
+  m_PrefabInstance: {fileID: 918262476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1796842191 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2205024189343875690, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
@@ -3246,6 +3251,10 @@ PrefabInstance:
       propertyPath: _playerSprite
       value: 
       objectReference: {fileID: 1456087373}
+    - target: {fileID: 2674646268247701386, guid: a1727101349215544916d78221e891e9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5872657030509343829, guid: a1727101349215544916d78221e891e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.12
