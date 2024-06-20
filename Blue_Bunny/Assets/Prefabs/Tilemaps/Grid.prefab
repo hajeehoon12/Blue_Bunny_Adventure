@@ -191,6 +191,7 @@ Transform:
   - {fileID: 2627420349568873063}
   - {fileID: 7790957233740929734}
   - {fileID: 5958835176356877378}
+  - {fileID: 4356353827854310621}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &2803805949984326191
@@ -217,6 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4dc053dc08ed7b48bd7d1982e2300b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 5bc3acb0567b9ff4bb229f6992f2972b, type: 2}
   monsterSpawnTr:
   - {fileID: 4207309104722917084}
   - {fileID: 8134323018714338086}
@@ -228,8 +230,7 @@ MonoBehaviour:
   - {fileID: 7598328691810342760}
   - {fileID: 2719561449446549938}
   - {fileID: 1751903910037061587}
-  isCleared: 0
-  portal: {fileID: 0}
+  portalPos: {fileID: 4356353827854310621}
 --- !u!1 &5356630590888546988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,6 +2078,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5958835176356877378}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5861240718631177369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4356353827854310621}
+  m_Layer: 0
+  m_Name: PortalPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4356353827854310621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5861240718631177369}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.25, y: -2.87, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5275807183670642871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6135424062270319928
 GameObject:

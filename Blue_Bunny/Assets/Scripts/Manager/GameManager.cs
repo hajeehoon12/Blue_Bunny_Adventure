@@ -4,19 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager _instance;
-
-    public static GameManager Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = new GameObject("GameManager").AddComponent<GameManager>();
-            }
-            return _instance;
-        }
-    }
+    public static GameManager Instance;
 
     public SpawnManager spawnManager;
 
@@ -25,18 +13,15 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance != null)
+        if (Instance == null)
         {
-            _instance = this;
-            DontDestroyOnLoad(gameObject);
+            Instance = this;
         }
         else
         {
-            if (_instance == this)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(this.gameObject);
         }
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -48,7 +33,12 @@ public class GameManager : MonoBehaviour
     {
         GameObject go = Instantiate(mapPrefabs[stageIdx]);
         
+        if(spawnManager.nowMap != null)
+        {
+            Destroy(spawnManager.nowMap.gameObject);
+        }
         spawnManager.nowMap = go.GetComponent<Map>();
         spawnManager.SpawnMonster();
+        stageIdx++;
     }
 }
