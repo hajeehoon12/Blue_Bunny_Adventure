@@ -2664,7 +2664,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapIndex: 0
   nowMap: {fileID: 0}
-  spawnCount: 8
+  spawnCount: 1
+  aliveMonsterCount: 0
+  portalPrefab: {fileID: 8034338738082708265, guid: 09343025e9de93840af8e33c8db62f80, type: 3}
 --- !u!4 &1695904392
 Transform:
   m_ObjectHideFlags: 0
@@ -3215,8 +3217,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
+      propertyPath: playerHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
+      propertyPath: playerMP
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
       propertyPath: jumpPower
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
+      propertyPath: playerMaxHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
+      propertyPath: attackDamage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596478851436730474, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
       propertyPath: m_Name

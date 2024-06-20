@@ -13,6 +13,8 @@ public class SpawnManager : MonoBehaviour
     public int spawnCount;
     public int aliveMonsterCount = 0;
 
+    public GameObject portalPrefab;
+
     public void SpawnMonster()
     {
         spawnCount = nowMap.data.spawnCount;
@@ -30,8 +32,18 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    public void ApplyAliveMonsterDeath()
+    {
+        aliveMonsterCount--;
+        if(aliveMonsterCount == 0)
+        {
+            SpawnPortal();
+        }
+    }
+
     public void SpawnPortal()
     {
-
+        Instantiate(portalPrefab, nowMap.portalPos);
+        Debug.Log("다음 스테이지로 갈 수 있는 포탈이 생성되었습니다!");
     }
 }

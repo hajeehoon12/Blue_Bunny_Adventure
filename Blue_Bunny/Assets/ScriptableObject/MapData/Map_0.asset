@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Map_0
   m_EditorClassIdentifier: 
   mapIndex: 0
-  spawnCount: 8
+  spawnCount: 5
