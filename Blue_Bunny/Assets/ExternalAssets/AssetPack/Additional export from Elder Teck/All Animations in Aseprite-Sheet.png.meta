@@ -1,0 +1,3867 @@
+fileFormatVersion: 2
+guid: 33b497290a5f07f418085fe5c9da526c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 3
+        width: 31
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5, y: 1.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff59ce24adec6840bc43387d37b942b
+      internalID: -1634516729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 177fb613c05890343a7532ad0bd0214d
+      internalID: 1001106294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 3
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b47f8f1b955d74b92fb397fd5eacbc
+      internalID: -927376756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 3
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073d6b9752135f743ac6147e0b80624f
+      internalID: -1026338630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 3
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf16e2ea805094949a62d462a8c1c9d8
+      internalID: 368509875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982f529d5ebf56c4d963294c342f34b8
+      internalID: -1072887382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 3
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3816ee0bd5d520f468e54a109ba445d7
+      internalID: -1006543459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 3
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b38976e28036a84bba728991fd707b7
+      internalID: -371838253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956747fcd1b2d2d4aa5d219553fa24a4
+      internalID: -2010912673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce95c066b5b3d07489cf730209beae2a
+      internalID: -1008172265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 416cac368681fb3498280a0b1ef48392
+      internalID: -251051504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c470691541d84674ebfb4d1e3bef126a
+      internalID: -668924371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 3
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb1b7aec465bd74db8cab0c61879240
+      internalID: 251250455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb39e5bf391bb542bb6698c936ce10d
+      internalID: -1945300550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d48d77571451204fb4f25d9bf9b6ef7
+      internalID: 1722032554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ce59caf1a1596b4888a9a74d8756588
+      internalID: 266734271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2748f5707264e8d43aa4de33f05f8cf2
+      internalID: -1286718163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a199ae319a207804f96ef01d6c9c6978
+      internalID: -862115866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44468d63b561754bb31f214881b5513
+      internalID: -2118695174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 3
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d8409a90afe6843a143534cfa1d315
+      internalID: -1512892788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 3
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843dc2c1089590942ad09496ff2cafd1
+      internalID: 1658999133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 3
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a4f0ffccbbfa44b8c3e321cd57a11d
+      internalID: -697237274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 5
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a2cfa779a310045b7f51bdc722d163
+      internalID: 2166949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 4
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35323d3336ebce346a903febf84df4c9
+      internalID: -769917067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 3
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c99031e00a728064a9f69c92e9c85b2a
+      internalID: 229652752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1897
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d12e6bf39676f40b522ebad029265a
+      internalID: -752830402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1977
+        y: 3
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d793a570a409c408851e86d17953b5
+      internalID: -1068780872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 4
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b4a5bc9e3488c4c8ea4ecd03125b3a
+      internalID: 1549247441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 2126
+        y: 4
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14af58d632ace841a63a4876eb654df
+      internalID: -1843912581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 3
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2059a572b8aae4cbd8a6162cd9d50c
+      internalID: -2043981724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 2274
+        y: 3
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca320f5cc2483ef429224636096684e9
+      internalID: 36991050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 3
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb385d2e9d00e9d43be941d0d96059b2
+      internalID: -345648640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 2423
+        y: 3
+        width: 25
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd9381d5184f82540ba89d51b2f8d9dc
+      internalID: -170577159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 3
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c29c157625b1547b0204fef13bffa6
+      internalID: -846456022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 2569
+        y: 3
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d201d1da619f55d43a3a09f6c91bbd80
+      internalID: 1040947756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 2646
+        y: 3
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4a1b375a0ac694bbfb593260021256
+      internalID: -803726375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 3
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 171d8e60bc5389b4f84be5a854801c90
+      internalID: -420897800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 2794
+        y: 3
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5eb29770d6e7314893344e3e4ebdd55
+      internalID: 2114918548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 2872
+        y: 9
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0925c69da4413904a82a01f908e168f0
+      internalID: 545942392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 2955
+        y: 9
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc0e5abedc1d9748b68c80f034e21b8
+      internalID: 647774270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 9
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7aecd079e808ad40b3a20b71b9c6ac1
+      internalID: 1969222257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 3098
+        y: 9
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ea5174f40016a42a10b9e605284c2f
+      internalID: 491441170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 3
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f264901fe53d62d4ab3e994ee6bab8bf
+      internalID: -470739287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 3252
+        y: 3
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c11879554fa7247a4e24ec7d52ec4f
+      internalID: 1702040258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 3327
+        y: 4
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f87b40afdfbe1429b6270bb7e2948d
+      internalID: -77387018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 3401
+        y: 4
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fbd7168f5751ff44b1a4e87931d7366
+      internalID: 522763254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 3475
+        y: 3
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d344823d4a227845ab7054f382c2ce0
+      internalID: 2023267753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 3549
+        y: 3
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92f6c0b39d6c98429b134f20e6e9989
+      internalID: -416408179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 3624
+        y: 3
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed3c67d22e8c624d99bdd0665d4b326
+      internalID: 172206711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 3698
+        y: 4
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52220599f32eb49438d81f69f28d807c
+      internalID: 660417070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 3775
+        y: 4
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809196ded80d33a458ca2ed199aae6f2
+      internalID: -203882291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 10
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0580af3a1ea5640be535644c7dc53e
+      internalID: -88444754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 3927
+        y: 10
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f737ded343b564cb39cc1eb3d1496e
+      internalID: 1062704352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 4001
+        y: 10
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58dbcca6a0698247b3a5421d9b672f3
+      internalID: -452081133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 4075
+        y: 10
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6fc932f1efff24fb1dffc0658e8e21
+      internalID: 1284398385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 4150
+        y: 4
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d00862dfde49942ad08cee0f814165
+      internalID: -1139176353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 4
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef50c08e9c0ed2346ae923552ca491cf
+      internalID: 1014236611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 4298
+        y: 4
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6989a18bc3a1c249ad5464e5f82328f
+      internalID: -1283609479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 4373
+        y: 4
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca176892b7b5dd247b3f4a24a6155d8e
+      internalID: 1354672726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 4447
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115f89de32de8df45a9f0fd7d95bbd35
+      internalID: -1519737862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 4522
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51541c023366f8a40ae38aad30a4e165
+      internalID: 574012625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 4595
+        y: 3
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f78242d3941a18941aaa01af06a69b3e
+      internalID: -1561328553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 4670
+        y: 3
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3481aa113ac049945b5f032a9f94972d
+      internalID: 7239092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 3
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c8fc04d66533b4f954de0d1fb9e4ca
+      internalID: 972148921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 4824
+        y: 3
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b66007c4f61994c924f19db84e3b93
+      internalID: -360537413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 4899
+        y: 3
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ffdc07fa934a9344a113e035a6a2aee
+      internalID: -1042769919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 4973
+        y: 3
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc0c8fc5dd0d0e4a9eb12bf73c46dd0
+      internalID: 23824567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 5047
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ab8b3c801ea6a449f939c005a2812b
+      internalID: -1511327675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 5122
+        y: 3
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcff2a460b0f6ba4eaeb1357eba3f3bd
+      internalID: 999968135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 5199
+        y: 3
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90586ab4ac4b4dd46990b7cd4ce40af4
+      internalID: 97764773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 5276
+        y: 3
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240275040344e5b408dee54103556bb2
+      internalID: 1176731722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 5345
+        y: 3
+        width: 33
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2cbc1eda43f4d4198193c085b6b14d
+      internalID: 1678827799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 5420
+        y: 3
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97dcc13dc41663f4abe9e47125bb2e83
+      internalID: 1814556145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 5494
+        y: 3
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30ed265acf7febb40922e25b9fd837ca
+      internalID: 828578874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 5573
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 078f5da442c3a6244bd2f61409169fdb
+      internalID: -1573182240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 5648
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb637eb2989c9e049a08d215aa1944d4
+      internalID: -39657880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 5722
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5329068dd5d2749a8da401ff7965e8
+      internalID: 1219718514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 5797
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2f082665b6de344aaed5baabde306c
+      internalID: -836272531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 5872
+        y: 3
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e509aeed199b344881125abf43f68e
+      internalID: 252333907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 5948
+        y: 3
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f78bc24da4f8d14783b866d90b54375
+      internalID: 2109463206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 6019
+        y: 3
+        width: 62
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebfca55785af2574792f2005fa2ede62
+      internalID: -1329603694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 6093
+        y: 3
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a4453e9a392ec4699f378f3485ed7b
+      internalID: -1122534678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 6167
+        y: 3
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79ac5ff36d8e454d8462163e8a18869
+      internalID: 1778919006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 6242
+        y: 3
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ab69f9a506fbc4ead487951be479d1
+      internalID: 127595029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 6316
+        y: 3
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8517169a3534458499b3c423fbc4f952
+      internalID: 729304577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 6390
+        y: 3
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba4f70812958bfe4b82084946ee8bab6
+      internalID: -97318004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 6465
+        y: 3
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ba2043ea50d2844a560cfa4d63ed8e
+      internalID: -1228961943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 6539
+        y: 3
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c4ffdb734082d4490866c6b1644124
+      internalID: -1349926385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 6615
+        y: 3
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6924d5872ce3ce64f998e89d9d574d2b
+      internalID: 1606382542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_89
+      rect:
+        serializedVersion: 2
+        x: 6693
+        y: 3
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7505f09a6d0ac248ad86f7fbc38540d
+      internalID: -1833933758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_90
+      rect:
+        serializedVersion: 2
+        x: 6774
+        y: 3
+        width: 55
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc837f0571808664ab84d6456a5d50f7
+      internalID: -1739848438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_91
+      rect:
+        serializedVersion: 2
+        x: 6843
+        y: 3
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89a3540f5b42fa4687058137cc4fb12
+      internalID: 2143141876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 6922
+        y: 3
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db66800fd1944f84cbbc0d7ec483314e
+      internalID: 466940324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_93
+      rect:
+        serializedVersion: 2
+        x: 6997
+        y: 3
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737eb93d479242944b6ee79ba06269a4
+      internalID: 827591889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_94
+      rect:
+        serializedVersion: 2
+        x: 7071
+        y: 3
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12806ffa07d2eb419b4749647bbc710
+      internalID: -775763462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_95
+      rect:
+        serializedVersion: 2
+        x: 7145
+        y: 3
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92eb6fead9758f6428e090aaa4a237c2
+      internalID: 1118341288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_96
+      rect:
+        serializedVersion: 2
+        x: 7220
+        y: 3
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb5e3050643186049834c7bea97df986
+      internalID: 1349001813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_97
+      rect:
+        serializedVersion: 2
+        x: 7294
+        y: 3
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48a08479600a86d45941714d4cfc7e0b
+      internalID: 1863701335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_98
+      rect:
+        serializedVersion: 2
+        x: 7369
+        y: 3
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7726390dfa4528643bd4824ce2d16178
+      internalID: -1729086827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_99
+      rect:
+        serializedVersion: 2
+        x: 7448
+        y: 3
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fdb11398886163449419682d48cd760
+      internalID: -1836810695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_100
+      rect:
+        serializedVersion: 2
+        x: 7517
+        y: 3
+        width: 61
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cd6bba5829a25c489992c804bd229f2
+      internalID: -1138304482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_101
+      rect:
+        serializedVersion: 2
+        x: 7603
+        y: 3
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e316fc10ac618ef47b47f375ad9a91ce
+      internalID: 52045205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_102
+      rect:
+        serializedVersion: 2
+        x: 7677
+        y: 3
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9dc00bb113181b41abe794a3df9725c
+      internalID: 826915896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_103
+      rect:
+        serializedVersion: 2
+        x: 7746
+        y: 3
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125085a96d84f194a98c586360b0b353
+      internalID: 1944752103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_104
+      rect:
+        serializedVersion: 2
+        x: 7820
+        y: 3
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b7cff62df59bb43bd6517cfeef6ad2
+      internalID: -359831332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_105
+      rect:
+        serializedVersion: 2
+        x: 7900
+        y: 3
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db6baceb6d9d864ba79be1da92dca4f
+      internalID: 957464630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_106
+      rect:
+        serializedVersion: 2
+        x: 7975
+        y: 3
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497ceeef5cf32fd438f8935b1a067b57
+      internalID: -243347369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_107
+      rect:
+        serializedVersion: 2
+        x: 8046
+        y: 3
+        width: 45
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ab6f892bac01c4580ecfa7cfd09ccb
+      internalID: 565455005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_108
+      rect:
+        serializedVersion: 2
+        x: 8123
+        y: 3
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97bc17da09cb8e14a87569f05513d2a6
+      internalID: 1339297194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_109
+      rect:
+        serializedVersion: 2
+        x: 8197
+        y: 3
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257533e3a7d3e7145bc0ff3cc4a2be86
+      internalID: 1496695981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_110
+      rect:
+        serializedVersion: 2
+        x: 8272
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace939342771e754aa2c1bdc52f929a1
+      internalID: 570834231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_111
+      rect:
+        serializedVersion: 2
+        x: 8347
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b03f96fd7039c9459b778b33786f2c7
+      internalID: 688088855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_112
+      rect:
+        serializedVersion: 2
+        x: 8423
+        y: 3
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1960d4a0a473244965f4db1470a64a
+      internalID: 571563140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_113
+      rect:
+        serializedVersion: 2
+        x: 8501
+        y: 3
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea49c61b1357ae47805074ac2d5bfa0
+      internalID: -601850024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_114
+      rect:
+        serializedVersion: 2
+        x: 8575
+        y: 3
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6478907ce76af4b8731f2627f3bdf4
+      internalID: 353500338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_115
+      rect:
+        serializedVersion: 2
+        x: 8649
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139ba833f76a6a64bbfd862ae6149be5
+      internalID: -2082420157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_116
+      rect:
+        serializedVersion: 2
+        x: 8723
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6131f50ccc6f1044b19e921b48960b0
+      internalID: -882224006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_117
+      rect:
+        serializedVersion: 2
+        x: 8798
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0631b876ce9c1fc478f82ffb28bd537e
+      internalID: 1150184285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_118
+      rect:
+        serializedVersion: 2
+        x: 8872
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50ebae681cd48346a969f8fe2a294e8
+      internalID: 617012148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_119
+      rect:
+        serializedVersion: 2
+        x: 8947
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7ddb4a85cd6a54483088c4b9b3ff92
+      internalID: 1502004769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_120
+      rect:
+        serializedVersion: 2
+        x: 9021
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b3799e2a7bf954d807428d547a0827
+      internalID: 577923038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_121
+      rect:
+        serializedVersion: 2
+        x: 9101
+        y: 3
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12dd7d6fa0f449a44b475f243cc81275
+      internalID: 2065252544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_122
+      rect:
+        serializedVersion: 2
+        x: 9175
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa77ee5b85973fe4488a829d5225d7a5
+      internalID: 1272157466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_123
+      rect:
+        serializedVersion: 2
+        x: 9249
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa51a1392ddf61d49b073e44cbe4ed63
+      internalID: 1221033289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_124
+      rect:
+        serializedVersion: 2
+        x: 9324
+        y: 3
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879c491d4c982184887b4de27e9a30d0
+      internalID: 367233971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_125
+      rect:
+        serializedVersion: 2
+        x: 9398
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6d0ebc2c159494f9e08ddbe829bc67
+      internalID: -1747092251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_126
+      rect:
+        serializedVersion: 2
+        x: 9473
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d25e4b5e9c72444953c50ef2a6cee7
+      internalID: 1422249783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_127
+      rect:
+        serializedVersion: 2
+        x: 9547
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a70a39368b45a3a4eb48cb89729162d5
+      internalID: 221396907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_128
+      rect:
+        serializedVersion: 2
+        x: 9621
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62682df0fa8c0ac48bd10453c88f989d
+      internalID: 1949098749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_129
+      rect:
+        serializedVersion: 2
+        x: 9696
+        y: 3
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a237c301a4c7d499495a4cbc895d31
+      internalID: 413693274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_130
+      rect:
+        serializedVersion: 2
+        x: 9776
+        y: 3
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2438bceae9b6e740b3193e133a22287
+      internalID: -638158280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_131
+      rect:
+        serializedVersion: 2
+        x: 9850
+        y: 3
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0f808ea9991344882335af903cd2af
+      internalID: 1832363921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_132
+      rect:
+        serializedVersion: 2
+        x: 9918
+        y: 3
+        width: 37
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 762366149d72b524c99eac5c0796e3b6
+      internalID: -115106978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_133
+      rect:
+        serializedVersion: 2
+        x: 9992
+        y: 3
+        width: 49
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f8b97051b23cb4993dd0a676e661fa
+      internalID: 1314399991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_134
+      rect:
+        serializedVersion: 2
+        x: 10054
+        y: 3
+        width: 65
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266d8cda125d3a846a1a090a1cd1ec73
+      internalID: 1852055460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_135
+      rect:
+        serializedVersion: 2
+        x: 10128
+        y: 3
+        width: 68
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db581735d442fb4ab4b53c3807dd2f3
+      internalID: 1975738419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_136
+      rect:
+        serializedVersion: 2
+        x: 10203
+        y: 3
+        width: 67
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d733691faaed6404e8a51666cab6e271
+      internalID: 1915390249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_137
+      rect:
+        serializedVersion: 2
+        x: 10277
+        y: 3
+        width: 62
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d50efa9c228e948bb520ddf08a5830
+      internalID: 183714156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_138
+      rect:
+        serializedVersion: 2
+        x: 10351
+        y: 3
+        width: 67
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ada4065286071bb4aaf98f4acbe245d0
+      internalID: 1824116484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_139
+      rect:
+        serializedVersion: 2
+        x: 10426
+        y: 3
+        width: 67
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7df6ee96a68a0848b4b7947841d543c
+      internalID: 1335606084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_140
+      rect:
+        serializedVersion: 2
+        x: 10520
+        y: 3
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06e24ecb217a0544581cdba61f210b4d
+      internalID: -1357480718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_141
+      rect:
+        serializedVersion: 2
+        x: 10596
+        y: 3
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fcfb300f958c2b499d939071a9ae4d2
+      internalID: 546374931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_142
+      rect:
+        serializedVersion: 2
+        x: 10611
+        y: 35
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb71ba674479c224b976b97a8efa0e9a
+      internalID: 1013955068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_143
+      rect:
+        serializedVersion: 2
+        x: 10673
+        y: 3
+        width: 37
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e307aecedfbaa044381dc257cb3b92ed
+      internalID: -428219952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_144
+      rect:
+        serializedVersion: 2
+        x: 10750
+        y: 28
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51433fad82854084ebb6b55c443cbe48
+      internalID: 854079835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_145
+      rect:
+        serializedVersion: 2
+        x: 10823
+        y: 0
+        width: 40
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f2e331144e05743aea11cf2e21e519
+      internalID: -1673331416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_146
+      rect:
+        serializedVersion: 2
+        x: 10896
+        y: 0
+        width: 42
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9948beee0f626d247a64ce9087091df8
+      internalID: -1977891994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_147
+      rect:
+        serializedVersion: 2
+        x: 10970
+        y: 0
+        width: 42
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f69abf278607ad542b1c3894ad90ea4f
+      internalID: 2090332547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_148
+      rect:
+        serializedVersion: 2
+        x: 11044
+        y: 0
+        width: 37
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581bf01373e7eb64c9f3e02390b2a135
+      internalID: -1169578765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_149
+      rect:
+        serializedVersion: 2
+        x: 11119
+        y: 0
+        width: 36
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d18418a7ac1f04b81eac284d69db3f
+      internalID: -352058186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_150
+      rect:
+        serializedVersion: 2
+        x: 11195
+        y: 0
+        width: 37
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeaf0641e73b49d4d9bc49ec477664a0
+      internalID: 1740252489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_151
+      rect:
+        serializedVersion: 2
+        x: 11267
+        y: 0
+        width: 37
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add092f05abc5614594c74d782f1f4da
+      internalID: -383480850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_152
+      rect:
+        serializedVersion: 2
+        x: 11342
+        y: 0
+        width: 36
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003a44c443887f44ea320d84fbd368cb
+      internalID: 1823670845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_153
+      rect:
+        serializedVersion: 2
+        x: 11419
+        y: 2
+        width: 34
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e62e2e0f3e1b24291d0996c879d1b6
+      internalID: -802082663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_154
+      rect:
+        serializedVersion: 2
+        x: 11493
+        y: 0
+        width: 34
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a03ccdc6d3aa08948bb10f6cdfafbcce
+      internalID: 1022926962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_155
+      rect:
+        serializedVersion: 2
+        x: 11567
+        y: 29
+        width: 34
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501dba545a38da64b9976fa1a9d095c2
+      internalID: 234851673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_156
+      rect:
+        serializedVersion: 2
+        x: 11645
+        y: 3
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816abb3a9c0a5b1458a43fe80c8d41bd
+      internalID: 1567210520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_157
+      rect:
+        serializedVersion: 2
+        x: 11713
+        y: 0
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a824033f122847b45bf84d2a20d0a77d
+      internalID: -1493207224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_158
+      rect:
+        serializedVersion: 2
+        x: 11719
+        y: 0
+        width: 117
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf28f6466ccc48340a95fde1283646d0
+      internalID: 1839812035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_159
+      rect:
+        serializedVersion: 2
+        x: 11861
+        y: 0
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e91866a083393a4da6b8ae6b3822710
+      internalID: -1455529993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_160
+      rect:
+        serializedVersion: 2
+        x: 11936
+        y: 3
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ad277c5d3468d49a3bc80d971829cd
+      internalID: 1881513339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_161
+      rect:
+        serializedVersion: 2
+        x: 12010
+        y: 3
+        width: 55
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea7e3dab9ed54f4f8c8fb1d13efa7de
+      internalID: 1114011667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_162
+      rect:
+        serializedVersion: 2
+        x: 12085
+        y: 3
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863cf7c250ceb9f469f1483f307b853a
+      internalID: -1008781200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_163
+      rect:
+        serializedVersion: 2
+        x: 12165
+        y: 3
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0642d844e286324438db7f992ead74b4
+      internalID: -616509677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_164
+      rect:
+        serializedVersion: 2
+        x: 12239
+        y: 3
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8a7dccf88fa37468738d29e090f77c
+      internalID: 757804448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_165
+      rect:
+        serializedVersion: 2
+        x: 12314
+        y: 3
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15cc78960ea8b334db068f015a6f03ef
+      internalID: 177612209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_166
+      rect:
+        serializedVersion: 2
+        x: 12389
+        y: 3
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079d7a1840a156d49a9aa0a97434d41d
+      internalID: 1194089454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_167
+      rect:
+        serializedVersion: 2
+        x: 12465
+        y: 3
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6e006d40ae1b1842b50b8ad5b7a2675
+      internalID: 601635113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_168
+      rect:
+        serializedVersion: 2
+        x: 12548
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a4d7e1d0ee3c9b4595060eace6eda5c
+      internalID: 1318849274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All Animations in Aseprite-Sheet_169
+      rect:
+        serializedVersion: 2
+        x: 12622
+        y: 3
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afde46bd9029f05419e882f59b2112d7
+      internalID: -1212699345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      All Animations in Aseprite-Sheet_0: -1634516729
+      All Animations in Aseprite-Sheet_1: 1001106294
+      All Animations in Aseprite-Sheet_10: -251051504
+      All Animations in Aseprite-Sheet_100: -1138304482
+      All Animations in Aseprite-Sheet_101: 52045205
+      All Animations in Aseprite-Sheet_102: 826915896
+      All Animations in Aseprite-Sheet_103: 1944752103
+      All Animations in Aseprite-Sheet_104: -359831332
+      All Animations in Aseprite-Sheet_105: 957464630
+      All Animations in Aseprite-Sheet_106: -243347369
+      All Animations in Aseprite-Sheet_107: 565455005
+      All Animations in Aseprite-Sheet_108: 1339297194
+      All Animations in Aseprite-Sheet_109: 1496695981
+      All Animations in Aseprite-Sheet_11: -668924371
+      All Animations in Aseprite-Sheet_110: 570834231
+      All Animations in Aseprite-Sheet_111: 688088855
+      All Animations in Aseprite-Sheet_112: 571563140
+      All Animations in Aseprite-Sheet_113: -601850024
+      All Animations in Aseprite-Sheet_114: 353500338
+      All Animations in Aseprite-Sheet_115: -2082420157
+      All Animations in Aseprite-Sheet_116: -882224006
+      All Animations in Aseprite-Sheet_117: 1150184285
+      All Animations in Aseprite-Sheet_118: 617012148
+      All Animations in Aseprite-Sheet_119: 1502004769
+      All Animations in Aseprite-Sheet_12: 251250455
+      All Animations in Aseprite-Sheet_120: 577923038
+      All Animations in Aseprite-Sheet_121: 2065252544
+      All Animations in Aseprite-Sheet_122: 1272157466
+      All Animations in Aseprite-Sheet_123: 1221033289
+      All Animations in Aseprite-Sheet_124: 367233971
+      All Animations in Aseprite-Sheet_125: -1747092251
+      All Animations in Aseprite-Sheet_126: 1422249783
+      All Animations in Aseprite-Sheet_127: 221396907
+      All Animations in Aseprite-Sheet_128: 1949098749
+      All Animations in Aseprite-Sheet_129: 413693274
+      All Animations in Aseprite-Sheet_13: -1945300550
+      All Animations in Aseprite-Sheet_130: -638158280
+      All Animations in Aseprite-Sheet_131: 1832363921
+      All Animations in Aseprite-Sheet_132: -115106978
+      All Animations in Aseprite-Sheet_133: 1314399991
+      All Animations in Aseprite-Sheet_134: 1852055460
+      All Animations in Aseprite-Sheet_135: 1975738419
+      All Animations in Aseprite-Sheet_136: 1915390249
+      All Animations in Aseprite-Sheet_137: 183714156
+      All Animations in Aseprite-Sheet_138: 1824116484
+      All Animations in Aseprite-Sheet_139: 1335606084
+      All Animations in Aseprite-Sheet_14: 1722032554
+      All Animations in Aseprite-Sheet_140: -1357480718
+      All Animations in Aseprite-Sheet_141: 546374931
+      All Animations in Aseprite-Sheet_142: 1013955068
+      All Animations in Aseprite-Sheet_143: -428219952
+      All Animations in Aseprite-Sheet_144: 854079835
+      All Animations in Aseprite-Sheet_145: -1673331416
+      All Animations in Aseprite-Sheet_146: -1977891994
+      All Animations in Aseprite-Sheet_147: 2090332547
+      All Animations in Aseprite-Sheet_148: -1169578765
+      All Animations in Aseprite-Sheet_149: -352058186
+      All Animations in Aseprite-Sheet_15: 266734271
+      All Animations in Aseprite-Sheet_150: 1740252489
+      All Animations in Aseprite-Sheet_151: -383480850
+      All Animations in Aseprite-Sheet_152: 1823670845
+      All Animations in Aseprite-Sheet_153: -802082663
+      All Animations in Aseprite-Sheet_154: 1022926962
+      All Animations in Aseprite-Sheet_155: 234851673
+      All Animations in Aseprite-Sheet_156: 1567210520
+      All Animations in Aseprite-Sheet_157: -1493207224
+      All Animations in Aseprite-Sheet_158: 1839812035
+      All Animations in Aseprite-Sheet_159: -1455529993
+      All Animations in Aseprite-Sheet_16: -1286718163
+      All Animations in Aseprite-Sheet_160: 1881513339
+      All Animations in Aseprite-Sheet_161: 1114011667
+      All Animations in Aseprite-Sheet_162: -1008781200
+      All Animations in Aseprite-Sheet_163: -616509677
+      All Animations in Aseprite-Sheet_164: 757804448
+      All Animations in Aseprite-Sheet_165: 177612209
+      All Animations in Aseprite-Sheet_166: 1194089454
+      All Animations in Aseprite-Sheet_167: 601635113
+      All Animations in Aseprite-Sheet_168: 1318849274
+      All Animations in Aseprite-Sheet_169: -1212699345
+      All Animations in Aseprite-Sheet_17: -862115866
+      All Animations in Aseprite-Sheet_18: -2118695174
+      All Animations in Aseprite-Sheet_19: -1512892788
+      All Animations in Aseprite-Sheet_2: -927376756
+      All Animations in Aseprite-Sheet_20: 1658999133
+      All Animations in Aseprite-Sheet_21: -697237274
+      All Animations in Aseprite-Sheet_22: 2166949
+      All Animations in Aseprite-Sheet_23: -769917067
+      All Animations in Aseprite-Sheet_24: 229652752
+      All Animations in Aseprite-Sheet_25: -752830402
+      All Animations in Aseprite-Sheet_26: -1068780872
+      All Animations in Aseprite-Sheet_27: 1549247441
+      All Animations in Aseprite-Sheet_28: -1843912581
+      All Animations in Aseprite-Sheet_29: -2043981724
+      All Animations in Aseprite-Sheet_3: -1026338630
+      All Animations in Aseprite-Sheet_30: 36991050
+      All Animations in Aseprite-Sheet_31: -345648640
+      All Animations in Aseprite-Sheet_32: -170577159
+      All Animations in Aseprite-Sheet_33: -846456022
+      All Animations in Aseprite-Sheet_34: 1040947756
+      All Animations in Aseprite-Sheet_35: -803726375
+      All Animations in Aseprite-Sheet_36: -420897800
+      All Animations in Aseprite-Sheet_37: 2114918548
+      All Animations in Aseprite-Sheet_38: 545942392
+      All Animations in Aseprite-Sheet_39: 647774270
+      All Animations in Aseprite-Sheet_4: 368509875
+      All Animations in Aseprite-Sheet_40: 1969222257
+      All Animations in Aseprite-Sheet_41: 491441170
+      All Animations in Aseprite-Sheet_42: -470739287
+      All Animations in Aseprite-Sheet_43: 1702040258
+      All Animations in Aseprite-Sheet_44: -77387018
+      All Animations in Aseprite-Sheet_45: 522763254
+      All Animations in Aseprite-Sheet_46: 2023267753
+      All Animations in Aseprite-Sheet_47: -416408179
+      All Animations in Aseprite-Sheet_48: 172206711
+      All Animations in Aseprite-Sheet_49: 660417070
+      All Animations in Aseprite-Sheet_5: -1072887382
+      All Animations in Aseprite-Sheet_50: -203882291
+      All Animations in Aseprite-Sheet_51: -88444754
+      All Animations in Aseprite-Sheet_52: 1062704352
+      All Animations in Aseprite-Sheet_53: -452081133
+      All Animations in Aseprite-Sheet_54: 1284398385
+      All Animations in Aseprite-Sheet_55: -1139176353
+      All Animations in Aseprite-Sheet_56: 1014236611
+      All Animations in Aseprite-Sheet_57: -1283609479
+      All Animations in Aseprite-Sheet_58: 1354672726
+      All Animations in Aseprite-Sheet_59: -1519737862
+      All Animations in Aseprite-Sheet_6: -1006543459
+      All Animations in Aseprite-Sheet_60: 574012625
+      All Animations in Aseprite-Sheet_61: -1561328553
+      All Animations in Aseprite-Sheet_62: 7239092
+      All Animations in Aseprite-Sheet_63: 972148921
+      All Animations in Aseprite-Sheet_64: -360537413
+      All Animations in Aseprite-Sheet_65: -1042769919
+      All Animations in Aseprite-Sheet_66: 23824567
+      All Animations in Aseprite-Sheet_67: -1511327675
+      All Animations in Aseprite-Sheet_68: 999968135
+      All Animations in Aseprite-Sheet_69: 97764773
+      All Animations in Aseprite-Sheet_7: -371838253
+      All Animations in Aseprite-Sheet_70: 1176731722
+      All Animations in Aseprite-Sheet_71: 1678827799
+      All Animations in Aseprite-Sheet_72: 1814556145
+      All Animations in Aseprite-Sheet_73: 828578874
+      All Animations in Aseprite-Sheet_74: -1573182240
+      All Animations in Aseprite-Sheet_75: -39657880
+      All Animations in Aseprite-Sheet_76: 1219718514
+      All Animations in Aseprite-Sheet_77: -836272531
+      All Animations in Aseprite-Sheet_78: 252333907
+      All Animations in Aseprite-Sheet_79: 2109463206
+      All Animations in Aseprite-Sheet_8: -2010912673
+      All Animations in Aseprite-Sheet_80: -1329603694
+      All Animations in Aseprite-Sheet_81: -1122534678
+      All Animations in Aseprite-Sheet_82: 1778919006
+      All Animations in Aseprite-Sheet_83: 127595029
+      All Animations in Aseprite-Sheet_84: 729304577
+      All Animations in Aseprite-Sheet_85: -97318004
+      All Animations in Aseprite-Sheet_86: -1228961943
+      All Animations in Aseprite-Sheet_87: -1349926385
+      All Animations in Aseprite-Sheet_88: 1606382542
+      All Animations in Aseprite-Sheet_89: -1833933758
+      All Animations in Aseprite-Sheet_9: -1008172265
+      All Animations in Aseprite-Sheet_90: -1739848438
+      All Animations in Aseprite-Sheet_91: 2143141876
+      All Animations in Aseprite-Sheet_92: 466940324
+      All Animations in Aseprite-Sheet_93: 827591889
+      All Animations in Aseprite-Sheet_94: -775763462
+      All Animations in Aseprite-Sheet_95: 1118341288
+      All Animations in Aseprite-Sheet_96: 1349001813
+      All Animations in Aseprite-Sheet_97: 1863701335
+      All Animations in Aseprite-Sheet_98: -1729086827
+      All Animations in Aseprite-Sheet_99: -1836810695
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

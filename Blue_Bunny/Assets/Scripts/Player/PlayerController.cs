@@ -206,11 +206,17 @@ public class PlayerController : MonoBehaviour
         
         if (collision.gameObject.CompareTag(Define.MONSTER_TAG))
         {
-            Debug.Log("Check");
+            //Debug.Log("Check");
             Monster monster = collision.gameObject.GetComponent<Monster>();
             playerBattle.ChangeHealth(-monster.Data.AttackDamage); // Need to Change : magic number -> monster Damage
             //Debug.Log("Get Hit by Monster!!");
         }
+
+        if (collision.gameObject.CompareTag(Define.BOSS_TAG))
+        {
+            playerBattle.ChangeHealth(-5);
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision) // Check if player get on floor
@@ -230,6 +236,7 @@ public class PlayerController : MonoBehaviour
         float Dir = spriteRenderer.flipX ? -1 : 1;
 
         StartCoroutine(ColorChanged());
+        rigid.velocity = Vector3.zero;
         rigid.AddForce( (Vector2.up + Dir * new Vector2(1.5f, 0)) * rigid.mass * knockBackPower , ForceMode2D.Impulse);
         
         
