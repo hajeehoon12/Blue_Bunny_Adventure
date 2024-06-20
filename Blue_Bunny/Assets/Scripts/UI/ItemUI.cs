@@ -6,9 +6,16 @@ public class ItemUI : MonoBehaviour
     public GameObject MenuUI;//Test
     private bool isMenuOn = false;//Test
 
-    private bool isOn = false;
-    private bool isMoving = false;
+    private bool isOn = false;      //아이템UI On, Off
+    private bool isMoving = false;  //아이템UI가 움직이고 있는 중인지
 
+    public Slot[] slots;            //아이템 슬롯 배열
+    public Transform slotPanel;     //슬롯 패널
+
+    private void Start()
+    {
+        slots = new Slot[slotPanel.childCount];
+    }
 
     private void Update()
     {
@@ -44,4 +51,41 @@ public class ItemUI : MonoBehaviour
 
         if (gameObject.transform.position.x <= -499.0f || gameObject.transform.position.x >= -1.0f) isMoving = false;
     }
+
+    public void AddItem()//item 매개변수 넣어줘야함
+    {
+        Slot emptySlot = GetEmptySlot();
+        //아이콘 추가
+        //데이터 추가
+    }
+
+    //업데이트UI
+    void UIUpdate()
+    {
+        foreach (Slot slot in slots)
+        {
+            if (slot != null)
+            {
+                //set
+            }
+            else
+            {
+                //clear
+            }
+        }
+    }
+
+    //비어있는 곳에 넣어주는 로직
+    Slot GetEmptySlot()
+    {
+        foreach (Slot slot in slots)
+        {
+            //슬롯이 비어 있다면 return 해준다
+            if (slot.IsExist) return slot;
+        }
+
+        return null;
+    }
+
+
 }
