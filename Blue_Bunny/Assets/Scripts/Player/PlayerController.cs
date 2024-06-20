@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     GhostDash ghostDash;
     PlayerBattle playerBattle;
+    public Pet pet;
 
     private static readonly int isMoving = Animator.StringToHash("IsMoving");
 
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         ghostDash = GetComponent<GhostDash>();
         playerBattle = GetComponent<PlayerBattle>();
+        
     }
 
     private void Start()
