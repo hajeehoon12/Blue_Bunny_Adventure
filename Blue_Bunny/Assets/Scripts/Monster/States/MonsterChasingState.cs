@@ -32,11 +32,17 @@ public class MonsterChasingState : MonsterBaseState
             return;
         }
 
-        UpdateDirection();
+        UpdateChasingDirection();
         UpdateChasingMove();
     }
     private void UpdateChasingMove()
     {
-        stateMachine.Monster.transform.position += stateMachine.MovementDirection * stateMachine.Monster.Data.BaseSpeed * Time.deltaTime;
+        stateMachine.Monster.transform.position += stateMachine.MovementDirection * stateMachine.Monster.Data.ChasingSpeed * Time.deltaTime;
+    }
+
+    protected void UpdateChasingDirection()
+    {
+        stateMachine.MovementDirection = (stateMachine.Target.transform.position - stateMachine.Monster.transform.position).normalized;
+        RotateSprite(stateMachine.MovementDirection);
     }
 }
