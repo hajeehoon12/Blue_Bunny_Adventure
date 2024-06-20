@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd02dcc4f6315742b236615f60c6a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healValue: 10
 --- !u!61 &1073454711350347750
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -102,7 +103,7 @@ GameObject:
   - component: {fileID: 7156846830393917245}
   - component: {fileID: 272818039366546133}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

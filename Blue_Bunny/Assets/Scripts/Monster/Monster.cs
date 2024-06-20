@@ -7,11 +7,9 @@ public class Monster : MonoBehaviour
     [field: Header("Animations")]
     [field: SerializeField] public MonsterAnimationData AnimationData { get; private set; }
     [field: SerializeField] public MonsterData Data { get; private set; }
-
     public Animator Animator { get; private set; }
     public BoxCollider2D BoxCollider2D { get; private set; }
     public SpriteRenderer SpriteRenderer { get; private set; }
-    public Vector2 InitialPosition { get; private set; }
 
     private MonsterStateMachine stateMachine;
 
@@ -24,7 +22,6 @@ public class Monster : MonoBehaviour
         Animator = GetComponentInChildren<Animator>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
         SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        InitialPosition = transform.position;
 
         stateMachine = new MonsterStateMachine(this);
     }

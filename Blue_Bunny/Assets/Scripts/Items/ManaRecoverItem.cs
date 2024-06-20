@@ -1,12 +1,14 @@
-ï»¿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class HealItem : Item, iHeal
+public class ManaRecoverItem : Item, iHeal
 {
     public float healValue = 10f;
     public void Heal()
     {
-        CharacterManager.Instance.Player.stats.playerHP += healValue;
-        Debug.Log("ì²´ë ¥ íšŒë³µ");
+        CharacterManager.Instance.Player.stats.playerMP += healValue;
+        Debug.Log("¸¶³ª È¸º¹");
         PlayHealSound();
     }
     public void PlayHealSound()
@@ -19,6 +21,4 @@ public class HealItem : Item, iHeal
         Heal();
         base.OnTriggerEnter2D(collision);
     }
-
 }
-
