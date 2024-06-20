@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
+    public MapData data;
+
     public List<Transform> monsterSpawnTr;
     public bool isCleared = false;
 

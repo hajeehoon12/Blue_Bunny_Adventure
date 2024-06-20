@@ -10,10 +10,14 @@ public class SpawnManager : MonoBehaviour
 
     public Map nowMap;
 
-    public int spawnCount = 5;
+    public int spawnCount;
+    public int aliveMonsterCount = 0;
 
     public void SpawnMonster()
     {
+        spawnCount = nowMap.data.spawnCount;
+        aliveMonsterCount = spawnCount;
+
         for (int i = 0; i < spawnCount; i++)
         {
             GameObject monster = PoolManager.Instance.Get(2);
@@ -24,5 +28,10 @@ public class SpawnManager : MonoBehaviour
             monster.transform.position = spawnPos.position;
             nowMap.monsterSpawnTr.Remove(spawnPos);
         }
+    }
+
+    public void SpawnPortal()
+    {
+
     }
 }

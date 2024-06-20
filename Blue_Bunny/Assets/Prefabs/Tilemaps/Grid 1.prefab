@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4dc053dc08ed7b48bd7d1982e2300b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 8bdc6b940d69e3e4c817d1f761fbff08, type: 2}
   monsterSpawnTr:
   - {fileID: 4577931963761239816}
   - {fileID: 1877022538253780455}
@@ -259,6 +260,8 @@ MonoBehaviour:
   - {fileID: 4724860502391345011}
   - {fileID: 4542141698844664810}
   - {fileID: 3035413854842468682}
+  isCleared: 0
+  portal: {fileID: 0}
 --- !u!1 &5356630590888546988
 GameObject:
   m_ObjectHideFlags: 0
