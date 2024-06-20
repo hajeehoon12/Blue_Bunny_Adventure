@@ -7,7 +7,7 @@ public class PlayerBattle : MonoBehaviour
 {
 
 
-    [SerializeField] private float healthChangeDelay = 0.5f;
+    public float healthChangeDelay = 0.5f;
     
 
     private float timeSinceLastChange = float.MaxValue; // time calculate from last hit
@@ -63,6 +63,7 @@ public class PlayerBattle : MonoBehaviour
 
         if (CurrentHealth <= 0f)
         {
+            Debug.Log("Player Dead");
             CallDeath();
             return true;
         }
@@ -72,6 +73,7 @@ public class PlayerBattle : MonoBehaviour
         }
         else // When Damage to Player
         {
+            Debug.Log("Damage Motion called");
             OnDamage?.Invoke();
             //isAttacked = true;
 

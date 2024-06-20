@@ -2523,7 +2523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67268b52c6b559d4d9cbdb7414b31109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthChangeDelay: 0.5
+  healthChangeDelay: 0.4
 --- !u!1 &1659877750
 GameObject:
   m_ObjectHideFlags: 0
@@ -3063,6 +3063,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
+      propertyPath: playerHP
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
+      propertyPath: playerMP
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
       propertyPath: jumpPower
       value: 12
       objectReference: {fileID: 0}
@@ -3073,6 +3081,10 @@ PrefabInstance:
     - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
       propertyPath: bulletSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
+      propertyPath: playerMaxHP
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
       propertyPath: attackDamage

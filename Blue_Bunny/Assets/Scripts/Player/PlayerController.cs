@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -39,7 +41,11 @@ public class PlayerController : MonoBehaviour
     {
         boundPlayer = playerCollider.bounds.extents;
         playerGravityScale = rigid.gravityScale;
+
+        playerBattle.OnDamage += GetAttacked;
     }
+
+    
 
     private void FixedUpdate()
     {
@@ -211,5 +217,26 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    private void GetAttacked()
+    {
+        Debug.Log("Do Red");
+
+        float knockBackPower = 5f;
+        float Dir = spriteRenderer.flipX ? -1 : 1;
+
+        StartCoroutine(ColorChanged());
+        rigid.AddForce( (Vector2.up + Dir * new Vector2(1, 0)) * rigid.mass * knockBackPower , ForceMode2D.Impulse);
+        
+        
+    }
+
+    IEnumerator ColorChanged()
+    {
+        float durTime = playerBattle.healthChangeDelay / 2;
+        spriteRenderer.DOColor(Color.red, durTime);
+        yield return new WaitForSeconds(durTime);
+        spriteRenderer.DOColor(Color.white, durTime);
+
+    }
 
 }
