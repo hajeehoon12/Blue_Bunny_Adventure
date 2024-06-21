@@ -117,6 +117,10 @@ public class PlayerController : MonoBehaviour
             animator.SetBool(isMoving, false);
         }
 
+        float dir = spriteRenderer.flipX ? -1 : 1;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position +new Vector3(dir * boundPlayer.x ,boundPlayer.y) , new Vector2(dir, 0), 0.02f, groundLayerMask);
+        if (hit.collider?.name != null) return;
+
         transform.position += moveVelocity * CharacterManager.Instance.Player.stats.playerSpeed * Time.deltaTime;          
     }
 
