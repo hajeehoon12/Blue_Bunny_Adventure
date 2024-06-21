@@ -293,9 +293,17 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f2c517aec5880dc498da069aaf75717d, type: 3}
   - name: Boxopen
     clip: {fileID: 8300000, guid: 0b65f9825ea493e4cb9a95afd5f65526, type: 3}
+  - name: Summon
+    clip: {fileID: 8300000, guid: fdb1141e73441bf4ab755317838d7b56, type: 3}
+  - name: RainEffect
+    clip: {fileID: 8300000, guid: 465d9818c39767d4c8960d604d19fdb6, type: 3}
   bgm:
   - name: SuperMario
     clip: {fileID: 8300000, guid: 2d985052ed40f0c4da687bd445319410, type: 3}
+  - name: WindRain
+    clip: {fileID: 8300000, guid: f599d6d36a008614f9647d330436794f, type: 3}
+  - name: BossCloud
+    clip: {fileID: 8300000, guid: 6b3e9fb9b552bac479d7dd102da914b8, type: 3}
   bgmPlayer: {fileID: 1286800511}
   bgmPlayer2: {fileID: 619146554}
   sfxPlayer:
@@ -1225,7 +1233,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2715,23 +2723,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 57426893}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1550774469 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3010571838857538878, guid: 72611c7abaeff5846953f043f4fd1154, type: 3}
-  m_PrefabInstance: {fileID: 1753701880}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1550774473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1550774469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e41a6a51c5d53d4e9a3a9aaaee852fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1570036512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3522,10 +3513,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3010571838857538878, guid: 72611c7abaeff5846953f043f4fd1154, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1550774473}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72611c7abaeff5846953f043f4fd1154, type: 3}
 --- !u!1 &1799294124
 GameObject:
@@ -4006,6 +3994,7 @@ MonoBehaviour:
   - {fileID: 8057485987290429433, guid: 73634e94a25bf72418160b40e8c283c8, type: 3}
   - {fileID: 637281394924737894, guid: 73027e5f95bdd384796710483df2f8d8, type: 3}
   - {fileID: 2205024189343875690, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
+  - {fileID: 8470031503123131059, guid: 6b2301e1c50a2294ea59715559d7ed52, type: 3}
 --- !u!4 &2024324145
 Transform:
   m_ObjectHideFlags: 0
@@ -4040,6 +4029,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 290772945385336207, guid: b46b57e79136ae147be13acb8788d458, type: 3}
+      propertyPath: spawnCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 290772945385336207, guid: b46b57e79136ae147be13acb8788d458, type: 3}
       propertyPath: itemPrefabs.Array.size
       value: 5
@@ -4128,6 +4121,10 @@ PrefabInstance:
     - target: {fileID: 7964650592427289113, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
+      propertyPath: stageIdx
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: spawnManager

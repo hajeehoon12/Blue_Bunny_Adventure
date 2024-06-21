@@ -23,6 +23,16 @@ public class SpawnManager : MonoBehaviour
 
         for (int i = 0; i < spawnCount; i++)
         {
+
+            if (GameManager.Instance.stageIdx %3 == 0 && GameManager.Instance.stageIdx != 0) // not 0 and after 3stages
+            { 
+                GameObject boss = PoolManager.Instance.Get(3);
+                Transform bossSpawnPos = nowMap.monsterSpawnTr[0];
+                boss.transform.position = bossSpawnPos.position;
+                return;
+            }
+
+
             GameObject monster = PoolManager.Instance.Get(2);
             //랜덤한 위치에 생성 후 리스트에서 제거. (동일 위치 생성 방지)
             int rdSpawnIdx = Random.Range(0, nowMap.monsterSpawnTr.Count);
