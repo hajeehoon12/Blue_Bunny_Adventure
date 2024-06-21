@@ -259,6 +259,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log(other.name);
+    }
+
+
     /// <summary>
     /// 몬스터 Trigger 이다
     /// </summary>

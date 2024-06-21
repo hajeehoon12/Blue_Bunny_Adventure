@@ -9,6 +9,8 @@ public class CloudBoss : MonoBehaviour
     public GameObject Worm;
     public GameObject BlueBee;
 
+    private ParticleSystem Rain;
+
     public LayerMask groundLayerMask;
 
     Coroutine patterCoroutine;
@@ -16,7 +18,10 @@ public class CloudBoss : MonoBehaviour
     private int patternNum = 0;
     private int monsterNum = 0;
 
-
+    private void Awake()
+    {
+        Rain = GetComponentInChildren<ParticleSystem>();
+    }
 
     //private bool onFloor = false;
 
@@ -24,7 +29,7 @@ public class CloudBoss : MonoBehaviour
     {
         patterCoroutine= StartCoroutine(CloudPattern());
 
-
+        Rain.Stop();
 
 
     }
@@ -34,13 +39,17 @@ public class CloudBoss : MonoBehaviour
 
         while (true)
         {
-            switch (patternNum % 2)
+            switch (patternNum % 3)
             {
                 case 0:
                     StartCoroutine(SummonPeriod());
                     break;
-
-
+                case 1:
+                    StartCoroutine(CloudRainMove());
+                    break;
+                case 2:
+                    //Rain.Stop();
+                    break;
 
 
                 default:
@@ -52,9 +61,17 @@ public class CloudBoss : MonoBehaviour
 
             patternNum++;
         }
+    }
 
+
+    IEnumerator CloudRainMove()
+    {
+        Rain.Play();
+        yield return new WaitForSeconds(1f);
         
     }
+
+
 
     IEnumerator SummonPeriod()
     {
@@ -63,6 +80,8 @@ public class CloudBoss : MonoBehaviour
         SummonServant();
         yield return new WaitForSeconds(1f);
         SummonServant();
+
+        CloudPattern();
 
     }
 
