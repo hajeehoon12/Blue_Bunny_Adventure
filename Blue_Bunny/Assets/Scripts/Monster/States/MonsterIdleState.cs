@@ -46,7 +46,8 @@ public class MonsterIdleState : MonsterBaseState
         if (stateMachine.Monster.Data.MonsterType == MonsterType.Horizontal)
         {
             // 이동방향 레이가 땅에 안 닿으면 반대 방향으로 가기
-            if (IsRayHitGround(1, idleMoveDirection, Vector3.down, Color.green) == false)
+            if (IsRayHitGround(1, idleMoveDirection, Vector3.down, Color.green) == false || 
+                IsRayHitGround(1.5f, new Vector3(-0.5f, 0,0), new Vector3(0.7f, 0, 0), Color.black))
             {
                 idleMoveDirection *= -1;
                 RotateSprite(idleMoveDirection);
