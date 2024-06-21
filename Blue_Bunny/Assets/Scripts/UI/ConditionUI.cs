@@ -9,9 +9,7 @@ public class ConditionUI : MonoBehaviour
     private Image image;
 
     //연한 색
-    //float softBar = 50.0f / 255.0f;
     float softBar = 10.0f / 255.0f;
-    //float softBG = 15.0f / 255.0f;
     float softBG = 3.0f / 255.0f;
     //진한 색
     float hardBar = 225.0f / 255.0f;
