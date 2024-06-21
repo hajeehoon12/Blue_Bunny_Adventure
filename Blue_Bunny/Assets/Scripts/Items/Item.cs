@@ -18,10 +18,24 @@ public interface iStatUpgrade
 
 public class Item : MonoBehaviour
 {
+    BoxCollider2D itemCollider;
+    private void Awake()
+    {
+        itemCollider = GetComponent<BoxCollider2D>();
+        itemCollider.enabled = false;
+        StartCoroutine(InteractDelay());
+    }
+
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        //È¿°ú Àû¿ë
+        //íš¨ê³¼ ì ìš©
         Destroy(this.gameObject);
+    }
+
+    IEnumerator InteractDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        itemCollider.enabled = true;
     }
 }
 
