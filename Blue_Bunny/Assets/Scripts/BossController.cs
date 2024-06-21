@@ -105,12 +105,12 @@ public class BossController : MonoBehaviour
 
         if (diff.x < 3 && diff.x > -3)
         {
-            if (diff.y < -2f)
+            if (diff.y < -0.7f)
             {
                 TryJump();
                 return;
             }
-            else if (diff.y > 2f)
+            else if (diff.y > 0.7f)
             {
                 TryDown();
                 return;
@@ -118,7 +118,7 @@ public class BossController : MonoBehaviour
         }
 
 
-        if (diffDist < 3f)
+        if (diffDist < 2f)
         {
             if (diff.y < -2f)
             {
@@ -192,7 +192,7 @@ public class BossController : MonoBehaviour
 
         if (spriteRenderer.flipX) CheckDir = -1f;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(1, 0) * CheckDir, 3f, enemyLayerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(1, 0) * CheckDir, 2.5f, enemyLayerMask);
         {
             
             if (hit.collider == null) return;
