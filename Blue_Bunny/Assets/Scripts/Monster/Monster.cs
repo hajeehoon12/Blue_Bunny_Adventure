@@ -34,9 +34,12 @@ public class Monster : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         stateMachine = new MonsterStateMachine(this);
+    }
 
+    private void OnEnable()
+    {
+        stateMachine.Monster.BoxCollider2D.enabled = true;
         Health = Data.MaxHealth;
-
         stateMachine.ChangeState(stateMachine.IdleState);
     }
 
@@ -57,7 +60,7 @@ public class Monster : MonoBehaviour
         if (collision.gameObject.CompareTag(Define.BULLET_TAG)) // When Hit by Bullet
         {
             Health--;
-
+            OnHit?.Invoke();
             /*Debug.Log($"Monster Health : {Health}");*/
 
             if (Health <= 0)
@@ -67,9 +70,7 @@ public class Monster : MonoBehaviour
             else
             {
                 stateMachine.ChangeState(stateMachine.GetHitState);
-                OnHit?.Invoke();
             }
-
         }
     }
 }
