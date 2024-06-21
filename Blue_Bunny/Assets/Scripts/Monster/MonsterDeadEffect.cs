@@ -31,7 +31,7 @@ public class MonsterDeadEffect : MonoBehaviour
     {
         GetComponent<Collider2D>().enabled = false;
         StartCoroutine(FadeOut());
-        GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
+        
     }
 
     IEnumerator FadeOut()
@@ -40,9 +40,11 @@ public class MonsterDeadEffect : MonoBehaviour
         
         GetComponentInChildren<SpriteRenderer>().DOFade(0, 2f); // .OnComplete(() =>);
         yield return new WaitForSeconds(2.5f);
-        gameObject.SetActive(false);
         GetComponent<Collider2D>().enabled = true;
-        GetComponentInChildren<SpriteRenderer>().color += Color.black;
+        GetComponentInChildren<SpriteRenderer>().DOFade(1, 1f);
+        gameObject.SetActive(false);
+        GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
+
     }
 
 

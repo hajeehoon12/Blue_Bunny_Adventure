@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class ItemUI : MonoBehaviour
 {
-    public GameObject MenuUI;//Test
-    private bool isMenuOn = false;//Test
-
     private bool isOn = false;      //아이템UI On, Off
     private bool isMoving = false;  //아이템UI가 움직이고 있는 중인지
 
@@ -13,27 +10,12 @@ public class ItemUI : MonoBehaviour
 
     private void Start()
     {
+        UIManager.Instance.Item = this;
         slots = new Slot[slotPanel.childCount];
     }
 
     private void Update()
     {
-        //Test
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            isMenuOn = !isMenuOn;
-            MenuUI.SetActive(isMenuOn);
-
-            if (isMenuOn) Time.timeScale = 0.0f;
-            else Time.timeScale = 1.0f;
-        }
-
-        if(Input.GetKeyDown(KeyCode.Tab))
-        {
-            if(!isMoving) isMoving = true;
-            isOn = !isOn;
-        }
-
         if(isMoving)
         {
             if(isOn)
@@ -48,7 +30,13 @@ public class ItemUI : MonoBehaviour
             }
         }
 
-        if (gameObject.transform.position.x <= -499.0f || gameObject.transform.position.x >= -1.0f) isMoving = false;
+        if (gameObject.transform.position.x <= -499.99f || gameObject.transform.position.x >= -1.0f) isMoving = false;
+    }
+
+    public void OnOffUI()
+    {
+        if (!isMoving) isMoving = true;
+        isOn = !isOn;
     }
 
     public void AddItem()//item 매개변수 넣어줘야함

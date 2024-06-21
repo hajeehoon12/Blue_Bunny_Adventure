@@ -12,7 +12,7 @@ public class PlayerBattle : MonoBehaviour
 
     private float timeSinceLastChange = float.MaxValue; // time calculate from last hit
 
-    //private bool isAttacked = false;
+    public bool isAttacked = false;
 
 
     public event Action OnDamage;
@@ -50,8 +50,9 @@ public class PlayerBattle : MonoBehaviour
         {
             return false;
         }
+        
 
-        timeSinceLastChange = 0f;
+        
 
 
 
@@ -63,6 +64,7 @@ public class PlayerBattle : MonoBehaviour
 
         if (CurrentHealth <= 0f)
         {
+            timeSinceLastChange = 0f;
             Debug.Log("Player Dead");
             CallDeath();
             return true;
@@ -75,7 +77,8 @@ public class PlayerBattle : MonoBehaviour
         {
             //Debug.Log("Damage Motion called");
             OnDamage?.Invoke();
-            //isAttacked = true;
+            timeSinceLastChange = 0f;
+            
 
             // Get Damaged Sound
         }

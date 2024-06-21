@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4383326105621255411}
   - component: {fileID: 6313621975468925686}
   - component: {fileID: 7964954611461161073}
-  - component: {fileID: 8143362192105415211}
   - component: {fileID: 7331020171092748524}
   m_Layer: 0
   m_Name: Boss
@@ -124,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 5
-  jumpPower: 12
+  jumpPower: 15
   isGrounded: 1
   enemyLayerMask:
     serializedVersion: 2
@@ -138,6 +137,9 @@ MonoBehaviour:
   attackRate: 10
   ComboCount: 0
   _player: {fileID: 0}
+  isBossDie: 0
+  bossMaxHP: 5
+  bossHP: 0
 --- !u!50 &6313621975468925686
 Rigidbody2D:
   serializedVersion: 4
@@ -179,38 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ghostDelay: 0.1
   fadeDuration: 0.4
-  ghost: {fileID: 0}
+  ghost: {fileID: 5785987680709450409, guid: 23633ef67b88af2469af6d6f5121ae38, type: 3}
   makeGhost: 0
---- !u!114 &8143362192105415211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2073968807629043396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 44296f91a2b2fd84aaea2b9b73fe2112, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!70 &7331020171092748524
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
