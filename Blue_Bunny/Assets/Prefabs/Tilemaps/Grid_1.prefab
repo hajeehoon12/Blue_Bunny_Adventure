@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 2803805949984326191}
   - component: {fileID: -7051873678630648448}
   m_Layer: 0
-  m_Name: Grid 1
+  m_Name: Grid_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,6 +254,7 @@ Transform:
   - {fileID: 7790957233740929734}
   - {fileID: 810417125022662317}
   - {fileID: 803960830012086547}
+  - {fileID: 874596645518621320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &2803805949984326191
@@ -293,6 +294,9 @@ MonoBehaviour:
   - {fileID: 4542141698844664810}
   - {fileID: 3035413854842468682}
   portalPos: {fileID: 803960830012086547}
+  rewardChestTr: {fileID: 874596645518621320}
+  rewardChest: {fileID: 6366736423589511129, guid: 7cdb30040933477469763e8d782772ca, type: 3}
+  isCleared: 0
 --- !u!1 &5356630590888546988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,6 +1688,37 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &5696529996918266116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 874596645518621320}
+  m_Layer: 0
+  m_Name: RewardChestPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &874596645518621320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5696529996918266116}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5275807183670642871}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6646295447246561210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,6 +1835,7 @@ GameObject:
   - component: {fileID: 2244552096499822955}
   - component: {fileID: 1540059614913761354}
   - component: {fileID: 4365432123634697773}
+  - component: {fileID: 3106649452555424397}
   m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
@@ -3574,6 +3610,18 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &3106649452555424397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7618061358946158606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd08d84cc40b844a998c18742da0c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7676225002846068720
 GameObject:
   m_ObjectHideFlags: 0
