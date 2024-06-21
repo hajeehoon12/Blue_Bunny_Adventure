@@ -12,7 +12,7 @@ public class MonsterDeadState : MonsterBaseState
         StartAnimation(stateMachine.Monster.AnimationData.DeadParameterHash);
 
         stateMachine.Monster.BoxCollider2D.enabled = false;
-        GameManager.Instance.spawnManager.aliveMonsterCount--;
+        GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
 
         base.Enter();
     }
