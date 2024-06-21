@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemUI : MonoBehaviour
@@ -7,6 +8,8 @@ public class ItemUI : MonoBehaviour
 
     public Slot[] slots;            //아이템 슬롯 배열
     public Transform slotPanel;     //슬롯 패널
+
+    private int slotIndex;
 
     private void Start()
     {
@@ -39,13 +42,13 @@ public class ItemUI : MonoBehaviour
         isOn = !isOn;
     }
 
-    public void AddItem(ItemDataSO itemData)//item 매개변수 넣어줘야함
+    public void AddItem(ItemDataSO itemData)
     {
-        Slot emptySlot = GetEmptySlot();
-        emptySlot.item = itemData;
-        emptySlot.icon.sprite = itemData.itemIcon;
-        emptySlot.icon.gameObject.SetActive(true);
-        //데이터 추가
+        if (GetEmptySlot())
+        {
+            slots[slotIndex].Item = itemData;
+            slots[slotIndex].Set();
+        }
     }
 
     //업데이트UI
@@ -53,28 +56,23 @@ public class ItemUI : MonoBehaviour
     {
         foreach (Slot slot in slots)
         {
-            if (slot != null)
-            {
-                //set
-            }
-            else
-            {
-                //clear
-            }
+            if (slot.IsExist) slot.Set();
+            else slot.Clear();
         }
     }
 
     //비어있는 곳에 넣어주는 로직
-    Slot GetEmptySlot()
+    bool GetEmptySlot()
     {
-        foreach (Slot slot in slots)
+        for (int i = 0; i < slots.Length; i++) 
         {
-            //슬롯이 비어 있다면 return 해준다
-            if (slot.IsExist) return slot;
+            if (!slots[i].IsExist)
+            {
+                slotIndex = i;
+                return true;
+            }
         }
 
-        return null;
+        return false;
     }
-
-
 }

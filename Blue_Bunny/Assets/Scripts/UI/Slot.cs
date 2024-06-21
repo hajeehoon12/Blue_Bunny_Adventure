@@ -4,19 +4,17 @@ using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public ItemDataSO Item;
     public Image icon;
-    //아이템 정보 변수
-    public bool IsExist;//test
+    public bool IsExist;
     private bool OnToolTip;
 
-    [SerializeField] GameObject ToolTip;
-
-    public ItemDataSO item;
+    [SerializeField] ToolTip ToolTip;
 
     private void Start()
     {
         icon.gameObject.SetActive(false);
-        IsExist = true;
+        IsExist = false;
         OnToolTip = false;
     }
 
@@ -33,8 +31,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         icon.gameObject.SetActive(true);
         IsExist = true;
-        //아이콘 삽입
-
+        icon.sprite = Item.itemIcon;
     }
 
     //슬롯을 비워주는 함수
@@ -42,25 +39,27 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         icon.gameObject.SetActive(false);
         IsExist = false;
-        //아이템 정보 삭제
+        icon.sprite = null;
+        Item = null;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         if(IsExist)
         {
-            Debug.Log(IsExist);
-
             OnToolTip = true;
-            ToolTip.SetActive(true);
-
-            //툴팁 텍스트 설정
+            ToolTip.gameObject.SetActive(true);
+            Debug.Log(Item == null);
+            ToolTip.SetItemInfo(Item);
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        OnToolTip = false;
-        ToolTip.SetActive(false);
+        if (IsExist)
+        {
+            OnToolTip = false;
+            ToolTip.gameObject.SetActive(false);
+        }
     }
 }
