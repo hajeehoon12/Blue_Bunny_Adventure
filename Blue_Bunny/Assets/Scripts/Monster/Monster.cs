@@ -60,7 +60,7 @@ public class Monster : MonoBehaviour
         if (collision.gameObject.CompareTag(Define.BULLET_TAG)) // When Hit by Bullet
         {
             Health--;
-
+            OnHit?.Invoke();
             /*Debug.Log($"Monster Health : {Health}");*/
 
             if (Health <= 0)
@@ -70,9 +70,7 @@ public class Monster : MonoBehaviour
             else
             {
                 stateMachine.ChangeState(stateMachine.GetHitState);
-                OnHit?.Invoke();
             }
-
         }
     }
 }
