@@ -3,11 +3,9 @@ using UnityEngine;
 public class JumpPowerUpItem : Item, iStatUpgrade
 {
     public float jumpPowerUpgradeAmount = 1f;
-    public string explainPhrase;
     public void UpgradeStat()
     {
         CharacterManager.Instance.Player.stats.jumpPower += jumpPowerUpgradeAmount;
-        Debug.Log(explainPhrase);
         PlayUpgradeSound();
     }
 

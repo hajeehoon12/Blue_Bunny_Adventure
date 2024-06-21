@@ -1,13 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class SpeedUpItem : Item, iStatUpgrade
 {
     public float speedUpgradeAmount = 1f;
-    public string explainPhrase;
     public void UpgradeStat()
     {
         CharacterManager.Instance.Player.stats.playerSpeed += speedUpgradeAmount;
-        Debug.Log(explainPhrase);
         PlayUpgradeSound();
     }
     public void PlayUpgradeSound()

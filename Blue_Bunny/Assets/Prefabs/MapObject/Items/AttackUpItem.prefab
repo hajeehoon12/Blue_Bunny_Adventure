@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e9adef55a8e7846b4a76519b2be761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: abb93457023adbc47943356ab007c7e3, type: 2}
   attackUpgradeAmount: 1
   explainPhrase: "\uB0A0\uCE74\uB85C\uC6B4 \uCE7C\uC785\uB2C8\uB2E4. \uAC00\uC9C0\uACE0
     \uC788\uB294 \uAC83\uB9CC\uC73C\uB85C\uB3C4 \uC704\uD5D8\uD574 \uBCF4\uC785\uB2C8\uB2E4. "

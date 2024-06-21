@@ -11,7 +11,7 @@ public class ItemUI : MonoBehaviour
     private void Start()
     {
         UIManager.Instance.Item = this;
-        slots = new Slot[slotPanel.childCount];
+        slots = GetComponentsInChildren<Slot>();
     }
 
     private void Update()
@@ -39,10 +39,12 @@ public class ItemUI : MonoBehaviour
         isOn = !isOn;
     }
 
-    public void AddItem()//item 매개변수 넣어줘야함
+    public void AddItem(ItemDataSO itemData)//item 매개변수 넣어줘야함
     {
         Slot emptySlot = GetEmptySlot();
-        //아이콘 추가
+        emptySlot.item = itemData;
+        emptySlot.icon.sprite = itemData.itemIcon;
+        emptySlot.icon.gameObject.SetActive(true);
         //데이터 추가
     }
 

@@ -11,6 +11,8 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     [SerializeField] GameObject ToolTip;
 
+    public ItemDataSO item;
+
     private void Start()
     {
         icon.gameObject.SetActive(false);
