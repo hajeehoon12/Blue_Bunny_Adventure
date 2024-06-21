@@ -3935,7 +3935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: stageIdx
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: spawnManager

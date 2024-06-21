@@ -97,3 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a461dacb82f03f446bfa8f89540ed7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bee: {fileID: 6089313879609324528, guid: c173851d388bace46a99e592be974134, type: 3}
+  Worm: {fileID: 2205024189343875690, guid: 7fafbe050eaada547b0546e4ff69805d, type: 3}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
