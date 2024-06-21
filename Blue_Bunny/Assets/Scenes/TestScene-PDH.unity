@@ -302,6 +302,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 2d985052ed40f0c4da687bd445319410, type: 3}
   - name: WindRain
     clip: {fileID: 8300000, guid: f599d6d36a008614f9647d330436794f, type: 3}
+  - name: BossCloud
+    clip: {fileID: 8300000, guid: 6b3e9fb9b552bac479d7dd102da914b8, type: 3}
   bgmPlayer: {fileID: 1286800511}
   bgmPlayer2: {fileID: 619146554}
   sfxPlayer:
@@ -2721,23 +2723,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 57426893}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1550774469 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3010571838857538878, guid: 72611c7abaeff5846953f043f4fd1154, type: 3}
-  m_PrefabInstance: {fileID: 1753701880}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1550774473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1550774469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e41a6a51c5d53d4e9a3a9aaaee852fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1570036512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3528,10 +3513,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3010571838857538878, guid: 72611c7abaeff5846953f043f4fd1154, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1550774473}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72611c7abaeff5846953f043f4fd1154, type: 3}
 --- !u!1 &1799294124
 GameObject:

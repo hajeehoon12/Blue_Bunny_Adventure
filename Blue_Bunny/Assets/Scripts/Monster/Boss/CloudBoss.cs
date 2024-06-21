@@ -27,6 +27,8 @@ public class CloudBoss : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.instance.StopBGM();
+        AudioManager.instance.PlayBGM("BossCloud", 0.2f);
         patterCoroutine= StartCoroutine(CloudPattern());
 
         Rain.Stop();
@@ -139,7 +141,7 @@ public class CloudBoss : MonoBehaviour
 
         rigid.gravityScale = 0;
 
-        servant.transform.DOMoveY(servant.transform.position.y + distDiff/3,1f).SetEase(Ease.Linear);
+        servant.transform.DOMoveY(servant.transform.position.y + distDiff/3 + Dir-1, 1f).SetEase(Ease.Linear);
         servant.transform.DOMoveX(servant.transform.position.x - distDiff - Dir, 1f);
 
         yield return new WaitForSeconds(1f);
@@ -176,9 +178,11 @@ public class CloudBoss : MonoBehaviour
             }
            
         }
-        servant.GetComponent<Monster>().enabled = true;
-        rigid.velocity = Vector3.zero;
+
+        rigid.gravityScale = 0f;
+        rigid.velocity = Vector2.zero;
         Destroy(rigid);
+        servant.GetComponent<Monster>().enabled = true;
     }
 
 
