@@ -10,7 +10,8 @@ public class RewardChest : MonoBehaviour
 
     public void OpenChest()
     {
-        chestIcon.sprite = openedChestSprite;   
+        chestIcon.sprite = openedChestSprite;
+        AudioManager.instance.PlaySFX("Boxopen", 0.2f);
         upArrowIcon.SetActive(false);
         GameManager.Instance.spawnManager.SpawnBoxRewardItem(this.transform);
     }

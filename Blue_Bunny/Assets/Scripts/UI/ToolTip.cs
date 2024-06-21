@@ -8,7 +8,7 @@ public class ToolTip : MonoBehaviour
 
     public void SetItemInfo(ItemDataSO itemData)
     {
-        Name.text = itemData.name;
+        Name.text = itemData.itemName;
         Description.text = itemData.itemdescription;
     }
 }

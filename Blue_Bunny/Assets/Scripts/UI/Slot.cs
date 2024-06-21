@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -48,12 +49,10 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         if(IsExist)
-        {
-            Debug.Log(IsExist);
-
+        {            
             OnToolTip = true;
             ToolTip.SetActive(true);
-
+            SetToolTipTxt();
             //툴팁 텍스트 설정
         }
     }
@@ -62,5 +61,10 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         OnToolTip = false;
         ToolTip.SetActive(false);
+    }
+
+    private void SetToolTipTxt()
+    {
+        ToolTip.GetComponent<ToolTip>().SetItemInfo(item);
     }
 }
