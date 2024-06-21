@@ -15,11 +15,10 @@ public class Monster : MonoBehaviour
     public MonsterData Data => data;
     public Animator Animator { get; private set; }
     public BoxCollider2D BoxCollider2D { get; private set; }
-    public SpriteRenderer spriteRenderer;
+    public SpriteRenderer SpriteRenderer { get; private set; }
 
     private MonsterStateMachine stateMachine;
 
-    public GameObject _monsterEffect;
     public float Health { get; set; } = 3f;
 
     public event Action OnHealthChanged;
@@ -31,7 +30,7 @@ public class Monster : MonoBehaviour
 
         Animator = GetComponentInChildren<Animator>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         stateMachine = new MonsterStateMachine(this);
     }
