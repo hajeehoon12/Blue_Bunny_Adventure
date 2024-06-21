@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using DG.Tweening;
 
 public class BossController : MonoBehaviour
 {
@@ -57,6 +58,10 @@ public class BossController : MonoBehaviour
 
     private bool canDoDown = true;
 
+    public bool isBossDie = false;
+    public float bossMaxHP = 5f;
+    public float bossHP;
+
 
 
     void Awake()
@@ -74,15 +79,19 @@ public class BossController : MonoBehaviour
         playerGravityScale = rigid.gravityScale;
         boundPlayer = playerCollider.bounds.extents;
         _player = CharacterManager.Instance.Player.transform;
+
+        bossHP = bossMaxHP;
+
     }
 
     private void FixedUpdate()
     {
+        if (isBossDie) return;
         Move();
     }
     void Update()
     {
-        
+        if (isBossDie) return;
         //OnDash()
         //OnRoll();
         JumpCheck(); // Checking wheter can jump
@@ -105,12 +114,12 @@ public class BossController : MonoBehaviour
 
         if (diff.x < 3 && diff.x > -3)
         {
-            if (diff.y < -2f)
+            if (diff.y < -0.7f)
             {
                 TryJump();
                 return;
             }
-            else if (diff.y > 2f)
+            else if (diff.y > 0.7f)
             {
                 TryDown();
                 return;
@@ -118,7 +127,7 @@ public class BossController : MonoBehaviour
         }
 
 
-        if (diffDist < 3f)
+        if (diffDist < 2f)
         {
             if (diff.y < -2f)
             {
@@ -153,11 +162,22 @@ public class BossController : MonoBehaviour
         {
             rollCoolTime -= rollInterval;
             OnRoll();
+            return;
         }
         else
         { 
             rollCoolTime += Time.deltaTime;
         }
+
+        if (diff.y > 0.7f)
+        {
+            TryDown();
+        }
+        else if (diff.y < -0.7f)
+        {
+            TryJump();
+        }
+
 
 
     }
@@ -176,7 +196,7 @@ public class BossController : MonoBehaviour
     {
         canDoDown = false;
         playerCollider.enabled = false;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.03f);
         playerCollider.enabled = true;
         canDoDown = true;
     }
@@ -192,7 +212,7 @@ public class BossController : MonoBehaviour
 
         if (spriteRenderer.flipX) CheckDir = -1f;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(1, 0) * CheckDir, 3f, enemyLayerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(1, 0) * CheckDir, 2.5f, enemyLayerMask);
         {
             
             if (hit.collider == null) return;
@@ -319,6 +339,7 @@ public class BossController : MonoBehaviour
         Vector3 moveVelocity = Vector3.zero;
 
         if (ghostDash.makeGhost) return;
+
         
 
         if (transform.position.x - _player.position.x > 0)
@@ -338,11 +359,17 @@ public class BossController : MonoBehaviour
             animator.SetBool(isRunning, false);
         }
 
+        float dir = spriteRenderer.flipX ? -1 : 1;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(dir * boundPlayer.x, boundPlayer.y), new Vector2(dir, 0), 0.02f, groundLayerMask);
+        if (hit.collider?.name != null) return;
+
         if (Rolling)
         {
             transform.position += moveVelocity * 1.2f * maxSpeed * Time.deltaTime;
             return;
         }
+
+
         transform.position += moveVelocity * maxSpeed * Time.deltaTime;
     }
 
@@ -389,7 +416,7 @@ public class BossController : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collider) // Jump and wall Climb check
     {
         //Debug.Log(collider.gameObject.tag);
-        if (collider.gameObject.CompareTag("Floor"))
+        if (collider.gameObject.CompareTag(Define.FLOOR_TAG))
         {
             //Debug.Log(boundPlayer.x);
             //Debug.Log(boundPlayer.y);
@@ -420,6 +447,44 @@ public class BossController : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag(Define.BULLET_TAG))
+        {
+            Debug.Log("BossGotHit!!");
+            StartCoroutine(ColorRed());
+
+            float damage = CharacterManager.Instance.Player.stats.attackDamage;
+            Debug.Log(damage);
+            if (bossHP >= damage)
+            {
+                bossHP -= damage;
+                Debug.Log("남은 체력 : " + (bossHP));
+            }
+            else
+            {
+                Debug.Log("사망");
+                CallDie();
+            }
+
+        }
+    }
+
+    void CallDie()
+    {
+        Debug.Log("Boss Dead!!");
+        isBossDie = true;
+        animator.SetBool(isRunning, false);
+        
+    }
+
+    IEnumerator ColorRed()
+    {
+        spriteRenderer.DOColor(Color.red, 0.2f);
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.DOColor(Color.white, 0.2f);
+            
+    }
 
 
 }
