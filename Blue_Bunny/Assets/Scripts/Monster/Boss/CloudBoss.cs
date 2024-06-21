@@ -125,11 +125,13 @@ public class CloudBoss : MonoBehaviour
         
         onFloor = false;
         GameObject servant = Instantiate(mon, transform.position, Quaternion.identity);
+        //servant.GetComponent<Monster>().enabled = false;
+        Monster monScript = servant.GetComponent<Monster>();
         Collider2D servCol = servant.GetComponent<BoxCollider2D>();
         
         Rigidbody2D rigid = servant.GetComponent<Rigidbody2D>();
 
-        servant.GetComponent<Monster>().enabled = false;
+        
         //rigid.gravityScale = 0f;
         // 던지기
         //float throwTime = 0;
@@ -182,7 +184,8 @@ public class CloudBoss : MonoBehaviour
         rigid.gravityScale = 0f;
         rigid.velocity = Vector2.zero;
         Destroy(rigid);
-        servant.GetComponent<Monster>().enabled = true;
+        monScript.enabled = true;
+        monScript.stateMachine.ChangeState(monScript.stateMachine.ChasingState);
     }
 
 

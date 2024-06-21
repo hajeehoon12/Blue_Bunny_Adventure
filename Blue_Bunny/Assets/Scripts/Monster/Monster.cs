@@ -17,7 +17,7 @@ public class Monster : MonoBehaviour
     public BoxCollider2D BoxCollider2D { get; private set; }
     public SpriteRenderer SpriteRenderer { get; private set; }
 
-    private MonsterStateMachine stateMachine;
+    public MonsterStateMachine stateMachine;
 
     public float Health { get; set; } = 3f;
 
