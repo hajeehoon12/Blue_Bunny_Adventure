@@ -1,17 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.UI;
 
 public class MPBar : SlideBar
 {
+    public Image BackgroundBar;
+
     void Start()
     {
         UpdateBar_Add(0.0f);
-    }
-
-    void Update()
-    {
-        
     }
 
     //마나가 찰 때, 호출하는 함수 ( 매개변수는 절대값을 넣어준다. )

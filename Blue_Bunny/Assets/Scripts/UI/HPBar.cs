@@ -1,17 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.UI;
 
 public class HPBar : SlideBar
 {
+    public Image BackgroundBar;
+
     void Start()
     {
         UpdateBar_Add(0.0f);
-    }
-
-    void Update()
-    {
-        
     }
 
     //체력이 찰 때, 호출하는 함수
