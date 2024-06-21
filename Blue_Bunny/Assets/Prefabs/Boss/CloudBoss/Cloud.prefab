@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bee: {fileID: 6089313879609324528, guid: c173851d388bace46a99e592be974134, type: 3}
   Worm: {fileID: 2205024189343875690, guid: 7fafbe050eaada547b0546e4ff69805d, type: 3}
+  BlueBee: {fileID: 1064301147246969813, guid: 2b74aa1f736d10846b9f1e905e639442, type: 3}
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 128
