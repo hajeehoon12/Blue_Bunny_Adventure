@@ -10,4 +10,6 @@ public class Define
     public const string ITEM_TAG = "Item";
     public const string GROUND_Layer = "Ground";
     public const string BOSS_TAG = "Boss";
+    public const string FLOOR_TAG = "Floor";
+    
 }
