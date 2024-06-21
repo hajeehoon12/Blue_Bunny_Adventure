@@ -14,7 +14,7 @@ public class Monster : MonoBehaviour
     public MonsterData Data => data;
     public Animator Animator { get; private set; }
     public BoxCollider2D BoxCollider2D { get; private set; }
-    public SpriteRenderer SpriteRenderer { get; private set; }
+    public SpriteRenderer spriteRenderer;
 
     private MonsterStateMachine stateMachine;
 
@@ -28,7 +28,7 @@ public class Monster : MonoBehaviour
 
         Animator = GetComponentInChildren<Animator>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
-        SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         stateMachine = new MonsterStateMachine(this);
     }
@@ -73,18 +73,21 @@ public class Monster : MonoBehaviour
     public void Dead()
     {
         GetComponent<Collider2D>().enabled = false;
+
         StartCoroutine(FadeOut());
-        GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
+        
     }
 
     IEnumerator FadeOut()
     {
         Instantiate(_monsterEffect, transform.position, Quaternion.identity);
 
-        GetComponentInChildren<SpriteRenderer>().DOFade(0, 2f);
+        spriteRenderer.DOFade(0, 1f);
         yield return new WaitForSeconds(2.5f);
-        gameObject.SetActive(false);
         GetComponent<Collider2D>().enabled = true;
-        GetComponentInChildren<SpriteRenderer>().color += Color.black;
+        spriteRenderer.DOFade(1, 1f);
+        gameObject.SetActive(false);
+        
+        GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
     }
 }

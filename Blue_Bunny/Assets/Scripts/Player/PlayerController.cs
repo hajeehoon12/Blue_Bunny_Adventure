@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     private bool canJump = true;
     private bool canDash = true;
+    private bool isAttacked = false;
 
     private void Awake()
     {
@@ -129,7 +130,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            if (canJump)
+            if (canJump && !isAttacked)
             {
                 rigid.velocity = Vector3.zero;
                 animator.SetBool(isMoving, false);
@@ -238,17 +239,23 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log("Do Red");
 
-        float knockBackPower = 2f;
+        float knockBackPower = 4f;
         float Dir = spriteRenderer.flipX ? -1 : 1;
 
         StartCoroutine(ColorChanged());
+        StartCoroutine(GetAttackedCheck());
 
         canJump = false;
         rigid.velocity = Vector3.zero;
         rigid.AddForce((Vector2.up + Dir * new Vector2(1f, 0)) * rigid.mass * knockBackPower , ForceMode2D.Impulse);
-        
-        
-        
+
+    }
+
+    IEnumerator GetAttackedCheck()
+    {
+        isAttacked = true;
+        yield return new WaitForSeconds(playerBattle.healthChangeDelay);
+        isAttacked = false;
     }
 
     IEnumerator ColorChanged()

@@ -93,7 +93,7 @@ public class MonsterBaseState : IState
     protected void RotateSprite(Vector2 direction)
     {
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        stateMachine.Monster.SpriteRenderer.flipX = Mathf.Abs(rotZ) > 90f;
+        stateMachine.Monster.spriteRenderer.flipX = Mathf.Abs(rotZ) > 90f;
 
         Debug.Log($"MonsterBaseState::RotateSprite()");
     }
