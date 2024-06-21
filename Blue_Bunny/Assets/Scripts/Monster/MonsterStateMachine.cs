@@ -9,8 +9,8 @@ public class MonsterStateMachine : StateMachine
 
     public MonsterIdleState IdleState { get; }
     public MonsterChasingState ChasingState { get; }
-
     public MonsterGetHitState GetHitState { get; }
+    public MonsterDeadState DeadState { get; }
 
     public MonsterStateMachine(Monster monster)
     {
@@ -19,6 +19,7 @@ public class MonsterStateMachine : StateMachine
         IdleState = new MonsterIdleState(this);
         ChasingState = new MonsterChasingState(this);
         GetHitState = new MonsterGetHitState(this);
+        DeadState = new MonsterDeadState(this);
 
         Target = FindTarget();
     }

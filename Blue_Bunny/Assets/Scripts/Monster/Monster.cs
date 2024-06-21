@@ -36,10 +36,7 @@ public class Monster : MonoBehaviour
         stateMachine = new MonsterStateMachine(this);
 
         Health = Data.MaxHealth;
-    }
 
-    private void Start()
-    {
         stateMachine.ChangeState(stateMachine.IdleState);
     }
 
@@ -65,7 +62,7 @@ public class Monster : MonoBehaviour
 
             if (Health <= 0)
             {
-                Dead();
+                stateMachine.ChangeState(stateMachine.DeadState);
             }
             else
             {
@@ -75,25 +72,5 @@ public class Monster : MonoBehaviour
 
         }
     }
-
-    public void Dead()
-    {
-        GetComponent<Collider2D>().enabled = false;
-
-        StartCoroutine(FadeOut());
-        
-    }
-
-    IEnumerator FadeOut()
-    {
-        Instantiate(_monsterEffect, transform.position, Quaternion.identity);
-
-        //spriteRenderer.DOFade(0, 1f);
-        yield return new WaitForSeconds(2.5f);
-        GetComponent<Collider2D>().enabled = true;
-        //spriteRenderer.DOFade(1, 1f);
-        gameObject.SetActive(false);
-        
-        GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
-    }
 }
+
