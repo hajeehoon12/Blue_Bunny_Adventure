@@ -23,6 +23,8 @@ public class Monster : MonoBehaviour
 
     public event Action OnHealthChanged;
 
+    public GameObject MonsterLife;
+
     private void Awake()
     {
         AnimationData = new MonsterAnimationData();
@@ -67,6 +69,7 @@ public class Monster : MonoBehaviour
             if (Health <= 0)
             {
                 stateMachine.ChangeState(stateMachine.DeadState);
+                Instantiate(MonsterLife, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity); 
             }
             else
             {
