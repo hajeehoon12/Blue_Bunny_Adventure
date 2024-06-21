@@ -29,11 +29,11 @@ public class MonsterStateMachine : StateMachine
         Target = GameObject.FindGameObjectWithTag(Define.PLAYER_TAG);
         if(Target == null)
         {
-            Debug.Log($"MonsterStateMachine::FindTarget() Target is null");
+            /*Debug.Log($"MonsterStateMachine::FindTarget() Target is null");*/
             return null;
         }
 
-        Debug.Log($"Target : {Target.name}");
+        /*Debug.Log($"Target : {Target.name}");*/
         return Target;
     }
 }

@@ -8,14 +8,14 @@ public class MonsterGetHitState : MonsterBaseState
 
     public override void Enter()
     {
-        Debug.Log("MonsterGetHitState::Enter()");
+        /*Debug.Log("MonsterGetHitState::Enter()");*/
         base.Enter();
         StartAnimation(stateMachine.Monster.AnimationData.GetHitParameterHash);
     }
 
     public override void Exit()
     {
-        Debug.Log("MonsterGetHitState::Exit()");
+        /*Debug.Log("MonsterGetHitState::Exit()");*/
         base.Exit();
         StopAnimation(stateMachine.Monster.AnimationData.GetHitParameterHash);
     }

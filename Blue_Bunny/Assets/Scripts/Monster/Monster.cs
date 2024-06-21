@@ -58,7 +58,7 @@ public class Monster : MonoBehaviour
         {
             Health--;
 
-            Debug.Log($"Monster Health : {Health}");
+            /*Debug.Log($"Monster Health : {Health}");*/
 
             if (Health <= 0)
             {

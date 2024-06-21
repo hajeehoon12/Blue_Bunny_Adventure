@@ -8,7 +8,7 @@ public class MonsterDeadState : MonsterBaseState
 
     public override void Enter()
     {
-        Debug.Log("MonsterDeadState::Enter()");
+        /*Debug.Log("MonsterDeadState::Enter()");*/
         StartAnimation(stateMachine.Monster.AnimationData.DeadParameterHash);
 
         base.Enter();
@@ -16,7 +16,7 @@ public class MonsterDeadState : MonsterBaseState
 
     public override void Exit()
     {
-        Debug.Log("MonsterDeadState::Exit()");
+        /*Debug.Log("MonsterDeadState::Exit()");*/
         StopAnimation(stateMachine.Monster.AnimationData.DeadParameterHash);
         base.Exit();
     }
