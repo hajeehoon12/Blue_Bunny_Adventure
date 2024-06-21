@@ -10,7 +10,9 @@ public class MonsterDeadState : MonsterBaseState
     {
         /*Debug.Log("MonsterDeadState::Enter()");*/
         StartAnimation(stateMachine.Monster.AnimationData.DeadParameterHash);
+
         stateMachine.Monster.BoxCollider2D.enabled = false;
+        GameManager.Instance.spawnManager.aliveMonsterCount--;
 
         base.Enter();
     }
