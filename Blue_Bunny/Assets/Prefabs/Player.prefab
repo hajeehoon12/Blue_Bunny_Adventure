@@ -18,10 +18,9 @@ GameObject:
   - component: {fileID: 1698128626999075974}
   - component: {fileID: 4326917618531217044}
   - component: {fileID: 6500976779576107061}
-  - component: {fileID: 5986329902518861617}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052863b0f6c740e4999d2b8b082c08cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pet: {fileID: 0}
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -122,11 +120,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 6200000, guid: 7980feb44204883458eb32bb6049a022, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -135,7 +133,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!70 &1120360591173039896
 CapsuleCollider2D:
@@ -146,7 +144,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 7596478851436730474}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 7980feb44204883458eb32bb6049a022, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -264,7 +262,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
   stats: {fileID: 0}
-  battle: {fileID: 0}
 --- !u!95 &1698128626999075974
 Animator:
   serializedVersion: 5
@@ -315,22 +312,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
-  jumpPower: 15
-  bulletSpeed: 15
-  attackDamage: 1
-  playerHP: 100
-  playerMaxHP: 100
-  playerMP: 50
---- !u!114 &5986329902518861617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7596478851436730474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67268b52c6b559d4d9cbdb7414b31109, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthChangeDelay: 0.5
+  jumpPower: 10
+  bulletSpeed: 12

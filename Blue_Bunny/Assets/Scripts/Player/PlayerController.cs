@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
-using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : MonoBehaviour
 {
@@ -99,36 +98,26 @@ public class PlayerController : MonoBehaviour
 
     private void Move() // basic Move
     {
-        float moveVelocity;
-        float speed = CharacterManager.Instance.Player.stats.playerSpeed;
+        Vector3 moveVelocity = Vector3.zero;
 
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             if(canJump) animator.SetBool(isMoving, true);
-            moveVelocity = 1;
+            moveVelocity = Vector3.right;
             spriteRenderer.flipX = false;
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             if(canJump) animator.SetBool(isMoving, true);
-            moveVelocity = -1;
+            moveVelocity = Vector3.left;
             spriteRenderer.flipX = true;
         }
         else
         {
-            moveVelocity = 0;
             animator.SetBool(isMoving, false);
-            
         }
 
-        Vector3 movePosition = transform.position;
-
-        movePosition.x = Mathf.MoveTowards(transform.position.x, transform.position.x + moveVelocity * Time.deltaTime * speed,  Time.deltaTime);
-
-        rigid.MovePosition(movePosition);
-        
-        //rigid.velocity = new Vector2( speed* moveVelocity, rigid.velocity.y);
-        //transform.position += moveVelocity * CharacterManager.Instance.Player.stats.playerSpeed * Time.deltaTime;          
+        transform.position += moveVelocity * CharacterManager.Instance.Player.stats.playerSpeed * Time.deltaTime;          
     }
 
     public void OnJump(InputAction.CallbackContext context) // space
@@ -243,7 +232,7 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log("Do Red");
 
-        float knockBackPower = 2f;
+        float knockBackPower = 5f;
         float Dir = spriteRenderer.flipX ? -1 : 1;
 
         StartCoroutine(ColorChanged());
