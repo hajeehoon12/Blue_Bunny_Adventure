@@ -34,9 +34,12 @@ public class Monster : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         stateMachine = new MonsterStateMachine(this);
+    }
 
+    private void OnEnable()
+    {
+        stateMachine.Monster.BoxCollider2D.enabled = true;
         Health = Data.MaxHealth;
-
         stateMachine.ChangeState(stateMachine.IdleState);
     }
 
