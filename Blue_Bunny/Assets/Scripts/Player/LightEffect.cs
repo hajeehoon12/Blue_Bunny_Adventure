@@ -7,8 +7,6 @@ public class LightEffect : MonoBehaviour
 {
 
     Transform target;
-   
-
 
     private void Awake()
     {
@@ -58,7 +56,7 @@ public class LightEffect : MonoBehaviour
         float time = 0f;
         float totalTime = 3f;
 
-        while (distance > 0.2f || time < 4f)
+        while (distance > 0.2f || time < 2f)
         {
             time += 0.2f;
             float fraction = time / totalTime;
@@ -73,9 +71,8 @@ public class LightEffect : MonoBehaviour
             yield return new WaitForSeconds(interval);
         }
 
-        
-
-
-        Destroy(gameObject);
+        Destroy(gameObject, 0.2f);
     }
+
+
 }

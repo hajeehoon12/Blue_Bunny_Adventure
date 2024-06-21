@@ -23,6 +23,8 @@ public class Monster : MonoBehaviour
 
     public event Action OnHealthChanged;
 
+    public GameObject MonsterLife;
+
     private void Awake()
     {
         AnimationData = new MonsterAnimationData();
@@ -62,11 +64,13 @@ public class Monster : MonoBehaviour
             Health--;
             OnHealthChanged?.Invoke();
             /*Debug.Log($"Monster Health : {Health}");*/
-            AudioManager.instance.PlaySFX("MonsterGetHit", 0.2f);
+            AudioManager.instance.PlayPitchSFX("MonsterGetHit", 0.2f);
 
             if (Health <= 0)
             {
                 stateMachine.ChangeState(stateMachine.DeadState);
+                GameObject lifeLight = Instantiate(MonsterLife, CharacterManager.Instance.Player.transform.position, Quaternion.identity); 
+                lifeLight.transform.position = transform.position;
             }
             else
             {
