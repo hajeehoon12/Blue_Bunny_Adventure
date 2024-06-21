@@ -236,8 +236,11 @@ public class PlayerController : MonoBehaviour
         float Dir = spriteRenderer.flipX ? -1 : 1;
 
         StartCoroutine(ColorChanged());
+
+        
         rigid.velocity = Vector3.zero;
-        rigid.AddForce( (Vector2.up + Dir * new Vector2(1.5f, 0)) * rigid.mass * knockBackPower , ForceMode2D.Impulse);
+        rigid.AddForce((Vector2.up + Dir * new Vector2(1.5f, 0)) * rigid.mass * knockBackPower , ForceMode2D.Impulse);
+        canJump = false;
         
         
     }
