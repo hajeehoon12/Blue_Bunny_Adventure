@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using DG.Tweening;
 
 public class BossController : MonoBehaviour
 {
@@ -153,11 +154,22 @@ public class BossController : MonoBehaviour
         {
             rollCoolTime -= rollInterval;
             OnRoll();
+            return;
         }
         else
         { 
             rollCoolTime += Time.deltaTime;
         }
+
+        if (diff.y > 0.7f)
+        {
+            TryDown();
+        }
+        else if (diff.y < -0.7f)
+        {
+            TryJump();
+        }
+
 
 
     }
@@ -176,7 +188,7 @@ public class BossController : MonoBehaviour
     {
         canDoDown = false;
         playerCollider.enabled = false;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.03f);
         playerCollider.enabled = true;
         canDoDown = true;
     }
@@ -319,6 +331,7 @@ public class BossController : MonoBehaviour
         Vector3 moveVelocity = Vector3.zero;
 
         if (ghostDash.makeGhost) return;
+
         
 
         if (transform.position.x - _player.position.x > 0)
@@ -338,11 +351,17 @@ public class BossController : MonoBehaviour
             animator.SetBool(isRunning, false);
         }
 
+        float dir = spriteRenderer.flipX ? -1 : 1;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(dir * boundPlayer.x, boundPlayer.y), new Vector2(dir, 0), 0.02f, groundLayerMask);
+        if (hit.collider?.name != null) return;
+
         if (Rolling)
         {
             transform.position += moveVelocity * 1.2f * maxSpeed * Time.deltaTime;
             return;
         }
+
+
         transform.position += moveVelocity * maxSpeed * Time.deltaTime;
     }
 
@@ -389,7 +408,7 @@ public class BossController : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collider) // Jump and wall Climb check
     {
         //Debug.Log(collider.gameObject.tag);
-        if (collider.gameObject.CompareTag("Floor"))
+        if (collider.gameObject.CompareTag(Define.FLOOR_TAG))
         {
             //Debug.Log(boundPlayer.x);
             //Debug.Log(boundPlayer.y);
@@ -420,6 +439,22 @@ public class BossController : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag(Define.BULLET_TAG))
+        {
+            Debug.Log("BossGotHit!!");
+            StartCoroutine(ColorRed());
+        }
+    }
+
+    IEnumerator ColorRed()
+    {
+        spriteRenderer.DOColor(Color.red, 0.2f);
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.DOColor(Color.white, 0.2f);
+            
+    }
 
 
 }
