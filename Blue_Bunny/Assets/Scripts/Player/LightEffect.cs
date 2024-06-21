@@ -7,8 +7,6 @@ public class LightEffect : MonoBehaviour
 {
 
     Transform target;
-   
-
 
     private void Awake()
     {
@@ -73,9 +71,8 @@ public class LightEffect : MonoBehaviour
             yield return new WaitForSeconds(interval);
         }
 
-        
-
-
-        Destroy(gameObject);
+        Destroy(gameObject, 0.2f);
     }
+
+
 }

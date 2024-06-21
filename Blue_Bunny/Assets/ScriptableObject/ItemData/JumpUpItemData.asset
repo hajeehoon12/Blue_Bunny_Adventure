@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182aea01f241bd548a9f857bbed8be73, type: 3}
   m_Name: JumpUpItemData
   m_EditorClassIdentifier: 
-  itemName: 
-  itemdescription: 
-  itemIcon: {fileID: 0}
+  itemName: Jump Potion
+  itemdescription: Questionable potion. My body feels lighter.
+  itemIcon: {fileID: 21300000, guid: 2c8d3bd6c95ad0a4b9c5ed8c367d65d7, type: 3}

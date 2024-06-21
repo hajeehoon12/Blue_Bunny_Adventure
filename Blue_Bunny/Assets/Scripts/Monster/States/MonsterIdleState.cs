@@ -59,13 +59,13 @@ public class MonsterIdleState : MonsterBaseState
         else if (stateMachine.Monster.Data.MonsterType == MonsterType.Vertical)
         {
             // 땅 위면 방향 뒤집기
-            if (IsRayHitGround(1f, Vector3.zero, Vector3.down, Color.yellow) == true)
+            if (IsRayHitGround(0.7f, Vector3.zero, Vector3.down, Color.yellow) == true)
             {
                 idleMoveDirection *= -1;
             }
 
             // 너무 위에 있으면 방향 바꾸기
-            if (IsRayHitGround(4f, Vector3.zero, Vector3.down, Color.green) == false)
+            if (IsRayHitGround(stateMachine.Monster.Data.IdleFlyDistance, Vector3.zero, Vector3.down, Color.green) == false)
             {
                 idleMoveDirection *= -1;
             }
