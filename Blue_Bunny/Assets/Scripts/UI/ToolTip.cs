@@ -6,13 +6,9 @@ public class ToolTip : MonoBehaviour
     public TextMeshProUGUI Name;
     public TextMeshProUGUI Description;
 
-    public void ChangeName(string name)
+    public void SetItemInfo(ItemDataSO itemData)
     {
-        Name.text = name;
-    }
-
-    public void ChangeDescription(string description)
-    {
-        Description.text = description;
+        Name.text = itemData.name;
+        Description.text = itemData.itemdescription;
     }
 }
