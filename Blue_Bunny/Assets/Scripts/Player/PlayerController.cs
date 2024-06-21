@@ -115,7 +115,12 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool(isMoving, false);
+            return;
         }
+
+        float dir = spriteRenderer.flipX ? -1 : 1;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position +new Vector3(dir * boundPlayer.x ,boundPlayer.y) , new Vector2(dir, 0), 0.02f, groundLayerMask);
+        if (hit.collider?.name != null) return;
 
         transform.position += moveVelocity * CharacterManager.Instance.Player.stats.playerSpeed * Time.deltaTime;          
     }
@@ -126,6 +131,7 @@ public class PlayerController : MonoBehaviour
         {
             if (canJump)
             {
+                rigid.velocity = Vector3.zero;
                 animator.SetBool(isMoving, false);
                 rigid.AddForce(Vector2.up * CharacterManager.Instance.Player.stats.jumpPower * rigid.mass, ForceMode2D.Impulse);
                 StartCoroutine(ChangeJumpBool());
@@ -232,14 +238,14 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log("Do Red");
 
-        float knockBackPower = 5f;
+        float knockBackPower = 2f;
         float Dir = spriteRenderer.flipX ? -1 : 1;
 
         StartCoroutine(ColorChanged());
 
         canJump = false;
         rigid.velocity = Vector3.zero;
-        rigid.AddForce((Vector2.up + Dir * new Vector2(1.5f, 0)) * rigid.mass * knockBackPower , ForceMode2D.Impulse);
+        rigid.AddForce((Vector2.up + Dir * new Vector2(1f, 0)) * rigid.mass * knockBackPower , ForceMode2D.Impulse);
         
         
         
