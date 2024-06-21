@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public SpawnManager spawnManager;
 
     public GameObject[] mapPrefabs;
+
     public int stageIdx = 0;
 
     private void Awake()

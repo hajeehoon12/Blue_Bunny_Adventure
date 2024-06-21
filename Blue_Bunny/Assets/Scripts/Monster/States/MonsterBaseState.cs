@@ -80,7 +80,7 @@ public class MonsterBaseState : IState
     {
         if(stateMachine.Target == null)
         {
-            Debug.Log($"MonsterBaseState::IsInChasingRange() : Target is null");
+            /*Debug.Log($"MonsterBaseState::IsInChasingRange() : Target is null");*/
 
             return false;
         }
@@ -93,9 +93,9 @@ public class MonsterBaseState : IState
     protected void RotateSprite(Vector2 direction)
     {
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        stateMachine.Monster.SpriteRenderer.flipX = Mathf.Abs(rotZ) > 90f;
+        stateMachine.Monster.spriteRenderer.flipX = Mathf.Abs(rotZ) > 90f;
 
-        Debug.Log($"MonsterBaseState::RotateSprite()");
+        /*Debug.Log($"MonsterBaseState::RotateSprite()");*/
     }
 
     protected bool IsRayHitGround(float distance, Vector3 offset, Vector3 toward, Color color)

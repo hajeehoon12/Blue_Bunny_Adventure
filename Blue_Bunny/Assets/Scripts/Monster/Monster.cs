@@ -15,7 +15,7 @@ public class Monster : MonoBehaviour
     public MonsterData Data => data;
     public Animator Animator { get; private set; }
     public BoxCollider2D BoxCollider2D { get; private set; }
-    public SpriteRenderer SpriteRenderer { get; private set; }
+    public SpriteRenderer spriteRenderer;
 
     private MonsterStateMachine stateMachine;
 
@@ -31,15 +31,15 @@ public class Monster : MonoBehaviour
 
         Animator = GetComponentInChildren<Animator>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
-        SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         stateMachine = new MonsterStateMachine(this);
-
-        Health = Data.MaxHealth;
     }
 
-    private void Start()
+    private void OnEnable()
     {
+        stateMachine.Monster.BoxCollider2D.enabled = true;
+        Health = Data.MaxHealth;
         stateMachine.ChangeState(stateMachine.IdleState);
     }
 
@@ -60,37 +60,18 @@ public class Monster : MonoBehaviour
         if (collision.gameObject.CompareTag(Define.BULLET_TAG)) // When Hit by Bullet
         {
             Health--;
-
-            Debug.Log($"Monster Health : {Health}");
+            OnHit?.Invoke();
+            /*Debug.Log($"Monster Health : {Health}");*/
 
             if (Health <= 0)
             {
-                Dead();
+                stateMachine.ChangeState(stateMachine.DeadState);
             }
             else
             {
                 stateMachine.ChangeState(stateMachine.GetHitState);
-                OnHit?.Invoke();
             }
-
         }
     }
-
-    public void Dead()
-    {
-        GetComponent<Collider2D>().enabled = false;
-        StartCoroutine(FadeOut());
-        GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
-    }
-
-    IEnumerator FadeOut()
-    {
-        Instantiate(_monsterEffect, transform.position, Quaternion.identity);
-
-        GetComponentInChildren<SpriteRenderer>().DOFade(0, 2f);
-        yield return new WaitForSeconds(2.5f);
-        gameObject.SetActive(false);
-        GetComponent<Collider2D>().enabled = true;
-        GetComponentInChildren<SpriteRenderer>().color += Color.black;
-    }
 }
+

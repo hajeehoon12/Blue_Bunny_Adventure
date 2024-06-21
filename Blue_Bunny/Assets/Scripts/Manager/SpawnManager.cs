@@ -14,6 +14,7 @@ public class SpawnManager : MonoBehaviour
     public int aliveMonsterCount = 0;
 
     public GameObject portalPrefab;
+    public GameObject[] itemPrefabs;
 
     public void SpawnMonster()
     {
@@ -38,6 +39,7 @@ public class SpawnManager : MonoBehaviour
         if(aliveMonsterCount == 0)
         {
             SpawnPortal();
+            SpawnRewardChest();
         }
     }
 
@@ -45,5 +47,17 @@ public class SpawnManager : MonoBehaviour
     {
         Instantiate(portalPrefab, nowMap.portalPos);
         Debug.Log("다음 스테이지로 갈 수 있는 포탈이 생성되었습니다!");
+    }
+
+    public void SpawnRewardChest()
+    {
+        nowMap.SetRewardChestOn();
+        Debug.Log("보상이 들어있는 상자가 등장했습니다!");
+    }
+
+    public void SpawnBoxRewardItem(Transform spawnTr)
+    {
+        int rdIndex = Random.Range(0, itemPrefabs.Length);
+        Instantiate(itemPrefabs[rdIndex], spawnTr);
     }
 }

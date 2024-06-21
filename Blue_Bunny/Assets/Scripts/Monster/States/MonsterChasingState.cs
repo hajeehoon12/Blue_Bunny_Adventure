@@ -10,14 +10,14 @@ public class MonsterChasingState : MonsterBaseState
 
     public override void Enter()
     {
-        Debug.Log("MonsterChasingState::Enter()");
+        /*Debug.Log("MonsterChasingState::Enter()");*/
         base.Enter();
         StartAnimation(stateMachine.Monster.AnimationData.ChasingParameterHash);
     }
 
     public override void Exit()
     {
-        Debug.Log("MonsterChasingState::Exit()");
+        /*Debug.Log("MonsterChasingState::Exit()");*/
         base.Exit();
         StopAnimation(stateMachine.Monster.AnimationData.ChasingParameterHash);
     }
