@@ -62,6 +62,7 @@ public class Monster : MonoBehaviour
             Health--;
             OnHealthChanged?.Invoke();
             /*Debug.Log($"Monster Health : {Health}");*/
+            AudioManager.instance.PlaySFX("MonsterGetHit", 0.2f);
 
             if (Health <= 0)
             {
