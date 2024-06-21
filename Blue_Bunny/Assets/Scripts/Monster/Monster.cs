@@ -15,14 +15,13 @@ public class Monster : MonoBehaviour
     public MonsterData Data => data;
     public Animator Animator { get; private set; }
     public BoxCollider2D BoxCollider2D { get; private set; }
-    public SpriteRenderer spriteRenderer;
+    public SpriteRenderer SpriteRenderer { get; private set; }
 
     private MonsterStateMachine stateMachine;
 
-    public GameObject _monsterEffect;
     public float Health { get; set; } = 3f;
 
-    public event Action OnHit;
+    public event Action OnHealthChanged;
 
     private void Awake()
     {
@@ -31,7 +30,7 @@ public class Monster : MonoBehaviour
 
         Animator = GetComponentInChildren<Animator>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         stateMachine = new MonsterStateMachine(this);
     }
@@ -40,6 +39,7 @@ public class Monster : MonoBehaviour
     {
         stateMachine.Monster.BoxCollider2D.enabled = true;
         Health = Data.MaxHealth;
+        OnHealthChanged?.Invoke();
         stateMachine.ChangeState(stateMachine.IdleState);
     }
 
@@ -60,7 +60,7 @@ public class Monster : MonoBehaviour
         if (collision.gameObject.CompareTag(Define.BULLET_TAG)) // When Hit by Bullet
         {
             Health--;
-            OnHit?.Invoke();
+            OnHealthChanged?.Invoke();
             /*Debug.Log($"Monster Health : {Health}");*/
 
             if (Health <= 0)
