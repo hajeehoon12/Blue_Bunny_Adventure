@@ -10,12 +10,15 @@ public class MonsterStateMachine : StateMachine
     public MonsterIdleState IdleState { get; }
     public MonsterChasingState ChasingState { get; }
 
+    public MonsterGetHitState GetHitState { get; }
+
     public MonsterStateMachine(Monster monster)
     {
         this.Monster = monster;
 
         IdleState = new MonsterIdleState(this);
         ChasingState = new MonsterChasingState(this);
+        GetHitState = new MonsterGetHitState(this);
 
         Target = FindTarget();
     }
