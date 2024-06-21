@@ -115,6 +115,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool(isMoving, false);
+            return;
         }
 
         float dir = spriteRenderer.flipX ? -1 : 1;
