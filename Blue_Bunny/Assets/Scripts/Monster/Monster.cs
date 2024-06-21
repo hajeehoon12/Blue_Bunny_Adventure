@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using System;
 
 /// <summary>
 /// Monster Data / StateMachin 갖고있다
@@ -17,6 +19,11 @@ public class Monster : MonoBehaviour
 
     private MonsterStateMachine stateMachine;
 
+    public GameObject _monsterEffect;
+    public float Health { get; set; } = 3f;
+
+    public event Action OnHit;
+
     private void Awake()
     {
         AnimationData = new MonsterAnimationData();
@@ -27,6 +34,8 @@ public class Monster : MonoBehaviour
         SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         stateMachine = new MonsterStateMachine(this);
+
+        Health = Data.MaxHealth;
     }
 
     private void Start()
@@ -43,5 +52,45 @@ public class Monster : MonoBehaviour
     private void FixedUpdate()
     {
         stateMachine.FixedUpdate();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        if (collision.gameObject.CompareTag(Define.BULLET_TAG)) // When Hit by Bullet
+        {
+            Health--;
+
+            Debug.Log($"Monster Health : {Health}");
+
+            if (Health <= 0)
+            {
+                Dead();
+            }
+            else
+            {
+                stateMachine.ChangeState(stateMachine.GetHitState);
+                OnHit?.Invoke();
+            }
+
+        }
+    }
+
+    public void Dead()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        StartCoroutine(FadeOut());
+        GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
+    }
+
+    IEnumerator FadeOut()
+    {
+        Instantiate(_monsterEffect, transform.position, Quaternion.identity);
+
+        GetComponentInChildren<SpriteRenderer>().DOFade(0, 2f);
+        yield return new WaitForSeconds(2.5f);
+        gameObject.SetActive(false);
+        GetComponent<Collider2D>().enabled = true;
+        GetComponentInChildren<SpriteRenderer>().color += Color.black;
     }
 }

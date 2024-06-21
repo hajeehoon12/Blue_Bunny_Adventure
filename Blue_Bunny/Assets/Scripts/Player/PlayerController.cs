@@ -115,7 +115,12 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool(isMoving, false);
+            return;
         }
+
+        float dir = spriteRenderer.flipX ? -1 : 1;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position +new Vector3(dir * boundPlayer.x ,boundPlayer.y) , new Vector2(dir, 0), 0.02f, groundLayerMask);
+        if (hit.collider?.name != null) return;
 
         transform.position += moveVelocity * CharacterManager.Instance.Player.stats.playerSpeed * Time.deltaTime;          
     }
@@ -126,6 +131,7 @@ public class PlayerController : MonoBehaviour
         {
             if (canJump)
             {
+                rigid.velocity = Vector3.zero;
                 animator.SetBool(isMoving, false);
                 rigid.AddForce(Vector2.up * CharacterManager.Instance.Player.stats.jumpPower * rigid.mass, ForceMode2D.Impulse);
                 StartCoroutine(ChangeJumpBool());
@@ -147,7 +153,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(boundPlayer.y);
         if (canJump) return;
         
-        RaycastHit2D hit = Physics2D.Raycast(transform.position , new Vector2(0, -1), 0.1f, groundLayerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position , new Vector2(0, -1), 0.05f, groundLayerMask);
         //Debug.Log(hit.collider?.name);
 
         if (hit.collider?.name != null)
@@ -198,13 +204,13 @@ public class PlayerController : MonoBehaviour
         {
             if (spriteRenderer.flipX)
             {
-                transform.position -= new Vector3(0.2f, 0, 0);
+                transform.position -= new Vector3(0.1f, 0, 0);
             }
             else
             {
-                transform.position += new Vector3(0.2f, 0, 0);
+                transform.position += new Vector3(0.1f, 0, 0);
             }
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.01f);
         }
 
         yield return null;
@@ -220,7 +226,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-    private void OnCollisionEnter2D(Collision2D collision) // Check if player get on floor
+    private void OnCollisionStay2D(Collision2D collision) // Check if player get on floor
     {
         JumpCheck();
 
@@ -248,12 +254,15 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log("Do Red");
 
-        float knockBackPower = 5f;
+        float knockBackPower = 2f;
         float Dir = spriteRenderer.flipX ? -1 : 1;
 
         StartCoroutine(ColorChanged());
+
+        canJump = false;
         rigid.velocity = Vector3.zero;
-        rigid.AddForce( (Vector2.up + Dir * new Vector2(1.5f, 0)) * rigid.mass * knockBackPower , ForceMode2D.Impulse);
+        rigid.AddForce((Vector2.up + Dir * new Vector2(1f, 0)) * rigid.mass * knockBackPower , ForceMode2D.Impulse);
+        
         
         
     }

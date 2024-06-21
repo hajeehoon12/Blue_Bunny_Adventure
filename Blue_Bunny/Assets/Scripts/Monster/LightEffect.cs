@@ -68,10 +68,14 @@ public class LightEffect : MonoBehaviour
 
 
 
-            //transform.DOLocalMove(target.position, 4 * distance / firstDistance);
+            transform.DOLocalMove(target.position, 4 * distance / firstDistance);
 
             yield return new WaitForSeconds(interval);
         }
+
+        
+
+
         Destroy(gameObject);
     }
 }
