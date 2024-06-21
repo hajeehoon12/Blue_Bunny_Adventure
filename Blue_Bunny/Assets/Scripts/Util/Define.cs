@@ -12,4 +12,6 @@ public class Define
     public const string BOSS_TAG = "Boss";
     public const string FLOOR_TAG = "Floor";
     
+    public const string MainScene = "MainScene";
+    public const string StartScene = "StartScene";
 }
