@@ -29,6 +29,10 @@ public class PlayerController : MonoBehaviour
     private bool canDash = true;
     private bool isAttacked = false;
 
+    Coroutine fireCoroutine;
+
+    
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -53,16 +57,33 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+
     }
 
 
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed)
+        if (context.phase == InputActionPhase.Started)
         {
-            BulletAttack();
+            fireCoroutine = StartCoroutine(FireRoutine());
         }
+        if (context.phase == InputActionPhase.Canceled)
+        {
+            StopCoroutine(fireCoroutine);
+        }
+    }
+
+    IEnumerator FireRoutine()
+    {
+
+        while (true)
+        {
+            
+            BulletAttack();
+            yield return new WaitForSeconds(CharacterManager.Instance.Player.stats.attackSpeed);
+        }
+    
     }
 
 

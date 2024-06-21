@@ -17,4 +17,6 @@ public class PlayerStat:MonoBehaviour
     public float playerMaxHP;
 
     public float playerMP;
+
+    public float attackSpeed;
 }
