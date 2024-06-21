@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182aea01f241bd548a9f857bbed8be73, type: 3}
   m_Name: AttackItemData
   m_EditorClassIdentifier: 
-  itemName: 
-  itemdescription: 
-  itemIcon: {fileID: 0}
+  itemName: Sharp Knife
+  itemdescription: 'Just Sharp Knife. Just having it is dangerous. '
+  itemIcon: {fileID: 21300000, guid: 58dcf045746a3554bacd0bc2dc8c45c2, type: 3}

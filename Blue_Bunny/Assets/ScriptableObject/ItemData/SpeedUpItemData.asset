@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182aea01f241bd548a9f857bbed8be73, type: 3}
   m_Name: SpeedUpItemData
   m_EditorClassIdentifier: 
-  itemName: 
-  itemdescription: 
-  itemIcon: {fileID: 0}
+  itemName: Racer's Handle
+  itemdescription: You can feel the instinct to run just by holding it.
+  itemIcon: {fileID: 21300000, guid: 3cd854f411d57ad4c96c40564503cde4, type: 3}
