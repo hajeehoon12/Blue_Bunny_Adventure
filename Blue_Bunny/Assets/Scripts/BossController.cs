@@ -58,6 +58,10 @@ public class BossController : MonoBehaviour
 
     private bool canDoDown = true;
 
+    public bool isBossDie = false;
+    public float bossMaxHP = 5f;
+    public float bossHP;
+
 
 
     void Awake()
@@ -75,15 +79,19 @@ public class BossController : MonoBehaviour
         playerGravityScale = rigid.gravityScale;
         boundPlayer = playerCollider.bounds.extents;
         _player = CharacterManager.Instance.Player.transform;
+
+        bossHP = bossMaxHP;
+
     }
 
     private void FixedUpdate()
     {
+        if (isBossDie) return;
         Move();
     }
     void Update()
     {
-        
+        if (isBossDie) return;
         //OnDash()
         //OnRoll();
         JumpCheck(); // Checking wheter can jump
@@ -445,7 +453,29 @@ public class BossController : MonoBehaviour
         {
             Debug.Log("BossGotHit!!");
             StartCoroutine(ColorRed());
+
+            float damage = CharacterManager.Instance.Player.stats.attackDamage;
+            Debug.Log(damage);
+            if (bossHP >= damage)
+            {
+                bossHP -= damage;
+                Debug.Log("남은 체력 : " + (bossHP));
+            }
+            else
+            {
+                Debug.Log("사망");
+                CallDie();
+            }
+
         }
+    }
+
+    void CallDie()
+    {
+        Debug.Log("Boss Dead!!");
+        isBossDie = true;
+        animator.SetBool(isRunning, false);
+        
     }
 
     IEnumerator ColorRed()

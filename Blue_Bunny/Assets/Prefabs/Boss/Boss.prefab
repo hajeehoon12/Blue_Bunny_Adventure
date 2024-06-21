@@ -137,6 +137,9 @@ MonoBehaviour:
   attackRate: 10
   ComboCount: 0
   _player: {fileID: 0}
+  isBossDie: 0
+  bossMaxHP: 5
+  bossHP: 0
 --- !u!50 &6313621975468925686
 Rigidbody2D:
   serializedVersion: 4
