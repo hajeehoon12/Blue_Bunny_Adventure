@@ -117,7 +117,15 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3255251551348193598, guid: d2b713d4e6610b64db2f5ff9b1a3f757, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255251551348193598, guid: d2b713d4e6610b64db2f5ff9b1a3f757, type: 3}
       propertyPath: CollisionModule.collisionMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255251551348193598, guid: d2b713d4e6610b64db2f5ff9b1a3f757, type: 3}
+      propertyPath: CollisionModule.collisionMessages
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3255251551348193598, guid: d2b713d4e6610b64db2f5ff9b1a3f757, type: 3}

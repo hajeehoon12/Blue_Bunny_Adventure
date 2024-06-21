@@ -261,7 +261,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log(other.name);
+        playerBattle.ChangeHealth(-2f);
     }
 
 
