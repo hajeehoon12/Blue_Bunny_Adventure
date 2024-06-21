@@ -36,7 +36,7 @@ public class CloudBoss : MonoBehaviour
 
     IEnumerator CloudPattern()
     {
-
+        float duringTime = 3f;
         while (true)
         {
             switch (patternNum % 3)
@@ -46,9 +46,10 @@ public class CloudBoss : MonoBehaviour
                     break;
                 case 1:
                     StartCoroutine(CloudRainMove());
+                    duringTime = 6f;
                     break;
                 case 2:
-                    //Rain.Stop();
+                    duringTime = 3f;
                     break;
 
 
@@ -57,7 +58,7 @@ public class CloudBoss : MonoBehaviour
             
             }
 
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(duringTime);
 
             patternNum++;
         }
@@ -67,8 +68,15 @@ public class CloudBoss : MonoBehaviour
     IEnumerator CloudRainMove()
     {
         Rain.Play();
-        yield return new WaitForSeconds(1f);
-        
+
+        float Dir = transform.position.x > 0 ? -1 : 1;
+
+        transform.DOMoveX((CameraManager.Instance.mapSize.x -5) * Dir, 6f);
+
+
+        yield return new WaitForSeconds(6f);
+
+        Rain.Stop();
     }
 
 
