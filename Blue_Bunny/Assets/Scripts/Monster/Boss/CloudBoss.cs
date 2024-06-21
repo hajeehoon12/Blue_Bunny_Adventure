@@ -69,6 +69,8 @@ public class CloudBoss : MonoBehaviour
 
     void SummonServant() // Summon Servants
     {
+        AudioManager.instance.PlayPitchSFX("Summon", 0.2f);
+
         switch (monsterNum % 3)
         {
             case 0:
