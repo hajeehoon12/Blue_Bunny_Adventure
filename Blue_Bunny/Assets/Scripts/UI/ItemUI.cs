@@ -44,11 +44,9 @@ public class ItemUI : MonoBehaviour
 
     public void AddItem(ItemDataSO itemData)
     {
-        if (GetEmptySlot())
-        {
-            slots[slotIndex].Item = itemData;
-            slots[slotIndex].Set();
-        }
+        GetEmptySlot();
+        slots[slotIndex].Item = itemData;
+        slots[slotIndex].Set();
     }
 
     //업데이트UI
@@ -62,17 +60,19 @@ public class ItemUI : MonoBehaviour
     }
 
     //비어있는 곳에 넣어주는 로직
-    bool GetEmptySlot()
+    void GetEmptySlot()
     {
-        for (int i = 0; i < slots.Length; i++) 
+        for (int i = 0; i < slots.Length; i++)
+            if (!slots[i].IsExist) slotIndex = i;
+    }
+
+    public bool IsFull()
+    {
+        foreach (Slot slot in slots)
         {
-            if (!slots[i].IsExist)
-            {
-                slotIndex = i;
-                return true;
-            }
+            if (!slot.IsExist) return false;
         }
 
-        return false;
+        return true;
     }
 }
