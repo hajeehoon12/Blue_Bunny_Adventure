@@ -11,7 +11,7 @@ public class MonsterIdleState : MonsterBaseState
     }
     public override void Enter()
     {
-        Debug.Log("MonsterIdleState::Enter()");
+        /*Debug.Log("MonsterIdleState::Enter()");*/
 
         base.Enter();
         StartAnimation(stateMachine.Monster.AnimationData.IdleParameterHash);
@@ -20,7 +20,7 @@ public class MonsterIdleState : MonsterBaseState
 
     public override void Exit()
     {
-        Debug.Log("MonsterIdleState::Exit()");
+        /*Debug.Log("MonsterIdleState::Exit()");*/
 
         base.Exit();
         StopAnimation(stateMachine.Monster.AnimationData.IdleParameterHash);
@@ -86,7 +86,6 @@ public class MonsterIdleState : MonsterBaseState
             if (stateMachine.Monster.Data.MonsterType == MonsterType.Horizontal)
             {
                 idleMoveDirection = new Vector3(randomValue, 0, 0);
-                Debug.Log($"MonsterIdleState::SetDirectionCoroutine() : {idleMoveDirection}");
                 RotateSprite(idleMoveDirection);
             }
             else
