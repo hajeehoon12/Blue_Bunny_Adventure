@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 /// <summary>
 /// Monster Data / StateMachin 갖고있다
@@ -16,6 +17,9 @@ public class Monster : MonoBehaviour
     public SpriteRenderer SpriteRenderer { get; private set; }
 
     private MonsterStateMachine stateMachine;
+
+    public GameObject _monsterEffect;
+    public float tempHealth = 5f;
 
     private void Awake()
     {
@@ -43,5 +47,44 @@ public class Monster : MonoBehaviour
     private void FixedUpdate()
     {
         stateMachine.FixedUpdate();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        if (collision.gameObject.CompareTag(Define.BULLET_TAG)) // When Hit by Bullet
+        {
+            tempHealth--;
+
+            Debug.Log($"Monster Health : {tempHealth}");
+
+            if (tempHealth <= 0)
+            {
+                Dead();
+            }
+            else
+            {
+                stateMachine.ChangeState(stateMachine.GetHitState);
+            }
+
+        }
+    }
+
+    public void Dead()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        StartCoroutine(FadeOut());
+        GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
+    }
+
+    IEnumerator FadeOut()
+    {
+        Instantiate(_monsterEffect, transform.position, Quaternion.identity);
+
+        GetComponentInChildren<SpriteRenderer>().DOFade(0, 2f);
+        yield return new WaitForSeconds(2.5f);
+        gameObject.SetActive(false);
+        GetComponent<Collider2D>().enabled = true;
+        GetComponentInChildren<SpriteRenderer>().color += Color.black;
     }
 }
