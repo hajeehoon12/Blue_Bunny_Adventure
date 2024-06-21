@@ -44,7 +44,7 @@ public class MonsterChasingState : MonsterBaseState
 
             // 이동방향 레이가 땅에 닿아있을 때만 앞으로 가기
             if (IsRayHitGround(1, moveDirection, Vector3.down, Color.red) == true &&
-                IsRayHitGround(1.5f, Vector3.zero, Vector3.right, Color.black) == false)
+                IsRayHitGround(1.5f, new Vector3(-0.5f, 0, 0), new Vector3(0.7f, 0, 0), Color.black))
             {
                 stateMachine.Monster.transform.position += moveDirection * stateMachine.Monster.Data.ChasingSpeed * Time.deltaTime;
             }
