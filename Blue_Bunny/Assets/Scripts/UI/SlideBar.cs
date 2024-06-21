@@ -54,4 +54,9 @@ public class SlideBar : MonoBehaviour, ISlideBar
         if (Current <= 0.0f) SlideBarImage.fillAmount = 0.0f;
         else SlideBarImage.fillAmount = Current / Max;
     }
+
+    public void ChangeBarAlpha(float _alpha)
+    {
+        SlideBarImage.color = new Color(SlideBarImage.color.r, SlideBarImage.color.g, SlideBarImage.color.b, _alpha);
+    }
 }

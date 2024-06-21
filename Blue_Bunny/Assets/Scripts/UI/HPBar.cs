@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.UI;
 
 public class HPBar : SlideBar
@@ -13,16 +14,6 @@ public class HPBar : SlideBar
     }
 
     //체력이 찰 때, 호출하는 함수
-    //public override void UpdateBar_Add(float amount)
-    //{
-    //    base.UpdateBar_Add(amount);
-    //}
-
-    ////체력이 빠질 때, 호출하는 함수
-    //public override void UpdateBar_Sub(float amount)
-    //{
-    //    base.UpdateBar_Sub(amount);
-    //}
     public override void UpdateBar_Add()
     {
         Max = CharacterManager.Instance.Player.battle.MaxHealth;
@@ -36,5 +27,10 @@ public class HPBar : SlideBar
         Max = CharacterManager.Instance.Player.battle.MaxHealth;
         Current = CharacterManager.Instance.Player.battle.CurrentHealth;
         base.UpdateBar_Sub();
+    }
+
+    public void ChangeBGAlpha(float _alpha)
+    {
+        BackgroundBar.color = new Color(BackgroundBar.color.r, BackgroundBar.color.g, BackgroundBar.color.b, _alpha);
     }
 }

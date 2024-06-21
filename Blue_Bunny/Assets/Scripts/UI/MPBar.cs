@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.UI;
 
 public class MPBar : SlideBar
@@ -9,25 +10,20 @@ public class MPBar : SlideBar
         UpdateBar_Add();
     }
 
-    //마나가 찰 때, 호출하는 함수 ( 매개변수는 절대값을 넣어준다. )
-    //public override void UpdateBar_Add(float amount)
-    //{
-    //    base.UpdateBar_Add(amount);
-    //}
-
-    ////마나가 빠질 때, 호출하는 함수 ( 매개변수는 절대값을 넣어준다. )
-    //public override void UpdateBar_Sub(float amount)
-    //{
-    //    base.UpdateBar_Sub(amount);
-    //}
+    //마나가 찰 때, 호출하는 함수
     public override void UpdateBar_Add()
     {
         base.UpdateBar_Add();
     }
 
-    //마나가 빠질 때, 호출하는 함수 ( 매개변수는 절대값을 넣어준다. )
+    //마나가 빠질 때, 호출하는 함수
     public override void UpdateBar_Sub()
     {
         base.UpdateBar_Sub();
+    }
+
+    public void ChangeBGAlpha(float _alpha)
+    {
+        BackgroundBar.color = new Color(BackgroundBar.color.r, BackgroundBar.color.g, BackgroundBar.color.b, _alpha);
     }
 }

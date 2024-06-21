@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,8 +9,11 @@ public class ConditionUI : MonoBehaviour
 
     private Image image;
 
+    public event Action<float> OnChangeBarAlpha;
+    public event Action<float> OnChangeBGAlpha;
+
     //연한 색
-    float softBar = 10.0f / 255.0f;
+    float softBar = 80.0f / 255.0f;
     float softBG = 3.0f / 255.0f;
     //진한 색
     float hardBar = 225.0f / 255.0f;
@@ -17,12 +21,6 @@ public class ConditionUI : MonoBehaviour
     //알파값
     float alphaBar;
     float alphaBG;
-
-    //Color변수들
-    Color hpBGColor;
-    Color hpColor;
-    Color mpBGColor;
-    Color mpColor;
 
     //변하는 속도
     float changeSpeed = 3.0f;
@@ -32,10 +30,12 @@ public class ConditionUI : MonoBehaviour
         UIManager.Instance.Condition = this;
         image = GetComponent<Image>();
 
-        hpBGColor = HpBar.BackgroundBar.color;
-        hpColor = HpBar.SlideBarImage.color;
-        mpBGColor = MpBar.BackgroundBar.color;
-        mpColor = MpBar.SlideBarImage.color;
+        OnChangeBarAlpha += HpBar.ChangeBarAlpha;
+        OnChangeBarAlpha += MpBar.ChangeBarAlpha;
+
+        OnChangeBGAlpha += ChangeAlpha;
+        OnChangeBGAlpha += HpBar.ChangeBGAlpha;
+        OnChangeBGAlpha += MpBar.ChangeBGAlpha;
 
         alphaBar = hardBar;
         alphaBG = hardBG;
@@ -50,16 +50,13 @@ public class ConditionUI : MonoBehaviour
             {
                 alphaBar = Mathf.Lerp(alphaBar, softBar, Time.deltaTime * changeSpeed);
 
-                image.color = new Color(image.color.r, image.color.g, image.color.b, alphaBar);
-                hpColor = new Color(hpColor.r, hpColor.g, hpColor.b, alphaBar);
-                mpColor = new Color(mpColor.r, mpColor.g, mpColor.b, alphaBar);
+                OnChangeBarAlpha?.Invoke(alphaBar);
             }
             if(alphaBG > softBG + 0.01f)
             {
                 alphaBG = Mathf.Lerp(alphaBG, softBG, Time.deltaTime * changeSpeed);
 
-                hpBGColor = new Color(hpBGColor.r, hpBGColor.g, hpBGColor.b, alphaBG);
-                mpBGColor = new Color(mpBGColor.r, mpBGColor.g, mpBGColor.b, alphaBG);
+                OnChangeBGAlpha?.Invoke(alphaBG);
             }
         }
         else
@@ -68,17 +65,19 @@ public class ConditionUI : MonoBehaviour
             {
                 alphaBar = Mathf.Lerp(alphaBar, hardBar, Time.deltaTime);
 
-                image.color = new Color(image.color.r, image.color.g, image.color.b, alphaBar);
-                hpColor = new Color(hpColor.r, hpColor.g, hpColor.b, alphaBar);
-                mpColor = new Color(mpColor.r, mpColor.g, mpColor.b, alphaBar);
+                OnChangeBarAlpha?.Invoke(alphaBar);
             }
             if (alphaBG < hardBG - 0.01f)
             {
                 alphaBG = Mathf.Lerp(alphaBG, hardBG, Time.deltaTime);
 
-                hpBGColor = new Color(hpBGColor.r, hpBGColor.g, hpBGColor.b, alphaBG);
-                mpBGColor = new Color(mpBGColor.r, mpBGColor.g, mpBGColor.b, alphaBG);
+                OnChangeBGAlpha?.Invoke(alphaBG);
             }
         }
+    }
+
+    private void ChangeAlpha(float _alpha)
+    {
+        image.color = new Color(image.color.r, image.color.g, image.color.b, _alpha);
     }
 }
