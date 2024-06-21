@@ -82,10 +82,10 @@ public class Monster : MonoBehaviour
     {
         Instantiate(_monsterEffect, transform.position, Quaternion.identity);
 
-        spriteRenderer.DOFade(0, 1f);
+        //spriteRenderer.DOFade(0, 1f);
         yield return new WaitForSeconds(2.5f);
         GetComponent<Collider2D>().enabled = true;
-        spriteRenderer.DOFade(1, 1f);
+        //spriteRenderer.DOFade(1, 1f);
         gameObject.SetActive(false);
         
         GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
