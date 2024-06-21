@@ -10,6 +10,7 @@ public class MonsterDeadState : MonsterBaseState
     {
         /*Debug.Log("MonsterDeadState::Enter()");*/
         StartAnimation(stateMachine.Monster.AnimationData.DeadParameterHash);
+        stateMachine.Monster.BoxCollider2D.enabled = false;
 
         base.Enter();
     }
@@ -18,6 +19,7 @@ public class MonsterDeadState : MonsterBaseState
     {
         /*Debug.Log("MonsterDeadState::Exit()");*/
         StopAnimation(stateMachine.Monster.AnimationData.DeadParameterHash);
+        stateMachine.Monster.BoxCollider2D.enabled = true;
         base.Exit();
     }
 
@@ -28,7 +30,6 @@ public class MonsterDeadState : MonsterBaseState
         float normalizedTime = GetNormalizedTime(stateMachine.Monster.Animator, "MonsterDead");
         if (normalizedTime >= 1f)
         {
-            stateMachine.ChangeState(stateMachine.IdleState);
             stateMachine.Monster.gameObject.SetActive(false);
         }
     }
