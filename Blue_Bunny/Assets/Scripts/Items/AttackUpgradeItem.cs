@@ -1,13 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class AttackUpgradeItem : Item, iStatUpgrade
 {
     public float attackUpgradeAmount = 1f;
-    public string explainPhrase;
+
     public void UpgradeStat()
     {
         CharacterManager.Instance.Player.stats.attackDamage += attackUpgradeAmount;
-        Debug.Log(explainPhrase);
         PlayUpgradeSound();
     }
 
@@ -18,12 +17,13 @@ public class AttackUpgradeItem : Item, iStatUpgrade
 
     public void GotoInventoryTab()
     {
-        //인벤토리 탭에 표시되는 기능 구현하기.
+        UIManager.Instance.Item.AddItem(itemData);
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         UpgradeStat();
+        GotoInventoryTab();
         base.OnTriggerEnter2D(collision);
     }
 }

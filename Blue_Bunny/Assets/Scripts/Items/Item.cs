@@ -19,8 +19,11 @@ public interface iStatUpgrade
 public class Item : MonoBehaviour
 {
     BoxCollider2D itemCollider;
+    public ItemDataSO itemData;
+    protected SpriteRenderer icon;
     private void Awake()
     {
+        icon = GetComponentInChildren<SpriteRenderer>();
         itemCollider = GetComponent<BoxCollider2D>();
         itemCollider.enabled = false;
         StartCoroutine(InteractDelay());

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde617a443bcb474b81e1801656f1dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 15fba414326e4b9429014d50454eff13, type: 2}
   speedUpgradeAmount: 1
   explainPhrase: "\uC9C8\uC8FC \uBCF8\uB2A5\uC744 \uC790\uADF9\uD558\uB294 \uD578\uB4E4\uC785\uB2C8\uB2E4.
     \uC190\uC5D0 \uC950\uB294 \uAC83 \uB9CC\uC73C\uB85C\uB3C4 \uBE68\uB77C\uC9C0\uB294
