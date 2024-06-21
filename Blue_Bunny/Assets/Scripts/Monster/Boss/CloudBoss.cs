@@ -68,7 +68,7 @@ public class CloudBoss : MonoBehaviour
     IEnumerator CloudRainMove()
     {
         Rain.Play();
-
+        AudioManager.instance.PlayBGM2("WindRain", 0.2f);
         float Dir = transform.position.x > 0 ? -1 : 1;
 
         transform.DOMoveX((CameraManager.Instance.mapSize.x -5) * Dir, 6f);
@@ -77,6 +77,7 @@ public class CloudBoss : MonoBehaviour
         yield return new WaitForSeconds(6f);
 
         Rain.Stop();
+        AudioManager.instance.StopBGM2();
     }
 
 
