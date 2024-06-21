@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 /// <summary>
 /// Monster Data / StateMachin 갖고있다
@@ -19,7 +20,9 @@ public class Monster : MonoBehaviour
     private MonsterStateMachine stateMachine;
 
     public GameObject _monsterEffect;
-    public float tempHealth = 5f;
+    public float Health { get; set; } = 3f;
+
+    public event Action OnHit;
 
     private void Awake()
     {
@@ -31,6 +34,8 @@ public class Monster : MonoBehaviour
         SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         stateMachine = new MonsterStateMachine(this);
+
+        Health = Data.MaxHealth;
     }
 
     private void Start()
@@ -54,17 +59,18 @@ public class Monster : MonoBehaviour
         
         if (collision.gameObject.CompareTag(Define.BULLET_TAG)) // When Hit by Bullet
         {
-            tempHealth--;
+            Health--;
 
-            Debug.Log($"Monster Health : {tempHealth}");
+            Debug.Log($"Monster Health : {Health}");
 
-            if (tempHealth <= 0)
+            if (Health <= 0)
             {
                 Dead();
             }
             else
             {
                 stateMachine.ChangeState(stateMachine.GetHitState);
+                OnHit?.Invoke();
             }
 
         }
