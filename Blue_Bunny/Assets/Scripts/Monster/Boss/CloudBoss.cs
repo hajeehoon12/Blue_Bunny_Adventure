@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CloudBoss : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class CloudBoss : MonoBehaviour
     private int patternNum = 0;
     private int monsterNum = 0;
 
-    private bool onFloor = false;
+
+
+    //private bool onFloor = false;
 
     private void Start()
     {
@@ -86,6 +89,7 @@ public class CloudBoss : MonoBehaviour
     IEnumerator Summon(GameObject mon)
     {
 
+        bool onFloor;
         
         onFloor = false;
         GameObject servant = Instantiate(mon, transform.position, Quaternion.identity);
@@ -96,14 +100,23 @@ public class CloudBoss : MonoBehaviour
         servant.GetComponent<Monster>().enabled = false;
         //rigid.gravityScale = 0f;
         // 던지기
-        float throwTime = 0;
+        //float throwTime = 0;
         
 
-        float distDiff = 5f;
-        rigid.gravityScale = 0f;
+        float distDiff;
+        distDiff = (servant.transform.position.x - CharacterManager.Instance.Player.transform.position.x);
+        float Dir = distDiff > 0 ? -1 : 1;
+
+        rigid.gravityScale = 0;
+
+        servant.transform.DOMoveY(servant.transform.position.y + distDiff/3,1f).SetEase(Ease.Linear);
+        servant.transform.DOMoveX(servant.transform.position.x - distDiff - Dir, 1f);
+
+        yield return new WaitForSeconds(1f);
+        rigid.gravityScale = 2f;
         while (!(distDiff < 0.5f && distDiff > -0.5f)) // in near distance
         {
-            float Dir = distDiff > 0 ? -1 : 1;
+            Dir = distDiff > 0 ? -1 : 1;
             servant.transform.position += new Vector3(0.2f * Dir, 0);
 
             
@@ -111,11 +124,13 @@ public class CloudBoss : MonoBehaviour
             distDiff = (servant.transform.position.x - CharacterManager.Instance.Player.transform.position.x);
             yield return new WaitForSeconds(0.02f);
         }
-        rigid.gravityScale = 2f;
+        
+
+        rigid.velocity = Vector3.zero;
 
         while (!onFloor)
         {
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.003f);
 
             if (servant.transform.position.y - CharacterManager.Instance.Player.transform.position.y >= 1f)
             {
