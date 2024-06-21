@@ -9,7 +9,7 @@ public class ConditionUI : MonoBehaviour
 
     void Start()
     {
-        
+        UIManager.Instance.Condition = this;
     }
 
     void Update()

@@ -175,6 +175,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnMenu(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            UIManager.Instance.Menu.OnOffUI();
+        }
+    }
+
+    public void OnItemInventory(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            UIManager.Instance.Item.OnOffUI();
+        }
+    }
+
     IEnumerator DoingDash()
     {
         
