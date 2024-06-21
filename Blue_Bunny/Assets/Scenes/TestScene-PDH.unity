@@ -4006,6 +4006,7 @@ MonoBehaviour:
   - {fileID: 8057485987290429433, guid: 73634e94a25bf72418160b40e8c283c8, type: 3}
   - {fileID: 637281394924737894, guid: 73027e5f95bdd384796710483df2f8d8, type: 3}
   - {fileID: 2205024189343875690, guid: 479afdc01eb8c8b4c9195a5508affd94, type: 3}
+  - {fileID: 8470031503123131059, guid: 6b2301e1c50a2294ea59715559d7ed52, type: 3}
 --- !u!4 &2024324145
 Transform:
   m_ObjectHideFlags: 0
@@ -4040,6 +4041,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 290772945385336207, guid: b46b57e79136ae147be13acb8788d458, type: 3}
+      propertyPath: spawnCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 290772945385336207, guid: b46b57e79136ae147be13acb8788d458, type: 3}
       propertyPath: itemPrefabs.Array.size
       value: 5
@@ -4127,6 +4132,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7964650592427289113, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
+      propertyPath: stageIdx
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
