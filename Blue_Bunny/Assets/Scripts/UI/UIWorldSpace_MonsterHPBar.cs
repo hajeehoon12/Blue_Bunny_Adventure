@@ -14,7 +14,7 @@ public class UIWorldSpace_MonsterHPBar : MonoBehaviour
         slider = GetComponentInChildren<Slider>();
         monster = GetComponentInParent<Monster>();
 
-        monster.OnHit += Refresh;
+        monster.OnHealthChanged += Refresh;
 
         Refresh();
     }

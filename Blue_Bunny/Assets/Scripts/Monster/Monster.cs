@@ -22,7 +22,7 @@ public class Monster : MonoBehaviour
     public GameObject _monsterEffect;
     public float Health { get; set; } = 3f;
 
-    public event Action OnHit;
+    public event Action OnHealthChanged;
 
     private void Awake()
     {
@@ -40,6 +40,7 @@ public class Monster : MonoBehaviour
     {
         stateMachine.Monster.BoxCollider2D.enabled = true;
         Health = Data.MaxHealth;
+        OnHealthChanged?.Invoke();
         stateMachine.ChangeState(stateMachine.IdleState);
     }
 
@@ -60,7 +61,7 @@ public class Monster : MonoBehaviour
         if (collision.gameObject.CompareTag(Define.BULLET_TAG)) // When Hit by Bullet
         {
             Health--;
-            OnHit?.Invoke();
+            OnHealthChanged?.Invoke();
             /*Debug.Log($"Monster Health : {Health}");*/
 
             if (Health <= 0)
