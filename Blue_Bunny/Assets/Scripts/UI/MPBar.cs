@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class MPBar : SlideBar
 {
     public Image BackgroundBar;
+    public Text MPText;
 
     void Start()
     {
@@ -14,12 +15,19 @@ public class MPBar : SlideBar
     public override void UpdateBar_Add()
     {
         base.UpdateBar_Add();
+        ChangeText();
     }
 
     //마나가 빠질 때, 호출하는 함수
     public override void UpdateBar_Sub()
     {
         base.UpdateBar_Sub();
+        ChangeText();
+    }
+
+    private void ChangeText()
+    {
+        MPText.text = $"{(int)Current} / {(int)Max}";
     }
 
     public void ChangeBGAlpha(float _alpha)

@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public interface ISlideBar
 {
-    //void UpdateBar_Add(float amount);
-    //void UpdateBar_Sub(float amount);
     void UpdateBar_Add();
     void UpdateBar_Sub();
     void CheckZeroOrMax();
@@ -20,27 +18,13 @@ public class SlideBar : MonoBehaviour, ISlideBar
     public float Current;
     public Image SlideBarImage;
 
-    //public virtual void UpdateBar_Add(float amount)
-    //{
-    //    //Current += amount;
-    //    CheckZeroOrMax();
-    //    SetPercent();
-    //}
-    //public virtual void UpdateBar_Sub(float amount)
-    //{
-    //    //Current -= amount;
-    //    CheckZeroOrMax();
-    //    SetPercent();
-    //}
     public virtual void UpdateBar_Add()
     {
-        //Current += amount;
         CheckZeroOrMax();
         SetPercent();
     }
     public virtual void UpdateBar_Sub()
     {
-        //Current -= amount;
         CheckZeroOrMax();
         SetPercent();
     }
