@@ -175,7 +175,7 @@ public class CloudBoss : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(servant.transform.position, new Vector2(0, -1), 1f, groundLayerMask);
             if (hit.collider?.name != null)
             {
-                servant.transform.position = hit.point + new Vector2(0, servCol.bounds.extents.y - servCol.offset.y);
+                servant.transform.position = hit.point + new Vector2(0, servCol.bounds.extents.y - servCol.offset.y);//
                 onFloor = true;
             }
 
