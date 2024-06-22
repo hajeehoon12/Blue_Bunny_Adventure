@@ -12,7 +12,7 @@ public abstract class StoreItem : MonoBehaviour
     {
         SetCost();
     }
-    protected void SetCost()
+    protected virtual void SetCost()
     {
         costText.text = itemData.cost.ToString();
     }

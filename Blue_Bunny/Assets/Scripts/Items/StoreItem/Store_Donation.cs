@@ -6,6 +6,11 @@ using UnityEngine;
 public class Store_Donation : StoreItem
 {
     [SerializeField] TextMeshPro donationText;
+
+    protected override void SetCost()
+    {
+        
+    }
     protected override void Buy()
     {
         Donate();
