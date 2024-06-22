@@ -29,7 +29,7 @@ public class CloudBoss : MonoBehaviour
     {
         AudioManager.instance.StopBGM();
         AudioManager.instance.PlayBGM("BossCloud", 0.2f);
-        patterCoroutine= StartCoroutine(CloudPattern());
+        patterCoroutine = StartCoroutine(CloudPattern());
 
         Rain.Stop();
 
@@ -57,7 +57,7 @@ public class CloudBoss : MonoBehaviour
 
                 default:
                     break;
-            
+
             }
 
             yield return new WaitForSeconds(duringTime);
@@ -73,7 +73,7 @@ public class CloudBoss : MonoBehaviour
         AudioManager.instance.PlayBGM2("WindRain", 0.2f);
         float Dir = transform.position.x > 0 ? -1 : 1;
 
-        transform.DOMoveX((CameraManager.Instance.mapSize.x -5) * Dir, 6f);
+        transform.DOMoveX((CameraManager.Instance.mapSize.x - 5) * Dir, 6f);
 
 
         yield return new WaitForSeconds(6f);
@@ -112,30 +112,30 @@ public class CloudBoss : MonoBehaviour
             default: // temp : safe code
                 StartCoroutine(Summon(Worm));
                 break;
-            
+
         }
 
         monsterNum++;
     }
-    
+
     IEnumerator Summon(GameObject mon)
     {
 
         bool onFloor;
-        
+
         onFloor = false;
         GameObject servant = Instantiate(mon, transform.position, Quaternion.identity);
         //servant.GetComponent<Monster>().enabled = false;
         Monster monScript = servant.GetComponent<Monster>();
         Collider2D servCol = servant.GetComponent<BoxCollider2D>();
-        
+
         Rigidbody2D rigid = servant.GetComponent<Rigidbody2D>();
 
-        
+
         //rigid.gravityScale = 0f;
         // 던지기
         //float throwTime = 0;
-        
+
 
         float distDiff;
         distDiff = (servant.transform.position.x - CharacterManager.Instance.Player.transform.position.x);
@@ -143,22 +143,22 @@ public class CloudBoss : MonoBehaviour
 
         rigid.gravityScale = 0;
 
-        servant.transform.DOMoveY(servant.transform.position.y + distDiff/3 + Dir-1, 1f).SetEase(Ease.Linear);
+        servant.transform.DOMoveY(servant.transform.position.y + Mathf.Abs(distDiff / 2) + Dir - 1, 1f).SetEase(Ease.Linear);
         servant.transform.DOMoveX(servant.transform.position.x - distDiff - Dir, 1f);
 
         yield return new WaitForSeconds(1f);
-        rigid.gravityScale = 2f;
+        rigid.gravityScale = 1f;
         while (!(distDiff < 0.5f && distDiff > -0.5f)) // in near distance
         {
             Dir = distDiff > 0 ? -1 : 1;
             servant.transform.position += new Vector3(0.2f * Dir, 0);
 
-            
+
 
             distDiff = (servant.transform.position.x - CharacterManager.Instance.Player.transform.position.x);
             yield return new WaitForSeconds(0.02f);
         }
-        
+
 
         rigid.velocity = Vector3.zero;
 
@@ -172,20 +172,20 @@ public class CloudBoss : MonoBehaviour
             }
 
 
-            RaycastHit2D hit = Physics2D.Raycast(servant.transform.position, new Vector2(0, -1), 0.6f, groundLayerMask);
+            RaycastHit2D hit = Physics2D.Raycast(servant.transform.position, new Vector2(0, -1), 1f, groundLayerMask);
             if (hit.collider?.name != null)
             {
-                servant.transform.position = hit.point + new Vector2(0, servCol.bounds.extents.y - servCol.offset.y);
+                servant.transform.position = hit.point + new Vector2(0, servCol.bounds.extents.y - servCol.offset.y);//
                 onFloor = true;
             }
-           
+
         }
 
         rigid.gravityScale = 0f;
         rigid.velocity = Vector2.zero;
-        Destroy(rigid);
+        //Destroy(rigid);
         monScript.enabled = true;
-        monScript.stateMachine.ChangeState(monScript.stateMachine.ChasingState);
+        //monScript.stateMachine.ChangeState(monScript.stateMachine.ChasingState);
     }
 
 
