@@ -57,7 +57,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.51, y: -4.44, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5275807183670642871}
@@ -129,7 +129,8 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 5ae4187d6acfb914aaa3626879ee459b, type: 2}
   monsterSpawnTr:
   - {fileID: 4577931963761239816}
-  portalPos: {fileID: 803960830012086547}
+  portalPos:
+  - {fileID: 803960830012086547}
   rewardChestTr: {fileID: 7792956628045030092}
   rewardChest: {fileID: 6366736423589511129, guid: 7cdb30040933477469763e8d782772ca, type: 3}
   isCleared: 0

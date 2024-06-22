@@ -15,6 +15,7 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject portalPrefab;
     public GameObject[] itemPrefabs;
+    public GameObject storePortal;
 
     public void SpawnMonster()
     {
@@ -55,7 +56,9 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnPortal()
     {
-        Instantiate(portalPrefab, nowMap.portalPos);
+        Instantiate(portalPrefab, nowMap.portalPos[0]);
+        if(nowMap.data.mapIndex == 2)
+            Instantiate(storePortal, nowMap.portalPos[1]);
         Debug.Log("다음 스테이지로 갈 수 있는 포탈이 생성되었습니다!");
     }
 

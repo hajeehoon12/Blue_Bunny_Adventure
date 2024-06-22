@@ -8,7 +8,7 @@ public class Map : MonoBehaviour
     public MapData data;
 
     public List<Transform> monsterSpawnTr;
-    public Transform portalPos;
+    public Transform[] portalPos;
 
     public Transform rewardChestTr;
     public GameObject rewardChest;

@@ -15,9 +15,12 @@ public class FloorToCameraData : MonoBehaviour
 
     private void Start()
     {
-        CameraManager.Instance.mapSize = tileMap.bounds.extents + new Vector3(0,2,0);
+        InitailizeMapCamera();
     }
 
-
+    public void InitailizeMapCamera()
+    {
+        CameraManager.Instance.mapSize = tileMap.bounds.extents + new Vector3(0, 2, 0);
+    }
 
 }

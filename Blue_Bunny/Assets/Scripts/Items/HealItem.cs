@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class HealItem : Item, iHeal
 {
@@ -16,8 +16,11 @@ public class HealItem : Item, iHeal
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        Heal();
-        base.OnTriggerEnter2D(collision);
+        if (collision.gameObject.CompareTag(Define.PLAYER_TAG))
+        {
+            Heal();
+        }
+            base.OnTriggerEnter2D(collision);
     }
 
 }
