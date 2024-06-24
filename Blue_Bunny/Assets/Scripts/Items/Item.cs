@@ -6,6 +6,7 @@ using UnityEngine;
 public interface iHeal
 {
     public void Heal();
+
     public void PlayHealSound();
 }
 
@@ -15,7 +16,6 @@ public interface iStatUpgrade
     public void GotoInventoryTab();
     public void PlayUpgradeSound();
 }
-
 public class Item : MonoBehaviour
 {
     BoxCollider2D itemCollider;

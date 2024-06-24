@@ -8,7 +8,7 @@ public class ManaRecoverItem : Item, iHeal
     public void Heal()
     {
         CharacterManager.Instance.Player.stats.playerMP += healValue;
-        Debug.Log("¸¶³ª È¸º¹");
+        Debug.Log("ë§ˆë‚˜ íšŒë³µ");
         PlayHealSound();
     }
     public void PlayHealSound()
@@ -18,7 +18,10 @@ public class ManaRecoverItem : Item, iHeal
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        Heal();
+        if (collision.gameObject.CompareTag(Define.PLAYER_TAG))
+        {
+            Heal();
+        }
         base.OnTriggerEnter2D(collision);
     }
 }

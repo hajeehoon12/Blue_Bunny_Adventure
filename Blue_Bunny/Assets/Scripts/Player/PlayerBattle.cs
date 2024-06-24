@@ -21,14 +21,7 @@ public class PlayerBattle : MonoBehaviour
     public event Action OnInvincibilityEnd;
 
 
-    public float CurrentHealth { get; private set; }
-
     public float MaxHealth => CharacterManager.Instance.Player.stats.playerMaxHP;
-
-    private void Start()
-    {
-        CurrentHealth = MaxHealth;
-    }
 
     private void Update()
     {
@@ -50,19 +43,18 @@ public class PlayerBattle : MonoBehaviour
         {
             return false;
         }
-        
-
-        
 
 
 
 
-        CurrentHealth += change; // health change value
-        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth); // restrict health range for 0<= health <= maxHealth
+
+
+        CharacterManager.Instance.Player.stats.playerHP += change; // health change value
+        CharacterManager.Instance.Player.stats.playerHP = Mathf.Clamp(CharacterManager.Instance.Player.stats.playerHP, 0, CharacterManager.Instance.Player.stats.playerMaxHP); // restrict health range for 0<= health <= maxHealth
 
         Debug.Log("Player Health : " + change);
 
-        if (CurrentHealth <= 0f)
+        if (CharacterManager.Instance.Player.stats.playerHP <= 0f)
         {
             timeSinceLastChange = 0f;
             Debug.Log("Player Dead");

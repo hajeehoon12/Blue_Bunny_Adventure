@@ -20,10 +20,11 @@ public class SpeedUpItem : Item, iStatUpgrade
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        UpgradeStat();
+        if (!UIManager.Instance.Item.IsFull() && collision.gameObject.CompareTag(Define.PLAYER_TAG))
+        {
+            UpgradeStat();
+        }
         base.OnTriggerEnter2D(collision);
     }
-
-
 }
 

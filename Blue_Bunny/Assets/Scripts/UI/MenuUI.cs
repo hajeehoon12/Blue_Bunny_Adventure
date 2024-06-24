@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class MenuUI : MonoBehaviour
 {
     public Slider bgm;
     public Slider sfx;
+    public AudioMixer mixer;
 
     public GameObject Blur;
 
@@ -28,15 +30,12 @@ public class MenuUI : MonoBehaviour
 
     public void ChangeBGM()
     {
-        //AudioManager.Instance
-        float A = bgm.value;
-        Debug.Log(A);
+        SetBGMVolume(bgm.value);
     }
 
     public void ChangeSFX()
     {
-        float A = sfx.value;
-        Debug.Log(A);
+        SetSFXVolume(sfx.value);
     }
 
     public void PressExitMenu()
@@ -47,5 +46,15 @@ public class MenuUI : MonoBehaviour
     public void PressExitGame()
     {
         Debug.Log("PressExitGame");
+    }
+
+    private void SetBGMVolume(float val)
+    {
+        mixer.SetFloat("BGM", Mathf.Log10(val) * 20);
+    }
+
+    private void SetSFXVolume(float val)
+    {
+        mixer.SetFloat("SFX", Mathf.Log10(val) * 20);
     }
 }

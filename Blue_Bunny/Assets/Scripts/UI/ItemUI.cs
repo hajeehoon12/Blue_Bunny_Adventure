@@ -14,7 +14,10 @@ public class ItemUI : MonoBehaviour
     private void Start()
     {
         UIManager.Instance.Item = this;
-        slots = GetComponentsInChildren<Slot>();
+
+        slots = new Slot[slotPanel.childCount];
+        for (int i = 0; i < slots.Length; i++) slots[i] = slotPanel.GetChild(i).GetComponent<Slot>();
+
     }
 
     private void Update()
@@ -63,7 +66,13 @@ public class ItemUI : MonoBehaviour
     void GetEmptySlot()
     {
         for (int i = 0; i < slots.Length; i++)
-            if (!slots[i].IsExist) slotIndex = i;
+        {
+            if (!slots[i].IsExist)
+            {
+                slotIndex = i;
+                break;
+            }
+        }
     }
 
     public bool IsFull()

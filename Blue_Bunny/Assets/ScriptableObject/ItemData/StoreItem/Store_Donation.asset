@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7efd33d48e9db0d4da29dbe4137d18c6, type: 3}
+  m_Name: Store_Donation
+  m_EditorClassIdentifier: 
+  itemName: "\uAE30\uBD80\uD558\uAE30"
+  itemdescription: "\uAC1C\uBC1C\uC790\uB97C \uC704\uD574 \uAE30\uBD80\uD574\uC8FC\uC138\uC694"
+  itemIcon: {fileID: 21300000, guid: 36d38f46740158e4ab67470939dd149d, type: 3}
+  cost: 5

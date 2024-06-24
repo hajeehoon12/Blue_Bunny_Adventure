@@ -262,7 +262,8 @@ MonoBehaviour:
   - {fileID: 7598328691810342760}
   - {fileID: 2719561449446549938}
   - {fileID: 1751903910037061587}
-  portalPos: {fileID: 4356353827854310621}
+  portalPos:
+  - {fileID: 4356353827854310621}
   rewardChestTr: {fileID: 7438699704952125445}
   rewardChest: {fileID: 6366736423589511129, guid: 7cdb30040933477469763e8d782772ca, type: 3}
   isCleared: 0
