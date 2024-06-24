@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
             Destroy(spawnManager.nowMap.gameObject);
         }
         spawnManager.nowMap = go.GetComponent<Map>();
-        spawnManager.SpawnMonster();
+        spawnManager.SpawnMonstertoMap();
         stageIdx++;
     }
 

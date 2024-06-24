@@ -15,7 +15,7 @@ public class SpeedUpItem : Item, iStatUpgrade
 
     public void GotoInventoryTab()
     {
-        //인벤토리 탭에 표시되는 기능 구현하기.
+        UIManager.Instance.Item.AddItem(itemData);
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
@@ -23,6 +23,7 @@ public class SpeedUpItem : Item, iStatUpgrade
         if (!UIManager.Instance.Item.IsFull() && collision.gameObject.CompareTag(Define.PLAYER_TAG))
         {
             UpgradeStat();
+            GotoInventoryTab();
         }
         base.OnTriggerEnter2D(collision);
     }

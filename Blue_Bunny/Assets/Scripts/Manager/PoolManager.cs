@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
-    //.. ÇÁ¸®ÆÕÀ» ÀúÀåÇÒ º¯¼ö »ı¼º
+    //.. í”„ë¦¬íŒ¹ì„ ì €ì¥í•  ë³€ìˆ˜ ìƒì„±
     public GameObject[] prefabs;
 
-    //.. Ç®À» °ü¸®ÇÒ ¸®½ºÆ® »ı¼º
+    //.. í’€ì„ ê´€ë¦¬í•  ë¦¬ìŠ¤íŠ¸ ìƒì„±
     List<GameObject>[] pools;
 
     public static PoolManager Instance;
 
     void Awake()
     {
-        // ÀÏ´ëÀÏ ´ëÀÀ ¼±¾ğ
+        // ì¼ëŒ€ì¼ ëŒ€ì‘ ì„ ì–¸
         if (Instance == null)
         {
             Instance = this;
@@ -36,8 +36,8 @@ public class PoolManager : MonoBehaviour
     {
         GameObject select = null;
 
-        // ... ¼±ÅÃÇÑ Ç®ÀÇ ³î°í (ºñÈ°¼ºÈ­ µÈ) °ÔÀÓ¿ÀºêÁ§Æ®¿¡ Á¢±Ù
-        //... ¸¸¾à ¹ß°ßÇÏ¸é select º¯¼ö¿¡ ÇÒ´çÇÏ°í
+        // ... ì„ íƒí•œ í’€ì˜ ë†€ê³  (ë¹„í™œì„±í™” ëœ) ê²Œì„ì˜¤ë¸Œì íŠ¸ì— ì ‘ê·¼
+        //... ë§Œì•½ ë°œê²¬í•˜ë©´ select ë³€ìˆ˜ì— í• ë‹¹í•˜ê³ 
         foreach (GameObject item in pools[index])
         {
             if (!item.activeSelf)
@@ -47,13 +47,23 @@ public class PoolManager : MonoBehaviour
                 break;
             }
         }
-        // ... ¸ø¹ß°ßÇÏ¸é
+        // ... ëª»ë°œê²¬í•˜ë©´
         if (!select)
-        { // ¹ß°ßÇÏÁö ¸øÇÏ°í null »óÅÂ ±×´ë·Î¶ó¸é
-            //... »õ·Ó°Ô »ı¼ºÇÏ°í select º¯¼ö¿¡ ÇÒ´ç
-            select = Instantiate(prefabs[index], transform); // instantiate »õ·Ó°Ô »ı¼ºÇÏ°í ÀÚ±â ÀÚ½Å transform¿¡ ÀÚ½ÄÀ¸·Î »ı¼º
-            pools[index].Add(select); // ÀÌ·¸°Ô »ı¼ºµÇ¸é pool¿¡ Áı¾î³ÖÀ½
+        { // ë°œê²¬í•˜ì§€ ëª»í•˜ê³  null ìƒíƒœ ê·¸ëŒ€ë¡œë¼ë©´
+            //... ìƒˆë¡­ê²Œ ìƒì„±í•˜ê³  select ë³€ìˆ˜ì— í• ë‹¹
+            select = Instantiate(prefabs[index], transform); // instantiate ìƒˆë¡­ê²Œ ìƒì„±í•˜ê³  ìê¸° ìì‹  transformì— ìì‹ìœ¼ë¡œ ìƒì„±
+            pools[index].Add(select); // ì´ë ‡ê²Œ ìƒì„±ë˜ë©´ poolì— ì§‘ì–´ë„£ìŒ
         }
         return select;
     }
+
+
+    public void DeleteAll()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
 }

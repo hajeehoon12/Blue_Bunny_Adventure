@@ -17,43 +17,65 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] itemPrefabs;
     public GameObject storePortal;
 
-    public void SpawnMonster()
+    public void SpawnMonstertoMap()
     {
-        spawnCount = nowMap.data.spawnCount;
+        spawnCount = nowMap.data.ground_spawnCount + nowMap.data.air_spawnCount;
         aliveMonsterCount = spawnCount;
 
-        for (int i = 0; i < spawnCount; i++)
+        if (nowMap.data.isBossStage) // not 0 and after 3stages
         {
+            nowMap.isBossAlive = true; 
+            GameObject boss = PoolManager.Instance.Get(3);
+            // 보스 타입을 air인지 ground 인지 정하면 좋을듯.
+            Transform bossSpawnPos = nowMap.airMonsterSpawnTr[0];
+            boss.transform.position = bossSpawnPos.position;
+            return;
+        }
 
-            if (GameManager.Instance.stageIdx %3 == 0 && GameManager.Instance.stageIdx != 0) // not 0 and after 3stages
-            { 
-                GameObject boss = PoolManager.Instance.Get(3);
-                Transform bossSpawnPos = nowMap.monsterSpawnTr[0];
-                boss.transform.position = bossSpawnPos.position;
-                return;
-            }
+        for (int i = 0; i < nowMap.data.ground_spawnCount; i++)
+        {
+            SpawnMonster(2, true);
+        }
 
-
-            GameObject monster = PoolManager.Instance.Get(2);
-            //랜덤한 위치에 생성 후 리스트에서 제거. (동일 위치 생성 방지)
-            int rdSpawnIdx = Random.Range(0, nowMap.monsterSpawnTr.Count);
-
-            Transform spawnPos = nowMap.monsterSpawnTr[rdSpawnIdx];
-            monster.transform.position = spawnPos.position;
-            nowMap.monsterSpawnTr.Remove(spawnPos);
+        for(int i = 0; i < nowMap.data.air_spawnCount; i++)
+        {
+            int randomIdx = Random.Range(7, 9);
+            SpawnMonster(randomIdx, false);
         }
     }
 
     public void ApplyAliveMonsterDeath()
     {
         aliveMonsterCount--;
-        if(aliveMonsterCount == 0)
-        {
+        if(aliveMonsterCount <= 0 && !nowMap.isBossAlive)
+        {           
             SpawnPortal();
             SpawnRewardChest();
         }
     }
 
+    public void SpawnMonster(int index, bool isGroundMonster)
+    {
+        GameObject monster = PoolManager.Instance.Get(index);
+        //랜덤한 위치에 생성 후 리스트에서 제거. (동일 위치 생성 방지)
+        if (isGroundMonster)
+        {
+            int rdSpawnIdx = Random.Range(0, nowMap.groundmonsterSpawnTr.Count);
+
+            Transform spawnPos = nowMap.groundmonsterSpawnTr[rdSpawnIdx];
+            monster.transform.position = spawnPos.position;
+            nowMap.groundmonsterSpawnTr.Remove(spawnPos);
+        }
+
+        else
+        {
+            int rdSpawnIdx = Random.Range(0, nowMap.airMonsterSpawnTr.Count);
+
+            Transform spawnPos = nowMap.airMonsterSpawnTr[rdSpawnIdx];
+            monster.transform.position = spawnPos.position;
+            nowMap.airMonsterSpawnTr.Remove(spawnPos);
+        }
+    }
     public void SpawnPortal()
     {
         Instantiate(portalPrefab, nowMap.portalPos[0]);
