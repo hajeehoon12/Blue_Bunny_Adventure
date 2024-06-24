@@ -20,6 +20,11 @@ public class CloudBoss : MonoBehaviour
     private int patternNum = 0;
     private int monsterNum = 0;
 
+    public float bossMaxHP = 100;
+    public float bossCurrentHP;
+    
+
+
     private void Awake()
     {
         Rain = GetComponentInChildren<ParticleSystem>();
@@ -32,6 +37,7 @@ public class CloudBoss : MonoBehaviour
         AudioManager.instance.StopBGM();
         AudioManager.instance.PlayBGM("BossCloud", 0.2f);
         patterCoroutine = StartCoroutine(CloudPattern());
+        bossCurrentHP = bossMaxHP;
 
         Rain.Stop();
 
@@ -230,11 +236,15 @@ public class CloudBoss : MonoBehaviour
     }
 
 
-
-
-
     void BossDie()
     {
         StopCoroutine(patterCoroutine);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+
+
 }
