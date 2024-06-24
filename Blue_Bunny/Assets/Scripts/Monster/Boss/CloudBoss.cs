@@ -87,7 +87,7 @@ public class CloudBoss : MonoBehaviour
         int amount = (int)dist / 1;
         int curNum = 0;
 
-        while (curNum <= amount + 1) // 
+        while (curNum <= amount + 2) // 
         {
             AudioManager.instance.PlayPitchSFX("ShockWave", 0.2f);
             Debug.Log("ShockWave!!");
