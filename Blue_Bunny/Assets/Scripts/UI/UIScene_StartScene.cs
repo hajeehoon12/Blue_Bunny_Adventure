@@ -7,13 +7,15 @@ using UnityEngine.UI;
 public class UIScene_StartScene : MonoBehaviour
 {
     [SerializeField] Button GameStart_Button;
+    [SerializeField] Button GameContinue_Button;
     [SerializeField] Button Credit_Button;
     [SerializeField] Button Exit_Button;
     [SerializeField] GameObject Credit;
 
     private void Awake()
     {
-        GameStart_Button.onClick.AddListener(() => { SceneManager.LoadScene(Define.MainScene); });
+        GameStart_Button.onClick.AddListener(OnGameStart);
+        GameContinue_Button.onClick.AddListener(OnGameContinue);
         Credit_Button.onClick.AddListener(() => { Credit.SetActive(true); });
         Exit_Button.onClick.AddListener(() =>
         {
@@ -26,5 +28,17 @@ public class UIScene_StartScene : MonoBehaviour
         Credit.SetActive(false);
 
         Credit.GetComponent<Button>().onClick.AddListener(() => { Credit.SetActive(false); });
+    }
+
+    private void OnGameStart()
+    {
+        DataPersistenceManager.Instance.IsNewGame = true;
+        SceneManager.LoadScene(Define.MainScene);
+
+    }
+
+    private void OnGameContinue()
+    {
+        SceneManager.LoadScene(Define.MainScene);
     }
 }

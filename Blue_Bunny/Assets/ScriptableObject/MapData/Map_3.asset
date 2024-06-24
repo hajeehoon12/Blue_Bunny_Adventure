@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Map_3
   m_EditorClassIdentifier: 
   mapIndex: 3
-  spawnCount: 1
+  ground_spawnCount: 0
+  air_spawnCount: 0
+  isBossStage: 1
