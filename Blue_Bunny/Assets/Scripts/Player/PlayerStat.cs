@@ -19,4 +19,9 @@ public class PlayerStat:MonoBehaviour
     public float playerMP;
 
     public float attackSpeed;
+
+    private void Update()
+    {
+        playerMP += Time.deltaTime * 2;
+    }
 }

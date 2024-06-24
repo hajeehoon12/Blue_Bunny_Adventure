@@ -191,8 +191,9 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            if (canDash)
+            if (canDash && CharacterManager.Instance.Player.stats.playerMP >= 10)
             {
+                CharacterManager.Instance.Player.stats.playerMP -= 5;
                 AudioManager.instance.PlayPitchSFX("Dash", 0.2f);
                 rigid.gravityScale = 0f;
                 rigid.velocity = new Vector2(rigid.velocity.x, 0);
