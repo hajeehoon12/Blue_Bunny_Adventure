@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class LightEffect : MonoBehaviour
 {
 
     //Transform CharacterManager.Instance.Player.pet.transform;
+
+
+    Coroutine thisCoroutine;
 
     private void Awake()
     {
@@ -23,7 +27,7 @@ public class LightEffect : MonoBehaviour
     {
         //CharacterManager.Instance.Player.pet.transform = CharacterManager.Instance.Player.pet.transform;
         StartCoroutine(Bound());
-        StartCoroutine(LifeTime());
+        thisCoroutine = StartCoroutine(LifeTime());
     }
 
     IEnumerator Bound()
@@ -71,7 +75,14 @@ public class LightEffect : MonoBehaviour
             yield return new WaitForSeconds(interval);
         }
 
-        Destroy(gameObject, 0.3f);
+        yield return new WaitForSeconds(interval);
+        LifeTimeEnd();  
+    }
+
+    void LifeTimeEnd()
+    {
+        StopAllCoroutines();
+        Destroy(gameObject, 0.2f);
     }
 
 

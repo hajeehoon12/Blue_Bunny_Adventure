@@ -82,7 +82,7 @@ public class CloudBoss : MonoBehaviour
         float dist =Vector3.Distance(CharacterManager.Instance.Player.controller.transform.position, transform.position);
         Vector3 normalDirection = totalDirection.normalized;
 
-        Debug.Log(normalDirection);
+        //Debug.Log(normalDirection);
 
         int amount = (int)dist / 1;
         int curNum = 0;
@@ -143,13 +143,13 @@ public class CloudBoss : MonoBehaviour
         switch (monsterNum % 3)
         {
             case 0:
-                StartCoroutine(Summon(Bee));
+                StartCoroutine(Summon(4));
                 break;
             case 1:
-                StartCoroutine(Summon(BlueBee));
+                StartCoroutine(Summon(5));
                 break;
             default: // temp : safe code
-                StartCoroutine(Summon(Worm));
+                StartCoroutine(Summon(6));
                 break;
 
         }
@@ -157,14 +157,16 @@ public class CloudBoss : MonoBehaviour
         monsterNum++;
     }
 
-    IEnumerator Summon(GameObject mon)
+    IEnumerator Summon(int numOfMon)
     {
 
         bool onFloor;
 
         onFloor = false;
-        GameObject servant = Instantiate(mon, transform.position, Quaternion.identity);
-        //servant.GetComponent<Monster>().enabled = false;
+        //GameObject servant = Instantiate(mon, transform.position, Quaternion.identity);
+        GameObject servant = PoolManager.Instance.Get(numOfMon);
+        servant.transform.position = transform.position;
+        servant.GetComponent<Monster>().enabled = false;
         Monster monScript = servant.GetComponent<Monster>();
         Collider2D servCol = servant.GetComponent<BoxCollider2D>();
 
