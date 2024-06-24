@@ -43,6 +43,7 @@ public class ConditionUI : MonoBehaviour
 
     void Update()
     {
+        if (Camera.main == null) return;
         Vector2 viewportPosition = Camera.main.WorldToViewportPoint(CharacterManager.Instance.Player.transform.position);
         if(viewportPosition.y < 0.15f)
         {

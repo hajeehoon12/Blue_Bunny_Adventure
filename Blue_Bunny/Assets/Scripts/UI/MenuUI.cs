@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class MenuUI : MonoBehaviour
 {
@@ -40,12 +41,20 @@ public class MenuUI : MonoBehaviour
 
     public void PressExitMenu()
     {
-        Debug.Log("PressExitMenu");
+        OnOffUI();
     }
 
     public void PressExitGame()
     {
-        Debug.Log("PressExitGame");
+        //매니저 더 생길 때마다 추가해줘야함
+        Destroy(GameManager.Instance.gameObject);
+        Destroy(AudioManager.instance.gameObject);
+        Destroy(CameraManager.Instance.gameObject);
+        Destroy(PoolManager.Instance.gameObject);
+        Destroy(UIManager.Instance.gameObject);
+        Time.timeScale = 1.0f;
+
+        SceneManager.LoadScene(Define.StartScene);
     }
 
     private void SetBGMVolume(float val)
