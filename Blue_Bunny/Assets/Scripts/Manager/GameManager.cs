@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IDataPersistence
 {
     public static GameManager Instance;
 
@@ -76,5 +76,17 @@ public class GameManager : MonoBehaviour
         spawnManager.nowMap.gameObject.SetActive(true);
         CharacterManager.Instance._player.transform.position = playerPrePos - (Vector2.left * 2);
         spawnManager.nowMap.GetComponentInChildren<FloorToCameraData>().InitailizeMapCamera();
+    }
+
+    public void LoadData(GameData data)
+    {
+        stageIdx = data.stageIdx;
+        Debug.Log(data.stageIdx);
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.stageIdx = stageIdx - 1;
+        Debug.Log(data.stageIdx);
     }
 }
