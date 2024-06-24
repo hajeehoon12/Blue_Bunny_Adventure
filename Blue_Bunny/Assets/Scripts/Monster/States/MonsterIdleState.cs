@@ -67,7 +67,7 @@ public class MonsterIdleState : MonsterBaseState
             // 너무 위에 있으면 방향 바꾸기
             if (IsRayHitGround(stateMachine.Monster.Data.IdleFlyDistance, Vector3.zero, Vector3.down, Color.green) == false)
             {
-                idleMoveDirection *= -1;
+                idleMoveDirection = new Vector3(0, -1, 0);
             }
             stateMachine.Monster.transform.position += idleMoveDirection * stateMachine.Monster.Data.IdleSpeed * Time.deltaTime;
         }
