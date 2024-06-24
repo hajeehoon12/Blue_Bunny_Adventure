@@ -7,13 +7,14 @@ public class Map : MonoBehaviour
 {
     public MapData data;
 
-    public List<Transform> monsterSpawnTr;
+    public List<Transform> groundmonsterSpawnTr;
+    public List<Transform> airMonsterSpawnTr;
     public Transform[] portalPos;
 
     public Transform rewardChestTr;
     public GameObject rewardChest;
 
-    public bool isCleared = false;
+    public bool isBossAlive = false;
 
     public void SetRewardChestOn()
     {
