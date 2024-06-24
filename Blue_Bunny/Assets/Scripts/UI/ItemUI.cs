@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,9 +9,13 @@ public class ItemUI : MonoBehaviour
 
     public Slot[] slots;            //아이템 슬롯 배열
     public Transform slotPanel;     //슬롯 패널
-
     public ToolTip ToolTip;
 
+    [Header("ItemIndex")]
+    [Tooltip("아이템을 인덱스로 구분하기 위한 변수")]
+    public ItemDataSO[] ItemsDataSo;
+
+    public ItemDataIndexData ItemsIndex;
     private int slotIndex;
 
     private void Start()
@@ -52,6 +57,11 @@ public class ItemUI : MonoBehaviour
         GetEmptySlot();
         slots[slotIndex].Item = itemData;
         slots[slotIndex].Set();
+        
+        for(int i = 0; i < ItemsDataSo.Length; i++)
+        {
+            if (ItemsDataSo[i].name == itemData.name) ItemsIndex.ItemsIndex.Add(i);
+        }
     }
 
     //업데이트UI
