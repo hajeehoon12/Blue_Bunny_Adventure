@@ -128,14 +128,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 5ae4187d6acfb914aaa3626879ee459b, type: 2}
-  monsterSpawnTr:
+  groundmonsterSpawnTr: []
+  airMonsterSpawnTr:
   - {fileID: 4577931963761239816}
   portalPos:
   - {fileID: 803960830012086547}
   - {fileID: 5402384748770941116}
   rewardChestTr: {fileID: 7792956628045030092}
   rewardChest: {fileID: 6366736423589511129, guid: 7cdb30040933477469763e8d782772ca, type: 3}
-  isCleared: 0
+  isBossAlive: 0
 --- !u!1 &5356630590888546988
 GameObject:
   m_ObjectHideFlags: 0

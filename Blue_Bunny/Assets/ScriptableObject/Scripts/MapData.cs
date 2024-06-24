@@ -6,5 +6,7 @@ using UnityEngine;
 public class MapData : ScriptableObject
 {
     public int mapIndex;
-    public int spawnCount;
+    public int ground_spawnCount;
+    public int air_spawnCount;
+    public bool isBossStage;
 }
