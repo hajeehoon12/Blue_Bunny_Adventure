@@ -1,6 +1,28 @@
+using System.Collections.Generic;
+
+//[System.Serializable]
+//public class SlotData
+//{
+//    //ì €ì¥ì„ ìœ„í•œ ì§ë ¬í™”ëœ ë°ì´í„°ë“¤ì„ ëª¨ì•„ë‘” í´ë˜ìŠ¤
+
+//}
 
 [System.Serializable]
 public class ItemUIData
 {
-    //ÀúÀåÀ» À§ÇÑ Á÷·ÄÈ­µÈ µ¥ÀÌÅÍµéÀ» ¸ğ¾ÆµĞ Å¬·¡½º
+    //ì €ì¥ì„ ìœ„í•œ ì§ë ¬í™”ëœ ë°ì´í„°ë“¤ì„ ëª¨ì•„ë‘” í´ë˜ìŠ¤
+    public List<ItemDataSO> SlotsData = new List<ItemDataSO>();
+
+    public void LoadItem()
+    {
+        var itemUI = UIManager.Instance.Item;
+        if(itemUI != null)
+        {
+            foreach (var slot in SlotsData)
+            {
+                //itemUI.AddItem(slot.item);
+                //slot.itemIcon
+            }
+        }
+    }
 }
