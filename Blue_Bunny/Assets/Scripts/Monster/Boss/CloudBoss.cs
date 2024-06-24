@@ -22,6 +22,8 @@ public class CloudBoss : MonoBehaviour
 
     public float bossMaxHP = 100;
     public float bossCurrentHP;
+
+    private bool isDead = false;
     
 
 
@@ -82,6 +84,8 @@ public class CloudBoss : MonoBehaviour
         
         yield return new WaitForSeconds(1f);
 
+
+        
         float shockWaveTime = 2f;
 
         Vector3 totalDirection = CharacterManager.Instance.Player.controller.transform.position - transform.position;
@@ -239,8 +243,14 @@ public class CloudBoss : MonoBehaviour
 
     void BossDie()
     {
+        isDead = true;
+        AudioManager.instance.StopBGM();
+        AudioManager.instance.StopBGM2();
+        AudioManager.instance.PlaySFX("SceneChange", 0.2f);
+        CameraManager.Instance.MakeCameraShake(transform.position, 4, 0.03f, 0.1f);
         StopCoroutine(patterCoroutine);
         StopAllCoroutines();
+        transform.DOScale(0, 2f).OnComplete(() => Destroy(gameObject));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -254,8 +264,11 @@ public class CloudBoss : MonoBehaviour
             }
             else
             {
-                BossDie();
-                Debug.Log("Boss Dead!!");
+                if (!isDead)
+                {
+                    BossDie();
+                    Debug.Log("Boss Dead!!");
+                }
             }
         }
     }
