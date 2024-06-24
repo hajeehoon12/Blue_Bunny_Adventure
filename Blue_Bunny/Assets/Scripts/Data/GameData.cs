@@ -25,6 +25,11 @@ public class GameData
     public float playerMP;
     public float attackSpeed;
 
+    // SpawnManager
+    public int killedGroundCount;
+    public int killedAirCount;
+
+
     /// <summary>
     /// 처음 만들어질 때 데이터 초기화
     /// </summary>
@@ -42,6 +47,8 @@ public class GameData
         playerMP = 50;
         attackSpeed = 0.2f;
 
+        killedGroundCount = 0;
+        killedAirCount = 0;
 
     }
 }
