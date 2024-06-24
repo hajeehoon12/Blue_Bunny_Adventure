@@ -266,6 +266,7 @@ public class CloudBoss : MonoBehaviour
                 AudioManager.instance.PlayBGM("SuperMario2", 0.2f);
                 //SpawnManager.
                 GameManager.Instance.spawnManager.nowMap.isBossAlive = false;
+                GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
                 Destroy(gameObject);
             }
         );
