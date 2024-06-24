@@ -79,8 +79,18 @@ public class SpawnManager : MonoBehaviour
     public void SpawnPortal()
     {
         Instantiate(portalPrefab, nowMap.portalPos[0]);
-        if(nowMap.data.mapIndex == 2)
+        if (nowMap.data.mapIndex == 2)
             Instantiate(storePortal, nowMap.portalPos[1]);
+
+        if (!(nowMap.data.mapIndex != 2 || nowMap.data.mapIndex != 3))
+        {
+            CameraManager.Instance.MakeCameraShake(nowMap.portalPos[0].position, 1.5f, 0.1f, 0.2f);
+        }
+        else if(nowMap.data.mapIndex ==2)
+        { 
+            CameraManager.Instance.MakeCameraShake((nowMap.portalPos[1].position ), 1.5f, 0.1f, 0.2f);
+        }
+
         Debug.Log("다음 스테이지로 갈 수 있는 포탈이 생성되었습니다!");
     }
 

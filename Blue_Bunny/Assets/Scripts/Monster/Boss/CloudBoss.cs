@@ -268,7 +268,7 @@ public class CloudBoss : MonoBehaviour
                 //SpawnManager.
                 GameManager.Instance.spawnManager.nowMap.isBossAlive = false;
                 GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
-                PoolManager.Instance.DeleteAll();
+                //PoolManager.Instance.DeleteAll();
                 Destroy(gameObject);
             }
         );

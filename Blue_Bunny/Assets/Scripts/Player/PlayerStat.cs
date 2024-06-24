@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [Serializable]
+
 public class PlayerStat : MonoBehaviour
 {
     public float playerSpeed = 5;
