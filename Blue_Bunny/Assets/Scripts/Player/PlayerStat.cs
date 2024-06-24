@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 [Serializable]
 
 public class PlayerStat : MonoBehaviour
 {
+    public MPBar mpBar;
+
     public float playerSpeed = 5;
 
     public float jumpPower = 15;
@@ -28,6 +31,7 @@ public class PlayerStat : MonoBehaviour
     private void Update()
     {
         playerMP += Time.deltaTime * 2;
+        mpBar.UpdateBar_Add();
     }
 
 }

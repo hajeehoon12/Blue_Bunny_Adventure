@@ -948,6 +948,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 57426893}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &360935235 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6508921127943966846, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
+  m_PrefabInstance: {fileID: 818019940}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 815ae052006487e4791743b86b6f0a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &409942008
 GameObject:
   m_ObjectHideFlags: 0
@@ -4840,6 +4851,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
+      propertyPath: mpBar
+      value: 
+      objectReference: {fileID: 360935235}
     - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
       propertyPath: attackSpeed
       value: 0.2
