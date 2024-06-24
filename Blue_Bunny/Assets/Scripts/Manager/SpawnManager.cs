@@ -54,6 +54,8 @@ public class SpawnManager : MonoBehaviour, IDataPersistence
         {           
             SpawnPortal();
             SpawnRewardChest();
+            if (nowMap.data.mapIndex == 3)
+                nowMap.GetComponent<BossMap>().SpawnBossRewardItem();
         }
     }
 
