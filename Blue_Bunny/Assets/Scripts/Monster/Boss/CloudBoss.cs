@@ -15,6 +15,8 @@ public class CloudBoss : MonoBehaviour
 
     public LayerMask groundLayerMask;
 
+    SpriteRenderer spriteRenderer;
+
     Coroutine patterCoroutine;
 
     private int patternNum = 0;
@@ -30,6 +32,7 @@ public class CloudBoss : MonoBehaviour
     private void Awake()
     {
         Rain = GetComponentInChildren<ParticleSystem>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     //private bool onFloor = false;
@@ -276,6 +279,7 @@ public class CloudBoss : MonoBehaviour
             {
                 bossCurrentHP -= CharacterManager.Instance.Player.stats.attackDamage;
                 Debug.Log($"BOSS HP : {bossCurrentHP}");
+                StartCoroutine(ColorChanged());
             }
             else
             {
@@ -288,5 +292,13 @@ public class CloudBoss : MonoBehaviour
         }
     }
 
+    IEnumerator ColorChanged()
+    {
+        
+        spriteRenderer.DOColor(Color.red, 0.1f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.DOColor(Color.white, 0.1f);
+
+    }
 
 }
