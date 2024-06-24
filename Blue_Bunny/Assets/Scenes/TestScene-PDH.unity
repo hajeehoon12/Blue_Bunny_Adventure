@@ -310,6 +310,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f599d6d36a008614f9647d330436794f, type: 3}
   - name: BossCloud
     clip: {fileID: 8300000, guid: 6b3e9fb9b552bac479d7dd102da914b8, type: 3}
+  - name: SuperMario2
+    clip: {fileID: 8300000, guid: 44e08d3ae2a721645bec9a2ab07d1fc3, type: 3}
+  - name: SuperMario3
+    clip: {fileID: 8300000, guid: 87ee443b67bdfe94db9251d6940c6388, type: 3}
   bgmPlayer: {fileID: 1286800511}
   bgmPlayer2: {fileID: 619146554}
   sfxPlayer:
@@ -4783,6 +4787,10 @@ PrefabInstance:
       propertyPath: attackSpeed
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 6500976779576107061, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
+      propertyPath: attackDamage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7596478851436730474, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5424,7 +5432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: stageIdx
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: spawnManager

@@ -205,7 +205,7 @@ MonoBehaviour:
     IdleSpeed: 0.7
     IdleChangeDirectionSecond: 1
     AttackDamage: 1
-    MaxHealth: 3
+    MaxHealth: 20
     IdleFlyDistance: 7
   MonsterLife: {fileID: 2643489189189102077, guid: 00ad2d6671a9c614880130b022b01a0a, type: 3}
 --- !u!1001 &7223492756875459889

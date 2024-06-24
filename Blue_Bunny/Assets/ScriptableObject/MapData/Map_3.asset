@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapIndex: 3
   ground_spawnCount: 0
-  air_spawnCount: 0
+  air_spawnCount: 1
   isBossStage: 1

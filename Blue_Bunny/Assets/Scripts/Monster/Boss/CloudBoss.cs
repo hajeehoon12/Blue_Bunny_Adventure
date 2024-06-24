@@ -15,6 +15,8 @@ public class CloudBoss : MonoBehaviour
 
     public LayerMask groundLayerMask;
 
+    SpriteRenderer spriteRenderer;
+
     Coroutine patterCoroutine;
 
     private int patternNum = 0;
@@ -30,6 +32,7 @@ public class CloudBoss : MonoBehaviour
     private void Awake()
     {
         Rain = GetComponentInChildren<ParticleSystem>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     //private bool onFloor = false;
@@ -38,6 +41,10 @@ public class CloudBoss : MonoBehaviour
     {
         AudioManager.instance.StopBGM();
         AudioManager.instance.PlayBGM("BossCloud", 0.2f);
+
+        CameraManager.Instance.MakeCameraShake(transform.position, 2, 0.05f, 0.1f);
+        AudioManager.instance.PlaySFX("Bad", 0.2f);
+
         patterCoroutine = StartCoroutine(CloudPattern());
         bossCurrentHP = bossMaxHP;
 
@@ -48,6 +55,8 @@ public class CloudBoss : MonoBehaviour
 
     IEnumerator CloudPattern()
     {
+
+        yield return new WaitForSeconds(2f);
         float duringTime = 3f;
         while (true)
         {
@@ -175,6 +184,7 @@ public class CloudBoss : MonoBehaviour
         onFloor = false;
         //GameObject servant = Instantiate(mon, transform.position, Quaternion.identity);
         GameObject servant = PoolManager.Instance.Get(numOfMon);
+        //servant.transform.parent = transform;
         servant.GetComponentInChildren<SpriteRenderer>().DOFade(1, 0f);
         servant.transform.position = transform.position + new Vector3(0, 1, 0);
         servant.GetComponent<Monster>().enabled = false;
@@ -243,14 +253,25 @@ public class CloudBoss : MonoBehaviour
 
     void BossDie()
     {
+        
         isDead = true;
         AudioManager.instance.StopBGM();
         AudioManager.instance.StopBGM2();
         AudioManager.instance.PlaySFX("SceneChange", 0.2f);
-        CameraManager.Instance.MakeCameraShake(transform.position, 4, 0.03f, 0.1f);
+        CameraManager.Instance.MakeCameraShake(transform.position, 4, 0.1f, 0.2f);
         StopCoroutine(patterCoroutine);
         StopAllCoroutines();
-        transform.DOScale(0, 2f).OnComplete(() => Destroy(gameObject));
+        transform.DOScale(0, 2f).OnComplete(() =>
+            {
+                
+                AudioManager.instance.PlayBGM("SuperMario2", 0.2f);
+                //SpawnManager.
+                GameManager.Instance.spawnManager.nowMap.isBossAlive = false;
+                GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
+                PoolManager.Instance.DeleteAll();
+                Destroy(gameObject);
+            }
+        );
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -261,6 +282,7 @@ public class CloudBoss : MonoBehaviour
             {
                 bossCurrentHP -= CharacterManager.Instance.Player.stats.attackDamage;
                 Debug.Log($"BOSS HP : {bossCurrentHP}");
+                StartCoroutine(ColorChanged());
             }
             else
             {
@@ -273,5 +295,13 @@ public class CloudBoss : MonoBehaviour
         }
     }
 
+    IEnumerator ColorChanged()
+    {
+        
+        spriteRenderer.DOColor(Color.red, 0.1f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.DOColor(Color.white, 0.1f);
+
+    }
 
 }

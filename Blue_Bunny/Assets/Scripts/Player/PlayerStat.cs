@@ -1,22 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStat:MonoBehaviour
+[Serializable]
+public class PlayerStat : MonoBehaviour
 {
-    public float playerSpeed;
+    public float playerSpeed = 5;
 
-    public float jumpPower;
+    public float jumpPower = 15;
 
-    public float bulletSpeed;
+    public float bulletSpeed = 15;
 
-    public float attackDamage;
+    public float attackDamage = 1;
 
-    public float playerHP;
+    public float playerHP = 100;
 
-    public float playerMaxHP;
+    public float playerMaxHP = 100;
 
-    public float playerMP;
+    public float playerMP = 50;
 
-    public float attackSpeed;
+    public float attackSpeed = 0.2f;
 }
