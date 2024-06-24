@@ -47,7 +47,7 @@ public class SpawnManager : MonoBehaviour
     public void ApplyAliveMonsterDeath()
     {
         aliveMonsterCount--;
-        if(aliveMonsterCount == 0 && !nowMap.isBossAlive)
+        if(aliveMonsterCount <= 0 && !nowMap.isBossAlive)
         {           
             SpawnPortal();
             SpawnRewardChest();

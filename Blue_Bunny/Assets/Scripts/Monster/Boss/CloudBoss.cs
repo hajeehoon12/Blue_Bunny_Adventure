@@ -253,6 +253,7 @@ public class CloudBoss : MonoBehaviour
 
     void BossDie()
     {
+        PoolManager.Instance.DeleteAll();
         isDead = true;
         AudioManager.instance.StopBGM();
         AudioManager.instance.StopBGM2();
@@ -267,6 +268,7 @@ public class CloudBoss : MonoBehaviour
                 //SpawnManager.
                 GameManager.Instance.spawnManager.nowMap.isBossAlive = false;
                 GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
+
                 Destroy(gameObject);
             }
         );

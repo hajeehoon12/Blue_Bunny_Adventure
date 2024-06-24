@@ -56,4 +56,14 @@ public class PoolManager : MonoBehaviour
         }
         return select;
     }
+
+
+    public void DeleteAll()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
 }
