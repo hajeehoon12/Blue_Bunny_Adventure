@@ -13,7 +13,6 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private void Start()
     {
-        //toolTip = UIManager.Instance.Item.ToolTip;
         icon.gameObject.SetActive(false);
         IsExist = false;
         OnToolTip = false;
