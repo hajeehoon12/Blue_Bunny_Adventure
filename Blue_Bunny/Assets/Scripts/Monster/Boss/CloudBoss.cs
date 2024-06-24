@@ -54,7 +54,7 @@ public class CloudBoss : MonoBehaviour
                     break;
                 case 2:
                     StartCoroutine(ElectricShockWave());
-                    duringTime = 3f;
+                    duringTime = 6f;
                     break;
 
 
@@ -89,6 +89,7 @@ public class CloudBoss : MonoBehaviour
 
         while (curNum <= amount)
         {
+            AudioManager.instance.PlayPitchSFX("ShockWave", 0.2f);
             Debug.Log("ShockWave!!");
             GameObject shockWave = Instantiate(ElecShockWave, transform.position,Quaternion.identity);
 
@@ -97,6 +98,7 @@ public class CloudBoss : MonoBehaviour
             yield return new WaitForSeconds(shockWaveTime / amount);
             curNum++;
             Destroy(shockWave);
+            
         }
 
         yield return new WaitForSeconds(1f);
@@ -110,7 +112,7 @@ public class CloudBoss : MonoBehaviour
         AudioManager.instance.PlayBGM2("WindRain", 0.2f);
         float Dir = transform.position.x > 0 ? -1 : 1;
 
-        transform.DOMoveX((CameraManager.Instance.mapSize.x - 5) * Dir, 6f);
+        transform.DOMoveX((CameraManager.Instance.mapSize.x - 5) * Dir, 5.9f);
 
 
         yield return new WaitForSeconds(6f);
