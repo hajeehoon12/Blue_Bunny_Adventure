@@ -5,6 +5,9 @@ using DG.Tweening;
 
 public class CloudBoss : MonoBehaviour
 {
+    public static CloudBoss Instance;
+
+
     public GameObject Bee;
     public GameObject Worm;
     public GameObject BlueBee;
@@ -31,6 +34,7 @@ public class CloudBoss : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         Rain = GetComponentInChildren<ParticleSystem>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -39,6 +43,7 @@ public class CloudBoss : MonoBehaviour
 
     private void Start()
     {
+        BossHPManager.instance.SyncCloud();
         AudioManager.instance.StopBGM();
         AudioManager.instance.PlayBGM("BossCloud", 0.2f);
 
@@ -253,7 +258,7 @@ public class CloudBoss : MonoBehaviour
 
     void BossDie()
     {
-        
+        BossHPManager.instance.HPBarUp();
         isDead = true;
         AudioManager.instance.StopBGM();
         AudioManager.instance.StopBGM2();
@@ -268,7 +273,8 @@ public class CloudBoss : MonoBehaviour
                 //SpawnManager.
                 GameManager.Instance.spawnManager.nowMap.isBossAlive = false;
                 GameManager.Instance.spawnManager.ApplyAliveMonsterDeath();
-                PoolManager.Instance.DeleteAll();
+                
+                //PoolManager.Instance.DeleteAll();
                 Destroy(gameObject);
             }
         );
@@ -281,7 +287,7 @@ public class CloudBoss : MonoBehaviour
             if (bossCurrentHP > CharacterManager.Instance.Player.stats.attackDamage)
             {
                 bossCurrentHP -= CharacterManager.Instance.Player.stats.attackDamage;
-                Debug.Log($"BOSS HP : {bossCurrentHP}");
+                //Debug.Log($"BOSS HP : {bossCurrentHP}");
                 StartCoroutine(ColorChanged());
             }
             else

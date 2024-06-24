@@ -81,12 +81,10 @@ public class GameManager : MonoBehaviour, IDataPersistence
     public void LoadData(GameData data)
     {
         stageIdx = data.stageIdx;
-        Debug.Log(data.stageIdx);
     }
 
     public void SaveData(GameData data)
     {
         data.stageIdx = stageIdx - 1;
-        Debug.Log(data.stageIdx);
     }
 }

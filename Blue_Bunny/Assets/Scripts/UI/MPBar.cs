@@ -9,11 +9,19 @@ public class MPBar : SlideBar
     void Start()
     {
         UpdateBar_Add();
+        CharacterManager.Instance.Player.controller.UseMana += UpdateBar_Sub;
+    }
+
+    private void Update()
+    {
+        
     }
 
     //마나가 찰 때, 호출하는 함수
     public override void UpdateBar_Add()
     {
+        Max = 50;
+        Current = CharacterManager.Instance.Player.stats.playerMP;
         base.UpdateBar_Add();
         ChangeText();
     }
@@ -21,6 +29,8 @@ public class MPBar : SlideBar
     //마나가 빠질 때, 호출하는 함수
     public override void UpdateBar_Sub()
     {
+        Max = 50;
+        Current = CharacterManager.Instance.Player.stats.playerMP;
         base.UpdateBar_Sub();
         ChangeText();
     }

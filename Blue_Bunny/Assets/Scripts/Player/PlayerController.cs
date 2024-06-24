@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     private bool canDash = true;
     private bool isAttacked = false;
 
+    public event Action UseMana;
+
     Coroutine fireCoroutine;
 
     
@@ -57,6 +59,8 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+
+        
 
     }
 
@@ -193,7 +197,9 @@ public class PlayerController : MonoBehaviour
         {
             if (canDash && CharacterManager.Instance.Player.stats.playerMP >= 10)
             {
-                CharacterManager.Instance.Player.stats.playerMP -= 5;
+                CharacterManager.Instance.Player.stats.playerMP -= 10;
+                UseMana?.Invoke();
+
                 AudioManager.instance.PlayPitchSFX("Dash", 0.2f);
                 rigid.gravityScale = 0f;
                 rigid.velocity = new Vector2(rigid.velocity.x, 0);
