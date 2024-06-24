@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    MonsterType: 0
+    MonsterType: 1
     ChasingRange: 6
     ChasingSpeed: 3
     IdleSpeed: 0.7

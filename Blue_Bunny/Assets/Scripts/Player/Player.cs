@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public PlayerController controller;
     public PlayerStat stats;
     public PlayerBattle battle;
+    public Pet pet;
 
     private void Awake()
     {
@@ -14,6 +15,11 @@ public class Player : MonoBehaviour
         controller = GetComponent<PlayerController>();
         stats = GetComponent<PlayerStat>();
         battle = GetComponent<PlayerBattle>();
+    }
+
+    private void Start()
+    {
+        pet = GameObject.Find("PetLight").GetComponent<Pet>();
     }
 
 }

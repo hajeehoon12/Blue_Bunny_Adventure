@@ -6,7 +6,7 @@ using DG.Tweening;
 public class LightEffect : MonoBehaviour
 {
 
-    Transform target;
+    //Transform CharacterManager.Instance.Player.pet.transform;
 
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class LightEffect : MonoBehaviour
 
     void MoveToPlayer()
     {
-        target = CharacterManager.Instance.Player.controller.pet.transform;
+        //CharacterManager.Instance.Player.pet.transform = CharacterManager.Instance.Player.pet.transform;
         StartCoroutine(Bound());
         StartCoroutine(LifeTime());
     }
@@ -52,7 +52,7 @@ public class LightEffect : MonoBehaviour
         
         float interval = 0.2f;
         float distance = 10f;
-        float firstDistance = Vector3.Distance(transform.position, target.position);
+        float firstDistance = Vector3.Distance(transform.position, CharacterManager.Instance.Player.pet.transform.position);
         float time = 0f;
         float totalTime = 3f;
 
@@ -61,17 +61,17 @@ public class LightEffect : MonoBehaviour
             time += 0.2f;
             float fraction = time / totalTime;
 
-            transform.DOLocalMove(transform.position + (target.position-transform.position) * fraction, interval);
-            distance = Vector3.Distance(transform.position, target.position);
+            transform.DOLocalMove(transform.position + (CharacterManager.Instance.Player.pet.transform.position-transform.position) * fraction, interval);
+            distance = Vector3.Distance(transform.position, CharacterManager.Instance.Player.pet.transform.position);
 
 
 
-            transform.DOLocalMove(target.position, 4 * distance / firstDistance);
+            transform.DOLocalMove(CharacterManager.Instance.Player.pet.transform.position, 4 * distance / firstDistance);
 
             yield return new WaitForSeconds(interval);
         }
 
-        Destroy(gameObject, 0.2f);
+        Destroy(gameObject, 0.3f);
     }
 
 
