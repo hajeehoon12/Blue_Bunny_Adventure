@@ -61,6 +61,9 @@ public class Monster : MonoBehaviour
         
         if (collision.gameObject.CompareTag(Define.BULLET_TAG)) // When Hit by Bullet
         {
+
+            
+
             Health -= CharacterManager.Instance.Player.stats.attackDamage;
             OnHealthChanged?.Invoke();
             /*Debug.Log($"Monster Health : {Health}");*/
