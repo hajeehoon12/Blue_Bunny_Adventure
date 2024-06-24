@@ -17,6 +17,6 @@ public class MonsterData
     [SerializeField] public float IdleSpeed = 1.0f;
     [SerializeField] public float IdleChangeDirectionSecond = 1.0f;
     [SerializeField] public float AttackDamage = 1.0f;
-    [SerializeField] public float MaxHealth = 3.0f;
+    [SerializeField] public float MaxHealth = 20.0f;
     [SerializeField] public float IdleFlyDistance = 7.0f;
 }

@@ -19,7 +19,7 @@ public class Monster : MonoBehaviour
 
     public MonsterStateMachine stateMachine;
 
-    public float Health { get; set; } = 3f;
+    public float Health { get; set; } = 20f;
 
     public event Action OnHealthChanged;
 
@@ -61,7 +61,7 @@ public class Monster : MonoBehaviour
         
         if (collision.gameObject.CompareTag(Define.BULLET_TAG)) // When Hit by Bullet
         {
-            Health--;
+            Health -= CharacterManager.Instance.Player.stats.attackDamage;
             OnHealthChanged?.Invoke();
             /*Debug.Log($"Monster Health : {Health}");*/
             AudioManager.instance.PlayPitchSFX("MonsterGetHit", 0.2f);

@@ -76,6 +76,28 @@
                 },
                 {
                     "name": "",
+                    "id": "97b94501-d30d-4e57-b663-fb8e376b2a71",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a9bca9e-93a7-40a6-ad15-b46661a55604",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "146c56a8-fff2-45a1-8a1b-4f43836e56bf",
                     "path": "<Keyboard>/leftShift",
                     "interactions": "",
