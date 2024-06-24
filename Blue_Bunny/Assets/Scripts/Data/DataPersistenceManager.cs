@@ -54,13 +54,16 @@ public class DataPersistenceManager : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
-        LoadGame();
 
         if (isNewGame)
         {
-            NewGame();
             isNewGame = false;
+            Debug.Log("Starting a new game.");
+            NewGame();
+            dataHandler.Save(gameData);
         }
+
+        LoadGame();
 
         Debug.Log("Scene Loaded: " + scene.name);
     }
