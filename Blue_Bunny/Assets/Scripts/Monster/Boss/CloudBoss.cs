@@ -73,13 +73,13 @@ public class CloudBoss : MonoBehaviour
 
     IEnumerator ElectricShockWave()
     {
-        float shockWaveTime = 2f;
+        
         yield return new WaitForSeconds(1f);
 
-        Transform player = CharacterManager.Instance.Player.transform;
+        float shockWaveTime = 2f;
 
-        Vector3 totalDirection = player.transform.position - transform.position;
-        float dist =Vector3.Distance(player.transform.position, transform.position);
+        Vector3 totalDirection = CharacterManager.Instance.Player.controller.transform.position - transform.position;
+        float dist =Vector3.Distance(CharacterManager.Instance.Player.controller.transform.position, transform.position);
         Vector3 normalDirection = totalDirection.normalized;
 
         Debug.Log(normalDirection);
@@ -87,7 +87,7 @@ public class CloudBoss : MonoBehaviour
         int amount = (int)dist / 1;
         int curNum = 0;
 
-        while (curNum <= amount)
+        while (curNum <= amount + 1) // 
         {
             AudioManager.instance.PlayPitchSFX("ShockWave", 0.2f);
             Debug.Log("ShockWave!!");
