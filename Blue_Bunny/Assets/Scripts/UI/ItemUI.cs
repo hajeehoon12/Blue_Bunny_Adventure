@@ -9,6 +9,8 @@ public class ItemUI : MonoBehaviour
     public Slot[] slots;            //아이템 슬롯 배열
     public Transform slotPanel;     //슬롯 패널
 
+    public ToolTip ToolTip;
+
     private int slotIndex;
 
     private void Start()
