@@ -108,7 +108,7 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  bossMaxHP: 150
+  bossMaxHP: 500
   bossCurrentHP: 0
 --- !u!60 &3998028730641636023
 PolygonCollider2D:
