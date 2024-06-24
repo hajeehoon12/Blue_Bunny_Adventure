@@ -21,6 +21,7 @@ public class Player : MonoBehaviour, IDataPersistence
     private void Start()
     {
         pet = GameObject.Find("PetLight").GetComponent<Pet>();
+    }
 
     public void LoadData(GameData data)
     {
