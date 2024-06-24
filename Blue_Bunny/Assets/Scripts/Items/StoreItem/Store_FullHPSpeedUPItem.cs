@@ -27,7 +27,7 @@ public class Store_FullHPSpeedUPItem : StoreItem, iHeal, iStatUpgrade
 
     public void Heal()
     {
-        CharacterManager.Instance._player.stats.playerHP = CharacterManager.Instance._player.stats.playerMaxHP;
+        CharacterManager.Instance.Player.battle.ChangeHealth(CharacterManager.Instance.Player.stats.playerMaxHP);
     }
 
     public void PlayHealSound()

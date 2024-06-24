@@ -5,8 +5,7 @@ public class HealItem : Item, iHeal
     public float healValue = 10f;
     public void Heal()
     {
-        CharacterManager.Instance.Player.stats.playerHP += healValue;
-        Debug.Log("체력 회복");
+        CharacterManager.Instance.Player.battle.ChangeHealth(healValue);
         PlayHealSound();
     }
     public void PlayHealSound()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDataPersistence
 {
     public PlayerController controller;
     public PlayerStat stats;
@@ -17,9 +17,19 @@ public class Player : MonoBehaviour
         battle = GetComponent<PlayerBattle>();
     }
 
+
     private void Start()
     {
         pet = GameObject.Find("PetLight").GetComponent<Pet>();
+
+    public void LoadData(GameData data)
+    {
+        this.transform.position = data.playerPosition;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.playerPosition = this.transform.position;
     }
 
 }

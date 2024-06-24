@@ -29,11 +29,11 @@ public class HPBar : SlideBar
     public override void UpdateBar_Sub()
     {
         Max = CharacterManager.Instance.Player.battle.MaxHealth;
-        Current = CharacterManager.Instance.Player.battle.CurrentHealth;
+        Current = CharacterManager.Instance.Player.stats.playerHP;
         base.UpdateBar_Sub();
         ChangeText();
     }
-    private void ChangeText()
+    public void ChangeText()
     {
         HPText.text = $"{(int)Current} / {(int)Max}";
     }

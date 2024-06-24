@@ -6,6 +6,7 @@ using UnityEngine;
 public interface iHeal
 {
     public void Heal();
+
     public void PlayHealSound();
 }
 

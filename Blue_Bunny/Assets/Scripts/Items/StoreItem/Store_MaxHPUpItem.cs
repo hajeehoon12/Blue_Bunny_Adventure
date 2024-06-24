@@ -27,5 +27,7 @@ public class Store_MaxHPUpItem : StoreItem, iStatUpgrade
     public void UpgradeStat()
     {
         CharacterManager.Instance.Player.stats.playerMaxHP += maxHPUpgradeAmount;
+        CharacterManager.Instance.Player.battle.ChangeHealth(0);
+        UIManager.Instance.Condition.HpBar.ChangeText();
     }
 }
