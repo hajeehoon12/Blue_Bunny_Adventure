@@ -171,7 +171,8 @@ public class CloudBoss : MonoBehaviour
         onFloor = false;
         //GameObject servant = Instantiate(mon, transform.position, Quaternion.identity);
         GameObject servant = PoolManager.Instance.Get(numOfMon);
-        servant.transform.position = transform.position;
+        servant.GetComponentInChildren<SpriteRenderer>().DOFade(1, 0f);
+        servant.transform.position = transform.position + new Vector3(0, 1, 0);
         servant.GetComponent<Monster>().enabled = false;
         Monster monScript = servant.GetComponent<Monster>();
         Collider2D servCol = servant.GetComponent<BoxCollider2D>();
@@ -239,11 +240,24 @@ public class CloudBoss : MonoBehaviour
     void BossDie()
     {
         StopCoroutine(patterCoroutine);
+        StopAllCoroutines();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag(Define.BULLET_TAG))
+        {
+            if (bossCurrentHP > CharacterManager.Instance.Player.stats.attackDamage)
+            {
+                bossCurrentHP -= CharacterManager.Instance.Player.stats.attackDamage;
+                Debug.Log($"BOSS HP : {bossCurrentHP}");
+            }
+            else
+            {
+                BossDie();
+                Debug.Log("Boss Dead!!");
+            }
+        }
     }
 
 
