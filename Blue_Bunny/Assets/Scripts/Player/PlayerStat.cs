@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStat:MonoBehaviour
+public class PlayerStat : MonoBehaviour
 {
-    public float playerSpeed;
+    public float playerSpeed = 5;
 
-    public float jumpPower;
+    public float jumpPower = 15;
 
     public float bulletSpeed;
 
