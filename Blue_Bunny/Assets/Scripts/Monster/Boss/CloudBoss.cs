@@ -9,6 +9,8 @@ public class CloudBoss : MonoBehaviour
     public GameObject Worm;
     public GameObject BlueBee;
 
+    public GameObject ElecShockWave;
+
     private ParticleSystem Rain;
 
     public LayerMask groundLayerMask;
@@ -17,6 +19,11 @@ public class CloudBoss : MonoBehaviour
 
     private int patternNum = 0;
     private int monsterNum = 0;
+
+    public float bossMaxHP = 100;
+    public float bossCurrentHP;
+    
+
 
     private void Awake()
     {
@@ -30,6 +37,7 @@ public class CloudBoss : MonoBehaviour
         AudioManager.instance.StopBGM();
         AudioManager.instance.PlayBGM("BossCloud", 0.2f);
         patterCoroutine = StartCoroutine(CloudPattern());
+        bossCurrentHP = bossMaxHP;
 
         Rain.Stop();
 
@@ -51,7 +59,8 @@ public class CloudBoss : MonoBehaviour
                     duringTime = 6f;
                     break;
                 case 2:
-                    duringTime = 3f;
+                    StartCoroutine(ElectricShockWave());
+                    duringTime = 6f;
                     break;
 
 
@@ -67,13 +76,49 @@ public class CloudBoss : MonoBehaviour
     }
 
 
+
+    IEnumerator ElectricShockWave()
+    {
+        
+        yield return new WaitForSeconds(1f);
+
+        float shockWaveTime = 2f;
+
+        Vector3 totalDirection = CharacterManager.Instance.Player.controller.transform.position - transform.position;
+        float dist =Vector3.Distance(CharacterManager.Instance.Player.controller.transform.position, transform.position);
+        Vector3 normalDirection = totalDirection.normalized;
+
+        //Debug.Log(normalDirection);
+
+        int amount = (int)dist / 1;
+        int curNum = 0;
+
+        while (curNum <= amount + 2) // 
+        {
+            AudioManager.instance.PlayPitchSFX("ShockWave", 0.2f);
+            Debug.Log("ShockWave!!");
+            GameObject shockWave = Instantiate(ElecShockWave, transform.position,Quaternion.identity);
+
+            shockWave.transform.position += normalDirection * curNum;
+
+            yield return new WaitForSeconds(shockWaveTime / amount);
+            curNum++;
+            Destroy(shockWave);
+            
+        }
+
+        yield return new WaitForSeconds(1f);
+    
+    }
+
+
     IEnumerator CloudRainMove()
     {
         Rain.Play();
         AudioManager.instance.PlayBGM2("WindRain", 0.2f);
         float Dir = transform.position.x > 0 ? -1 : 1;
 
-        transform.DOMoveX((CameraManager.Instance.mapSize.x - 5) * Dir, 6f);
+        transform.DOMoveX((CameraManager.Instance.mapSize.x - 5) * Dir, 5.9f);
 
 
         yield return new WaitForSeconds(6f);
@@ -104,13 +149,13 @@ public class CloudBoss : MonoBehaviour
         switch (monsterNum % 3)
         {
             case 0:
-                StartCoroutine(Summon(Bee));
+                StartCoroutine(Summon(4));
                 break;
             case 1:
-                StartCoroutine(Summon(BlueBee));
+                StartCoroutine(Summon(5));
                 break;
             default: // temp : safe code
-                StartCoroutine(Summon(Worm));
+                StartCoroutine(Summon(6));
                 break;
 
         }
@@ -118,14 +163,16 @@ public class CloudBoss : MonoBehaviour
         monsterNum++;
     }
 
-    IEnumerator Summon(GameObject mon)
+    IEnumerator Summon(int numOfMon)
     {
 
         bool onFloor;
 
         onFloor = false;
-        GameObject servant = Instantiate(mon, transform.position, Quaternion.identity);
-        //servant.GetComponent<Monster>().enabled = false;
+        //GameObject servant = Instantiate(mon, transform.position, Quaternion.identity);
+        GameObject servant = PoolManager.Instance.Get(numOfMon);
+        servant.transform.position = transform.position;
+        servant.GetComponent<Monster>().enabled = false;
         Monster monScript = servant.GetComponent<Monster>();
         Collider2D servCol = servant.GetComponent<BoxCollider2D>();
 
@@ -189,11 +236,15 @@ public class CloudBoss : MonoBehaviour
     }
 
 
-
-
-
     void BossDie()
     {
         StopCoroutine(patterCoroutine);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+
+
 }
