@@ -259,12 +259,11 @@ public class CloudBoss : MonoBehaviour
         StopAllCoroutines();
         transform.DOScale(0, 2f).OnComplete(() =>
             {
+                
                 AudioManager.instance.PlayBGM("SuperMario2", 0.2f);
+                //SpawnManager.
+                GameManager.Instance.spawnManager.nowMap.isBossAlive = false;
                 Destroy(gameObject);
-
-
-
-
             }
         );
     }
