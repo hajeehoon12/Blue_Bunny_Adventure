@@ -26,11 +26,30 @@ public class Player : MonoBehaviour, IDataPersistence
     public void LoadData(GameData data)
     {
         this.transform.position = data.playerPosition;
+
+        stats.playerSpeed = data.playerSpeed;
+        stats.jumpPower = data.jumpPower;
+        stats.bulletSpeed = data.bulletSpeed;
+        stats.attackDamage = data.attackDamage;
+        stats.playerHP = data.playerHP;
+        stats.playerMaxHP = data.playerMaxHP;
+        stats.playerMP = data.playerMP;
+        stats.attackSpeed = data.attackSpeed;
     }
 
     public void SaveData(GameData data)
     {
         data.playerPosition = this.transform.position;
+
+        data.playerSpeed = stats.playerSpeed;
+        data.jumpPower = stats.jumpPower;
+        data.bulletSpeed = stats.bulletSpeed;
+        data.attackDamage = stats.attackDamage;
+        data.playerHP = stats.playerHP;
+        data.playerMaxHP = stats.playerMaxHP;
+        data.playerMP = stats.playerMP;
+        data.attackSpeed = stats.attackSpeed;
+   
     }
 
 }
