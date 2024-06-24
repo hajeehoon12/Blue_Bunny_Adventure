@@ -39,7 +39,7 @@ public class SpawnManager : MonoBehaviour
 
         for(int i = 0; i < nowMap.data.air_spawnCount; i++)
         {
-            int randomIdx = Random.Range(4, 6);
+            int randomIdx = Random.Range(7, 9);
             SpawnMonster(randomIdx, false);
         }
     }
