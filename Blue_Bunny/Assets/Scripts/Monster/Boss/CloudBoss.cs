@@ -287,7 +287,7 @@ public class CloudBoss : MonoBehaviour
             if (bossCurrentHP > CharacterManager.Instance.Player.stats.attackDamage)
             {
                 bossCurrentHP -= CharacterManager.Instance.Player.stats.attackDamage;
-                Debug.Log($"BOSS HP : {bossCurrentHP}");
+                //Debug.Log($"BOSS HP : {bossCurrentHP}");
                 StartCoroutine(ColorChanged());
             }
             else
