@@ -9,6 +9,8 @@ public class CloudBoss : MonoBehaviour
     public GameObject Worm;
     public GameObject BlueBee;
 
+    public GameObject ElecShockWave;
+
     private ParticleSystem Rain;
 
     public LayerMask groundLayerMask;
@@ -51,6 +53,7 @@ public class CloudBoss : MonoBehaviour
                     duringTime = 6f;
                     break;
                 case 2:
+                    StartCoroutine(ElectricShockWave());
                     duringTime = 3f;
                     break;
 
@@ -64,6 +67,40 @@ public class CloudBoss : MonoBehaviour
 
             patternNum++;
         }
+    }
+
+
+
+    IEnumerator ElectricShockWave()
+    {
+        float shockWaveTime = 2f;
+        yield return new WaitForSeconds(1f);
+
+        Transform player = CharacterManager.Instance.Player.transform;
+
+        Vector3 totalDirection = player.transform.position - transform.position;
+        float dist =Vector3.Distance(player.transform.position, transform.position);
+        Vector3 normalDirection = totalDirection.normalized;
+
+        Debug.Log(normalDirection);
+
+        int amount = (int)dist / 1;
+        int curNum = 0;
+
+        while (curNum <= amount)
+        {
+            Debug.Log("ShockWave!!");
+            GameObject shockWave = Instantiate(ElecShockWave, transform.position,Quaternion.identity);
+
+            shockWave.transform.position += normalDirection * curNum;
+
+            yield return new WaitForSeconds(shockWaveTime / amount);
+            curNum++;
+            Destroy(shockWave);
+        }
+
+        yield return new WaitForSeconds(1f);
+    
     }
 
 
