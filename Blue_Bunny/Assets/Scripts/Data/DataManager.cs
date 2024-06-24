@@ -7,7 +7,7 @@ public class DataManager : MonoBehaviour
     public static DataManager Instance;
     string persistentDataPath;
 
-    public StartData Start { get; private set; }
+    public GameData Start { get; private set; }
 
     private void Awake()
     {
@@ -37,12 +37,12 @@ public class DataManager : MonoBehaviour
 
     public void Init()
     {
-        Start = new StartData();
+        Start = new GameData();
     }
 
     public void LoadGame()
     {
-        Start = LoadData<StartData>();
+        Start = LoadData<GameData>();
     }
 
     // TODO : SO 데이터 불러오기

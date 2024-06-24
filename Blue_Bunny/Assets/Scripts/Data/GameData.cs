@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class StartData
+public class GameData
 {
+    public long lastUpdated;
     public Vector3 playerPosition;
 
-    public StartData()
+    public GameData()
     {
         playerPosition = Vector3.zero;
     }

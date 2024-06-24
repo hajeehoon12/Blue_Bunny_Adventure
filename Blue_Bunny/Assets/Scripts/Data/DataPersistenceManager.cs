@@ -1,19 +1,45 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Profiling;
 using UnityEngine.SceneManagement;
 
 public interface IDataPersistence
 {
-    void LoadData(StartData data);
-    void SaveData(StartData data);
+    void LoadData(GameData data);
+    void SaveData(GameData data);
 }
 
 public class DataPersistenceManager : MonoBehaviour
 {
-    private StartData startData;
+    [Header("Debugging")]
+    [SerializeField] private bool isNewGame = false;
+    public bool IsNewGame { get { return isNewGame; } set { isNewGame = value; } }
+
+    [Header("File Storage Config")]
+    [SerializeField] private string fileName;
+
+    private GameData gameData;
     private List<IDataPersistence> dataPersistenceObjects;
+    private FileDataHandler dataHandler;
+    public static DataPersistenceManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Debug.Log("Found more than one Data Persistence Manager in the scene. Destroying the newest one.");
+            Destroy(this.gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(this.gameObject);
+
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+    }
 
     private void OnEnable()
     {
@@ -29,18 +55,64 @@ public class DataPersistenceManager : MonoBehaviour
     {
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
+
+        if (isNewGame)
+        {
+            NewGame();
+            isNewGame = false;
+        }
+
+        Debug.Log("Scene Loaded: " + scene.name);
     }
+
     public void NewGame()
     {
-        this.startData = new StartData();
+        this.gameData = new GameData();
     }
 
     public void SaveGame()
     {
+        // if we don't have any data to save, log a warning here
+        if (this.gameData == null)
+        {
+            Debug.LogWarning("No data was found. A New Game needs to be started before data can be saved.");
+            return;
+        }
+
+        // pass the data to other scripts so they can update it
+        foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+        {
+            dataPersistenceObj.SaveData(gameData);
+        }
+
+        // timestamp the data so we know when it was last saved
+        gameData.lastUpdated = System.DateTime.Now.ToBinary();
+
+        // save that data to a file using the data handler
+        dataHandler.Save(gameData);
+
+        Debug.Log("Game Saved!");
     }
 
     public void LoadGame()
     {
+        // load any saved data from a file using the data handler
+        this.gameData = dataHandler.Load();
+
+        // start a new game if the data is null and we're configured to initialize data for debugging purposes
+        if (this.gameData == null)
+        {
+            Debug.LogWarning("No data was found. Starting a new game.");
+            NewGame();
+        }
+
+        // push the loaded data to all other scripts that need it
+        foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+        {
+            dataPersistenceObj.LoadData(gameData);
+        }
+
+        Debug.Log("Game Loaded!");
     }
 
     /// <summary>

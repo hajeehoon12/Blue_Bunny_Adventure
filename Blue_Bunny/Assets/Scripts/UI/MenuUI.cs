@@ -28,7 +28,7 @@ public class MenuUI : MonoBehaviour
 
     public void ChangeBGM()
     {
-        //AudioManager.instance
+        //AudioManager.Instance
         float A = bgm.value;
         Debug.Log(A);
     }

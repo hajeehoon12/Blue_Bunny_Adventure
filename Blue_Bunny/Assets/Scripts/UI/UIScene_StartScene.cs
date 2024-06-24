@@ -33,10 +33,13 @@ public class UIScene_StartScene : MonoBehaviour
     private void OnGameStart()
     {
         SceneManager.LoadScene(Define.MainScene);
+        DataPersistenceManager.Instance.NewGame();
+
     }
 
     private void OnGameContinue()
     {
         SceneManager.LoadScene(Define.MainScene);
+        DataPersistenceManager.Instance.LoadGame();
     }
 }

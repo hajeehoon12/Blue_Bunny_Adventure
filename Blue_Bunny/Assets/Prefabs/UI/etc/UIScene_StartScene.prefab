@@ -1490,7 +1490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameStart_Button: {fileID: 6454185632868784848}
-  GameContinue_Button: {fileID: 0}
+  GameContinue_Button: {fileID: 9212131201036608679}
   Credit_Button: {fileID: 8819498750614708796}
   Exit_Button: {fileID: 3786891049831872720}
   Credit: {fileID: 6012914389803142821}
