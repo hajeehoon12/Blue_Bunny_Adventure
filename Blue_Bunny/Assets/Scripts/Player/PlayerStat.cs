@@ -22,7 +22,6 @@ public class PlayerStat : MonoBehaviour
 
     public float playerMP = 50;
 
-
     public float attackSpeed = 0.2f;
 
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManager : MonoBehaviour, IDataPersistence
 {
     //맵 인덱스를 가져와서 해당 맵에 맞는 스폰 포인트를 가져온 뒤 PoolManager.Instance.Get(번호)로 오브젝트를 가져온다.
     public int mapIndex;
@@ -17,9 +17,12 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] itemPrefabs;
     public GameObject storePortal;
 
+    [SerializeField] private int killedGroundCount = 0;
+    [SerializeField] private int killedAirCount = 0;
+
     public void SpawnMonstertoMap()
     {
-        spawnCount = nowMap.data.ground_spawnCount + nowMap.data.air_spawnCount;
+        spawnCount = nowMap.data.ground_spawnCount + nowMap.data.air_spawnCount - killedAirCount - killedGroundCount;
         aliveMonsterCount = spawnCount;
 
         if (nowMap.data.isBossStage) // not 0 and after 3stages
@@ -32,12 +35,12 @@ public class SpawnManager : MonoBehaviour
             return;
         }
 
-        for (int i = 0; i < nowMap.data.ground_spawnCount; i++)
+        for (int i = 0; i < nowMap.data.ground_spawnCount - killedGroundCount; i++)
         {
             SpawnMonster(2, true);
         }
 
-        for(int i = 0; i < nowMap.data.air_spawnCount; i++)
+        for(int i = 0; i < nowMap.data.air_spawnCount - killedAirCount; i++)
         {
             int randomIdx = Random.Range(7, 9);
             SpawnMonster(randomIdx, false);
@@ -51,6 +54,25 @@ public class SpawnManager : MonoBehaviour
         {           
             SpawnPortal();
             SpawnRewardChest();
+        }
+    }
+
+    public void ApplyAliveMonsterDeath(MonsterType monstertype)
+    {
+        aliveMonsterCount--;
+        if (aliveMonsterCount <= 0 && !nowMap.isBossAlive)
+        {
+            SpawnPortal();
+            SpawnRewardChest();
+        }
+
+        if (monstertype == MonsterType.Horizontal)
+        {
+            killedGroundCount++;
+        }
+        else
+        {
+            killedAirCount++;
         }
     }
 
@@ -104,5 +126,17 @@ public class SpawnManager : MonoBehaviour
     {
         int rdIndex = Random.Range(0, itemPrefabs.Length);
         Instantiate(itemPrefabs[rdIndex], spawnTr);
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.killedGroundCount = killedGroundCount;
+        data.killedAirCount = killedAirCount;
+    }
+
+    public void LoadData(GameData data)
+    {
+        killedGroundCount = data.killedGroundCount;
+        killedAirCount = data.killedAirCount;
     }
 }
