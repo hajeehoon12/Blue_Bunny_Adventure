@@ -4741,7 +4741,7 @@ PrefabInstance:
       objectReference: {fileID: 2137373206}
     - target: {fileID: 1541885961567742381, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
       propertyPath: bulletLifeTime
-      value: 0.55
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 3304743241754844544, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5432,7 +5432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: stageIdx
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: spawnManager
