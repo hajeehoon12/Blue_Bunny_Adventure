@@ -13,7 +13,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private void Start()
     {
-        toolTip = UIManager.Instance.Item.ToolTip;
+        //toolTip = UIManager.Instance.Item.ToolTip;
         icon.gameObject.SetActive(false);
         IsExist = false;
         OnToolTip = false;
@@ -23,7 +23,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if(OnToolTip)
         {
-            toolTip.transform.position = Input.mousePosition;
+            UIManager.Instance.Item.ToolTip.transform.position = Input.mousePosition;
         }
     }
 
@@ -49,9 +49,9 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if(IsExist)
         {
             OnToolTip = true;
-            toolTip.gameObject.SetActive(true);
+            UIManager.Instance.Item.ToolTip.gameObject.SetActive(true);
             Debug.Log(Item == null);
-            toolTip.SetItemInfo(Item);
+            UIManager.Instance.Item.ToolTip.SetItemInfo(Item);
         }
     }
 
@@ -60,7 +60,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (IsExist)
         {
             OnToolTip = false;
-            toolTip.gameObject.SetActive(false);
+            UIManager.Instance.Item.ToolTip.gameObject.SetActive(false);
         }
     }
 }
