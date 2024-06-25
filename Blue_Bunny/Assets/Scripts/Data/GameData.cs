@@ -37,7 +37,7 @@ public class GameData
     public GameData()
     {
         playerPosition = Vector3.zero;
-        stageIdx = 0;
+        stageIdx = -1;
 
         playerSpeed = 5;
         jumpPower = 15;
