@@ -15,5 +15,5 @@ MonoBehaviour:
   itemName: "\uAC70\uB300\uD55C \uC8FC\uC0AC\uAE30"
   itemdescription: "\uC704\uD5D8\uD574 \uBCF4\uC774\uB294 \uAC70\uB300\uD55C \uC8FC\uC0AC\uAE30\uB2E4.
     (\uCD5C\uB300 \uCCB4\uB825 +)"
-  itemIcon: {fileID: 21300000, guid: 0c529721f7b31184eb38d1856ee898ba, type: 3}
+  itemIcon: {fileID: 21300000, guid: 36d38f46740158e4ab67470939dd149d, type: 3}
   cost: 10
