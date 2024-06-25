@@ -25,10 +25,19 @@ public class SpawnManager : MonoBehaviour, IDataPersistence
         spawnCount = nowMap.data.ground_spawnCount + nowMap.data.air_spawnCount - killedAirCount - killedGroundCount;
         aliveMonsterCount = spawnCount;
 
-        if (nowMap.data.isBossStage) // not 0 and after 3stages
+        if (nowMap.data.isBossStage && GameManager.Instance.stageIdx == 3) // not 0 and after 3stages
         {
-            nowMap.isBossAlive = true; 
+            nowMap.isBossAlive = true;
             GameObject boss = PoolManager.Instance.Get(3);
+            // 보스 타입을 air인지 ground 인지 정하면 좋을듯.
+            Transform bossSpawnPos = nowMap.airMonsterSpawnTr[0];
+            boss.transform.position = bossSpawnPos.position;
+            return;
+        }
+        else if (nowMap.data.isBossStage && GameManager.Instance.stageIdx == 4)
+        {
+            nowMap.isBossAlive = true;
+            GameObject boss = PoolManager.Instance.Get(9);
             // 보스 타입을 air인지 ground 인지 정하면 좋을듯.
             Transform bossSpawnPos = nowMap.airMonsterSpawnTr[0];
             boss.transform.position = bossSpawnPos.position;
