@@ -14,6 +14,7 @@ public class BossHPManager : MonoBehaviour
     public CallBoss callBoss;
 
     private bool isCloudStage = false;
+    private bool isRedStage = false;
 
 
     private void Awake()
@@ -39,6 +40,26 @@ public class BossHPManager : MonoBehaviour
 
     }
 
+    public void SyncRed()
+    {
+        hpBarSlider.value = 0f;
+        bossText.DOText("", 0f);
+        isRedStage = true;
+        callBoss.CallHPBar();
+        StartCoroutine(RedSync());
+    }
+
+    IEnumerator RedSync()
+    {
+        yield return new WaitForSeconds(1f);
+
+        DOTween.To(() => hpBarSlider.value, x => hpBarSlider.value = x, 1f, 1f);
+
+        bossText.DOText("Git터져서 화난 검사", 1f);
+
+    }
+
+
     IEnumerator CloudSync()
     {
         
@@ -55,6 +76,7 @@ public class BossHPManager : MonoBehaviour
     {
         callBoss.GoBackHPBar();
         isCloudStage = false;
+        isRedStage = false;
     }
 
     public void SetHPBar()
@@ -62,6 +84,10 @@ public class BossHPManager : MonoBehaviour
         if (isCloudStage)
         {
             hpBarSlider.value = CloudBoss.Instance.bossCurrentHP / CloudBoss.Instance.bossMaxHP;
+        }
+        if (isRedStage)
+        { 
+            hpBarSlider.value = BossController.Instance.bossHP / BossController.Instance.bossMaxHP;
         }
 
     }
