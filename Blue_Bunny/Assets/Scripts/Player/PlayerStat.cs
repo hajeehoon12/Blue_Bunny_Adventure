@@ -24,6 +24,8 @@ public class PlayerStat : MonoBehaviour
 
     public float attackSpeed = 0.2f;
 
+    public float playerGold = 0f;
+
 
     private void Update()
     {
