@@ -13,14 +13,19 @@ public class Store_Donation : StoreItem
     }
     protected override void Buy()
     {
-        Donate();
+        if(CharacterManager.Instance.Player.stats.playerGold > 0)
+        {
+            Donate();
+        }
     }
 
     public void Donate()
     {
-        Instantiate(donationText, this.transform);
+        CharacterManager.Instance.Player.stats.playerGold -= Mathf.Min(CharacterManager.Instance.Player.stats.playerGold, itemData.cost);
+        TextMeshPro donationMessage = Instantiate(donationText, this.transform);
+        Destroy(donationMessage, 0.5f);
         this.gameObject.GetComponent<Collider2D>().enabled = false;
-        Destroy(gameObject, 1f);
+        Destroy(gameObject,1f);
     }
 
     protected override void OnTriggerStay2D(Collider2D collision)
@@ -28,7 +33,6 @@ public class Store_Donation : StoreItem
         if(Input.GetKey(KeyCode.UpArrow))
         {
             Buy();
-            Destroy(gameObject, 1f);
         }
     }
 }

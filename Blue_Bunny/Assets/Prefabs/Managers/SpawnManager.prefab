@@ -49,3 +49,12 @@ MonoBehaviour:
   spawnCount: 1
   aliveMonsterCount: 0
   portalPrefab: {fileID: 8034338738082708265, guid: 09343025e9de93840af8e33c8db62f80, type: 3}
+  itemPrefabs:
+  - {fileID: 628548740889199303, guid: f9b1f9232600e9649851566963dbd4af, type: 3}
+  - {fileID: 6990138531305047815, guid: 5b159595dfd8e9c4ba7a111524ed94ad, type: 3}
+  - {fileID: 7718114216464479476, guid: 7a094eb5c88ad7c4a85ea2311009439c, type: 3}
+  - {fileID: 4885697733078660534, guid: 657cb5b3c32ab1b4aa705defb1f85dc0, type: 3}
+  - {fileID: 1342911267116283509, guid: 8afa83baa2d8df947973b2d24605d587, type: 3}
+  storePortal: {fileID: 3992058561654064293, guid: 13c990b8270c70b4c9f196019286028c, type: 3}
+  killedGroundCount: 0
+  killedAirCount: 0
