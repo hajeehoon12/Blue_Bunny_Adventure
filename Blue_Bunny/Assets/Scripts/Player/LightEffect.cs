@@ -81,6 +81,7 @@ public class LightEffect : MonoBehaviour
 
     void LifeTimeEnd()
     {
+        CharacterManager.Instance.Player.stats.AddGold(20);
         StopAllCoroutines();
         Destroy(gameObject, 0.2f);
     }
