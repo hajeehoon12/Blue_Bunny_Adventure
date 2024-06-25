@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
                 CharacterManager.Instance.Player.transform.position = spawnManager.nowMap.playerSpawnPos.position;
                 IsMapChanged = false;
             }
+            
         }
         stageIdx++;
     }
