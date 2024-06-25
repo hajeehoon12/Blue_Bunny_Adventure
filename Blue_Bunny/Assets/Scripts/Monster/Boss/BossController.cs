@@ -6,6 +6,7 @@ using DG.Tweening;
 
 public class BossController : MonoBehaviour
 {
+    public static BossController Instance;
 
     private static readonly int isRunning = Animator.StringToHash("IsRunning");
     private static readonly int isJumping = Animator.StringToHash("IsJumping");
@@ -26,7 +27,7 @@ public class BossController : MonoBehaviour
     Collider2D playerCollider;
 
     bool Jumping = false;           // AM i Jumping?
-    //bool Falling = false;
+    bool Falling = false;
     bool Rolling = false;           // AM i rolling?
     public bool isGrounded = true;  // AM i on the ground?
     bool canCombo = false;          // AM i doing combo attack
@@ -59,13 +60,14 @@ public class BossController : MonoBehaviour
     private bool canDoDown = true;
 
     public bool isBossDie = false;
-    public float bossMaxHP = 5f;
+    public float bossMaxHP = 200f;
     public float bossHP;
 
 
 
     void Awake()
     {
+        Instance = this;
         rigid = GetComponentInParent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -76,12 +78,14 @@ public class BossController : MonoBehaviour
 
     private void Start()
     {
+        BossHPManager.instance.SyncRed();
         playerGravityScale = rigid.gravityScale;
         boundPlayer = playerCollider.bounds.extents;
         _player = CharacterManager.Instance.Player.transform;
 
         bossHP = bossMaxHP;
-
+        AudioManager.instance.StopBGM();
+        AudioManager.instance.PlayBGM("Thema", 0.2f);
     }
 
     private void FixedUpdate()
@@ -114,12 +118,12 @@ public class BossController : MonoBehaviour
 
         if (diff.x < 3 && diff.x > -3)
         {
-            if (diff.y < -0.7f)
+            if (diff.y < -1f)
             {
                 TryJump();
                 return;
             }
-            else if (diff.y > 0.7f)
+            else if (diff.y > 1f)
             {
                 TryDown();
                 return;
@@ -208,7 +212,8 @@ public class BossController : MonoBehaviour
     {
         //Debug.Log("I'm hitting!!");
         float CheckDir = 1f;
-        
+
+        AudioManager.instance.PlayPitchSFX("SwordAttack", 0.2f);
 
         if (spriteRenderer.flipX) CheckDir = -1f;
 
@@ -394,7 +399,7 @@ public class BossController : MonoBehaviour
         {
             animator.SetBool(isJumping, false);
             animator.SetBool(isFalling, true);
-            //Falling = true;
+            Falling = true;
         }
     }
 
@@ -429,9 +434,9 @@ public class BossController : MonoBehaviour
                 if (hit.collider?.name != null)
                 {
                     //Debug.Log(hit.collider.name);
-                    if (!isGrounded && Jumping)
+                    if (!isGrounded && Jumping && Falling)
                     {
-                        //Falling = false;
+                        Falling = false;
                         isGrounded = true;
                         Jumping = false;
                         animator.SetBool(isFalling, false);
@@ -472,9 +477,20 @@ public class BossController : MonoBehaviour
 
     void CallDie()
     {
+        BossHPManager.instance.HPBarUp();
         Debug.Log("Boss Dead!!");
         isBossDie = true;
         animator.SetBool(isRunning, false);
+
+        transform.DOScale(0, 1f).OnComplete(() =>
+            {
+                AudioManager.instance.PlaySFX("SwordDrop", 0.3f);
+                AudioManager.instance.StopBGM();
+                AudioManager.instance.PlayBGM("SuperMario3", 0.15f);
+                CharacterManager.Instance.Player.stats.AddGold(20);
+                gameObject.SetActive(false);
+            }
+        );
         
     }
 

@@ -35,6 +35,7 @@ public class Player : MonoBehaviour, IDataPersistence
         stats.playerMaxHP = data.playerMaxHP;
         stats.playerMP = data.playerMP;
         stats.attackSpeed = data.attackSpeed;
+        stats.playerGold = data.playerGold;
     }
 
     public void SaveData(GameData data)
@@ -49,7 +50,9 @@ public class Player : MonoBehaviour, IDataPersistence
         data.playerMaxHP = stats.playerMaxHP;
         data.playerMP = stats.playerMP;
         data.attackSpeed = stats.attackSpeed;
+        data.playerGold = stats.playerGold;
    
+        Debug.Log("Player Data Saved");
     }
 
 }

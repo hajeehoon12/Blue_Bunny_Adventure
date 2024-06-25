@@ -47,5 +47,11 @@ MonoBehaviour:
   spawnManager: {fileID: 0}
   mapPrefabs:
   - {fileID: 5311486081576766895, guid: a721c87b50704a44f90d83fa800618d2, type: 3}
-  - {fileID: 5311486081576766895, guid: 974c7f854180ea542a5d2aa3899defc3, type: 3}
-  stageIdx: 0
+  - {fileID: 5311486081576766895, guid: 6c49bab4168941344991794300cf0c7d, type: 3}
+  - {fileID: 5311486081576766895, guid: 6d2fd3837ceb37644bb50b900c18a323, type: 3}
+  - {fileID: 5311486081576766895, guid: 9f07a6f9f2f805643b1072252f66dbb0, type: 3}
+  - {fileID: 5311486081576766895, guid: 9356446271c69df40aa26d9d58def755, type: 3}
+  storeMapPrefab: {fileID: 5311486081576766895, guid: b5d04ce703eda1346bd4784fbe1cdcf8, type: 3}
+  tutorialMapPrefab: {fileID: 5311486081576766895, guid: d76026b9fb8a59e40b21c67c3c041e07, type: 3}
+  isInStore: 0
+  stageIdx: -1

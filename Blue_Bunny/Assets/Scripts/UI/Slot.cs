@@ -49,7 +49,6 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             OnToolTip = true;
             UIManager.Instance.Item.ToolTip.gameObject.SetActive(true);
-            Debug.Log(Item == null);
             UIManager.Instance.Item.ToolTip.SetItemInfo(Item);
         }
     }

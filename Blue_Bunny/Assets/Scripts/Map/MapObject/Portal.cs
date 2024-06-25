@@ -11,6 +11,7 @@ public class Portal : MonoBehaviour
             Debug.Log("다음 스테이지로 이동합니다");
             AudioManager.instance.PlaySFX("Warp", 0.2f);
             GameManager.Instance.ChangeMap();      
+            GameManager.Instance.IsMapChanged = true;
         }
     }
 }
