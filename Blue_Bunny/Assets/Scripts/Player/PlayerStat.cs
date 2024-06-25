@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 
 
@@ -27,11 +28,19 @@ public class PlayerStat : MonoBehaviour
 
     public float attackSpeed = 0.2f;
 
+    public float playerGold = 0f;
+
 
     private void Update()
     {
         playerMP += Time.deltaTime * 2;
         mpBar.UpdateBar_Add();
+    }
+
+
+    public void AddGold(int additionalGold)
+    {
+        DOTween.To(() => playerGold, x => playerGold = x, playerGold + additionalGold, 2f);
     }
 
 }
