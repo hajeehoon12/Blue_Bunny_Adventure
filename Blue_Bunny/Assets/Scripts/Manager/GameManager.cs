@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
     public GameObject storeMapPrefab;
     private GameObject storeMapObject;
-    public GameObject tutorialMapPrefab;
 
     private bool storeMapCreated = false;
     public bool isInStore = false;
@@ -42,25 +41,14 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
     public void ChangeMap()
     {
-        GameObject go;
-
-        // 튜토리얼 스테이지
-        if (stageIdx == -1)
+        GameObject go = Instantiate(mapPrefabs[stageIdx]);
+        
+        if(spawnManager.nowMap != null)
         {
-            go = Instantiate(tutorialMapPrefab);
-            spawnManager.nowMap = go.GetComponent<Map>();
+            Destroy(spawnManager.nowMap.gameObject);
         }
-        else
-        {
-            go = Instantiate(mapPrefabs[stageIdx]);
-
-            if (spawnManager.nowMap != null)
-            {
-                Destroy(spawnManager.nowMap.gameObject);
-            }
-            spawnManager.nowMap = go.GetComponent<Map>();
-            spawnManager.SpawnMonstertoMap();
-        }
+        spawnManager.nowMap = go.GetComponent<Map>();
+        spawnManager.SpawnMonstertoMap();
         stageIdx++;
     }
 

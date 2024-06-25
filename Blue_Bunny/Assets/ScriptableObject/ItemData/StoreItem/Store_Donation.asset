@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\uAE30\uBD80\uD558\uAE30"
   itemdescription: "\uAC1C\uBC1C\uC790\uB97C \uC704\uD574 \uAE30\uBD80\uD574\uC8FC\uC138\uC694"
-  itemIcon: {fileID: 21300000, guid: 871363134a8206e47b068a8f94ea1c1d, type: 3}
+  itemIcon: {fileID: 21300000, guid: 36d38f46740158e4ab67470939dd149d, type: 3}
   cost: 5

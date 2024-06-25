@@ -31,37 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5275807183670642871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3413897734396898763
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 967999448660272913}
-  m_Layer: 0
-  m_Name: PlayerSpawnPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &967999448660272913
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3413897734396898763}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.41, y: -4.01, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5275807183670642871}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4588936355881965777
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +103,6 @@ Transform:
   - {fileID: 5402384748770941116}
   - {fileID: 7792956628045030092}
   - {fileID: 5663972671543317406}
-  - {fileID: 967999448660272913}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &2803805949984326191
@@ -171,7 +139,7 @@ MonoBehaviour:
   rewardChestTr: {fileID: 7792956628045030092}
   rewardChest: {fileID: 6366736423589511129, guid: 7cdb30040933477469763e8d782772ca, type: 3}
   isBossAlive: 0
-  playerSpawnPos: {fileID: 967999448660272913}
+  isBossMap: 1
 --- !u!114 &9008163471574086758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +160,6 @@ MonoBehaviour:
   - {fileID: 1342911267116283509, guid: 51273b7b89beb6742ab0d3bf3fc2f8ba, type: 3}
   - {fileID: 1342911267116283509, guid: 8ed86ca8c118fbc4197f3d62e6fd1a24, type: 3}
   - {fileID: 1342911267116283509, guid: 8d6c20f6f408bf145a200990d7d07bba, type: 3}
-  isSelectAnyItem: 0
 --- !u!1 &5356630590888546988
 GameObject:
   m_ObjectHideFlags: 0
