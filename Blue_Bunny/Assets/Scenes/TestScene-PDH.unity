@@ -5616,12 +5616,16 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 7964650592427289113, guid: 40b6402fb7a9358408451146d933b699, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964650592427289113, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: stageIdx
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: spawnManager
@@ -5632,8 +5636,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5311486081576766895, guid: b5d04ce703eda1346bd4784fbe1cdcf8, type: 3}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
+      propertyPath: tutorialMapPrefab
+      value: 
+      objectReference: {fileID: 5311486081576766895, guid: d76026b9fb8a59e40b21c67c3c041e07, type: 3}
+    - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: mapPrefabs.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: itemPrefabs.Array.size
@@ -5651,6 +5659,10 @@ PrefabInstance:
       propertyPath: mapPrefabs.Array.data[3]
       value: 
       objectReference: {fileID: 5311486081576766895, guid: 9f07a6f9f2f805643b1072252f66dbb0, type: 3}
+    - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
+      propertyPath: mapPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 5311486081576766895, guid: 9356446271c69df40aa26d9d58def755, type: 3}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: itemPrefabs.Array.data[0]
       value: 
