@@ -565,17 +565,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3304743241754844544, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
   m_PrefabInstance: {fileID: 1946035930}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &264960028 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1198653104540595629, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-  m_PrefabInstance: {fileID: 818019940}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f29c197491b554746b1492639d1fed42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &277448496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,22 +2384,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1705522925015954382, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: m_fontAsset
+    - target: {fileID: 2225825072288514162, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
+      propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 11400000, guid: c6f43ff2fc5b21d439577ea8c1edeac3, type: 2}
-    - target: {fileID: 1705522925015954382, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2378279070156560092, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: ToolTip
-      value: 
-      objectReference: {fileID: 264960028}
-    - target: {fileID: 2974253870019784551, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: ToolTip
-      value: 
-      objectReference: {fileID: 264960028}
+      objectReference: {fileID: 21300000, guid: 14fc29ee9fafdd445a45f5130cf09007, type: 3}
     - target: {fileID: 3584065177848277302, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2607,10 +2584,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6801537901691970476, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: ToolTip
-      value: 
-      objectReference: {fileID: 264960028}
     - target: {fileID: 7167272292103299024, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2658,14 +2631,6 @@ PrefabInstance:
     - target: {fileID: 7461058421421380671, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7691993734761805600, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: c6f43ff2fc5b21d439577ea8c1edeac3, type: 2}
-    - target: {fileID: 7691993734761805600, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8462823211201741958, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2771,10 +2736,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9208742365391404001, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: ToolTip
-      value: 
-      objectReference: {fileID: 264960028}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

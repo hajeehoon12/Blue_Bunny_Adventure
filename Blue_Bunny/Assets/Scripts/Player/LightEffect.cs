@@ -74,7 +74,7 @@ public class LightEffect : MonoBehaviour
 
             yield return new WaitForSeconds(interval);
         }
-
+        CharacterManager.Instance.Player.stats.AddGold(2);
         yield return new WaitForSeconds(interval);
         LifeTimeEnd();  
     }
