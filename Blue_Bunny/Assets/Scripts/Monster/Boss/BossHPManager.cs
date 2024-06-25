@@ -55,7 +55,7 @@ public class BossHPManager : MonoBehaviour
 
         DOTween.To(() => hpBarSlider.value, x => hpBarSlider.value = x, 1f, 1f);
 
-        bossText.DOText("Git터져서 화난 검사", 1f);
+        bossText.DOText("Git 터져서 화난 검사", 1f);
 
     }
 
