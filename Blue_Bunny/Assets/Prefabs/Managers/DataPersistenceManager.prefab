@@ -44,4 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ff8f0730293f1428119ea7c520c09c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNewGame: 0
   fileName: data.json
+  autoSaveTimeSeconds: 10

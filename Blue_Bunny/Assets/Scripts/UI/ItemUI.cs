@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ItemUI : MonoBehaviour
+public class ItemUI : MonoBehaviour, IDataPersistence
 {
     private bool isOn = false;      //아이템UI On, Off
     private bool isMoving = false;  //아이템UI가 움직이고 있는 중인지
@@ -55,13 +55,19 @@ public class ItemUI : MonoBehaviour
 
     public void AddItem(ItemDataSO itemData)
     {
+        Debug.Log($"ItemUI AddItem: {itemData.name}");
+
         GetEmptySlot();
         slots[slotIndex].Item = itemData;
         slots[slotIndex].Set();
 
         for (int i = 0; i < ItemsDataSo.Length; i++)
         {
-            if (ItemsDataSo[i].name == itemData.name) ItemsData.ItemsIndex.Add(i);
+            if (ItemsDataSo[i].name == itemData.name)
+            {
+                ItemsData.ItemsIndex.Add(i);
+                Debug.Log($"ItemUI AddItem: {ItemsData.ItemsIndex}");
+            }
         }
     }
 
@@ -96,5 +102,22 @@ public class ItemUI : MonoBehaviour
         }
 
         return true;
+    }
+
+    // TODO : 관엽님 추가 부탁드려요!
+    private void AddItemAsLoad()
+    {
+        
+    }
+
+    public void LoadData(GameData data)
+    {
+        ItemsData.ItemsIndex = data.ItemsData;
+        AddItemAsLoad();
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.ItemsData = ItemsData.ItemsIndex;
     }
 }

@@ -30,6 +30,8 @@ public class GameData
     public int killedGroundCount;
     public int killedAirCount;
 
+    // ItemUI
+    public List<int> ItemsData;
 
     /// <summary>
     /// 처음 만들어질 때 데이터 초기화
@@ -52,5 +54,6 @@ public class GameData
         killedGroundCount = 0;
         killedAirCount = 0;
 
+        ItemsData = new List<int>();
     }
 }
