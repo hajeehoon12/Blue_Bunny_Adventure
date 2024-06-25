@@ -8,10 +8,15 @@ public class Store_MaxHPUpItem : StoreItem, iStatUpgrade
 
     protected override void Buy()
     {
-        // 플레이어의 돈이 아이템 가격보다 많다면
-        PlayUpgradeSound();
-        GotoInventoryTab();
-        UpgradeStat();
+        if (CharacterManager.Instance.Player.stats.playerGold > itemData.cost)
+        {
+            CharacterManager.Instance.Player.stats.playerGold -= itemData.cost;
+            PlayUpgradeSound();
+            GotoInventoryTab();
+            UpgradeStat();
+
+            Destroy(gameObject);
+        }
     }
 
     public void GotoInventoryTab()

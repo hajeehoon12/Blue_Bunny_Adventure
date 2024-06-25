@@ -20,13 +20,13 @@ public abstract class StoreItem : MonoBehaviour
     protected void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log($"가격? {itemData.cost}");
+        Debug.Log(CharacterManager.Instance.Player.stats.playerGold);
     }
     protected virtual void OnTriggerStay2D(Collider2D collision)
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
             Buy();
-            Destroy(gameObject);
         }
     }
     protected void OnTriggerExit2D(Collider2D collision)

@@ -54,7 +54,10 @@ public class NPC : MonoBehaviour
         conversations.Add("어떻게 벌써 여기까지 왔냐고?");
         conversations.Add("쉬프트 키를 누르면 대쉬가 된다는 건 알지?");
         conversations.Add("토끼라면 다 할 수 있을거야!");
-        conversations.Add("몸 조심히 다녀와!");
+        conversations.Add("잠시 쉬고 싶으면 Esc를,");
+        conversations.Add("아이템 목록을 보려면 Tab을 눌러!");
+        conversations.Add("내가 아는 건 여기까지야.");
+        conversations.Add("몸 조심하고 잘 다녀와..!");
     }
 
 

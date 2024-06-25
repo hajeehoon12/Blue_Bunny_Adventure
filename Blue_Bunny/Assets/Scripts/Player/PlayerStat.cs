@@ -26,6 +26,8 @@ public class PlayerStat : MonoBehaviour
 
     public float playerMP = 50;
 
+    public float playerMaxMP = 50;
+
     public float attackSpeed = 0.2f;
 
     public float playerGold = 0f;
@@ -33,7 +35,7 @@ public class PlayerStat : MonoBehaviour
 
     private void Update()
     {
-        playerMP += Time.deltaTime * 5;
+        playerMP = Mathf.Min(playerMaxMP, playerMP + Time.deltaTime * 5);
         mpBar.UpdateBar_Add();
     }
 

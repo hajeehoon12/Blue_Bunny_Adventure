@@ -109,7 +109,7 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  bulletLifeTime: 3
+  bulletLifeTime: 0.65
 --- !u!50 &7013075663424530611
 Rigidbody2D:
   serializedVersion: 4
@@ -246,11 +246,35 @@ MonoBehaviour:
     m_ActionId: 4647814c-c53d-4acc-9633-bb9a9dd6d129
     m_ActionName: Player/Dash[/Keyboard/leftShift]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1541885961567742381}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnItemInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ca41b5e8-9a08-402c-af9c-7ed6647506b0
     m_ActionName: Player/ItemIneventory[/Keyboard/tab]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1541885961567742381}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 88cd93cd-05a7-4705-bd93-5f9077ea5a20
     m_ActionName: Player/Menu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
@@ -273,6 +297,7 @@ MonoBehaviour:
   controller: {fileID: 0}
   stats: {fileID: 0}
   battle: {fileID: 0}
+  pet: {fileID: 0}
 --- !u!95 &1698128626999075974
 Animator:
   serializedVersion: 5
@@ -322,14 +347,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582aa398169eb414eb0f2aa2051b676a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mpBar: {fileID: 0}
   playerSpeed: 5
   jumpPower: 15
   bulletSpeed: 15
-  attackDamage: 1
+  attackDamage: 5
   playerHP: 100
   playerMaxHP: 100
   playerMP: 50
-  attackSpeed: 0
+  attackSpeed: 0.2
+  playerGold: 0
 --- !u!114 &5458660057958311090
 MonoBehaviour:
   m_ObjectHideFlags: 0
