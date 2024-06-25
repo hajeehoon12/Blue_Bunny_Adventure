@@ -33,7 +33,7 @@ public class PlayerStat : MonoBehaviour
 
     private void Update()
     {
-        playerMP += Time.deltaTime * 2;
+        playerMP += Time.deltaTime * 5;
         mpBar.UpdateBar_Add();
     }
 
