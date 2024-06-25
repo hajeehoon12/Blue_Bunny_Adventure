@@ -42,7 +42,7 @@ public class GameData
         playerSpeed = 5;
         jumpPower = 15;
         bulletSpeed = 15;
-        attackDamage = 1;
+        attackDamage = 5;
         playerHP = 100;
         playerMaxHP = 100;
         playerMP = 50;
