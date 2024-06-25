@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Profiling;
 using UnityEngine.SceneManagement;
@@ -17,15 +18,20 @@ public class DataPersistenceManager : MonoBehaviour
 {
     [Header("Debugging")]
     [SerializeField] private bool isNewGame = false;
-    public bool IsNewGame { get { return isNewGame; } set { isNewGame = value; } }
 
     [Header("File Storage Config")]
     [SerializeField] private string fileName;
+
+    [Header("Auto Saving Configuration")]
+    [SerializeField] private float autoSaveTimeSeconds = 60f;
 
     private GameData gameData;
     private List<IDataPersistence> dataPersistenceObjects;
     private FileDataHandler dataHandler;
     public static DataPersistenceManager Instance { get; private set; }
+    public bool IsNewGame { get { return isNewGame; } set { isNewGame = value; } }
+
+    private Coroutine autoSaveCoroutine;
 
     private void Awake()
     {
@@ -51,6 +57,11 @@ public class DataPersistenceManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    /// <summary>
+    /// 씬 로드 되면 저장객체 찾기, 게임 로드, 자동 저장 시작
+    /// </summary>
+    /// <param name="scene"></param>
+    /// <param name="mode"></param>
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
@@ -65,14 +76,27 @@ public class DataPersistenceManager : MonoBehaviour
 
         LoadGame();
 
+        // start up the auto saving coroutine
+        if (autoSaveCoroutine != null)
+        {
+            StopCoroutine(autoSaveCoroutine);
+        }
+        autoSaveCoroutine = StartCoroutine(AutoSave());
+
         Debug.Log("Scene Loaded: " + scene.name);
     }
 
+    /// <summary>
+    /// 새로운 게임이면 데이터 기본 값들로 초기화한다
+    /// </summary>
     public void NewGame()
     {
         this.gameData = new GameData();
     }
 
+    /// <summary>
+    /// 저장객체들에 데이터 저장
+    /// </summary>
     public void SaveGame()
     {
         // if we don't have any data to save, log a warning here
@@ -129,5 +153,15 @@ public class DataPersistenceManager : MonoBehaviour
             .OfType<IDataPersistence>();
 
         return new List<IDataPersistence>(dataPersistenceObjects);
+    }
+
+    private IEnumerator AutoSave()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(autoSaveTimeSeconds);
+            SaveGame();
+            Debug.Log("Auto Saved Game");
+        }
     }
 }
