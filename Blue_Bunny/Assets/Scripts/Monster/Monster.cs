@@ -72,7 +72,8 @@ public class Monster : MonoBehaviour
             if (Health <= 0)
             {
                 stateMachine.ChangeState(stateMachine.DeadState);
-                GameObject lifeLight = Instantiate(MonsterLife, CharacterManager.Instance.Player.transform.position, Quaternion.identity); 
+                GameObject lifeLight = Instantiate(MonsterLife, CharacterManager.Instance.Player.transform.position, Quaternion.identity);
+                
                 lifeLight.transform.position = transform.position;
             }
             else
