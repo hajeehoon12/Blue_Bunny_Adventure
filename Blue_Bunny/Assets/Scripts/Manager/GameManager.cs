@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
     public int stageIdx = 0;
 
-    public bool IsMapChanged { get; set;}
+    public bool IsMapChanged { get; set; }
 
     private void Awake()
     {
@@ -52,11 +52,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
             go = Instantiate(tutorialMapPrefab);
             spawnManager.nowMap = go.GetComponent<Map>();
 
-            if(IsMapChanged)
-            {
-                CharacterManager.Instance.Player.transform.position = spawnManager.nowMap.playerSpawnPos.position;
-                IsMapChanged = false;
-            }
+            CharacterManager.Instance.Player.transform.position = spawnManager.nowMap.playerSpawnPos.position;
         }
         else
         {
@@ -69,7 +65,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
             spawnManager.nowMap = go.GetComponent<Map>();
             spawnManager.SpawnMonstertoMap();
 
-            if(IsMapChanged)
+            if (IsMapChanged)
             {
                 CharacterManager.Instance.Player.transform.position = spawnManager.nowMap.playerSpawnPos.position;
                 IsMapChanged = false;

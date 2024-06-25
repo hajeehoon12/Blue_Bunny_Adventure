@@ -22,7 +22,7 @@ public class DataPersistenceManager : MonoBehaviour
     [SerializeField] private string fileName;
 
     [Header("Auto Saving Configuration")]
-    [SerializeField] private float autoSaveTimeSeconds = 60f;
+    [SerializeField] private float autoSaveTimeSeconds = 30f;
     private Coroutine autoSaveCoroutine;
 
     private GameData gameData;
@@ -71,12 +71,12 @@ public class DataPersistenceManager : MonoBehaviour
         LoadGame();
         Debug.Log("Scene Loaded: " + scene.name);
 
-        /*// start up the auto saving coroutine
+        // start up the auto saving coroutine
         if (autoSaveCoroutine != null)
         {
             StopCoroutine(autoSaveCoroutine);
         }
-        autoSaveCoroutine = StartCoroutine(AutoSave());*/
+        autoSaveCoroutine = StartCoroutine(AutoSave());
     }
 
     public void NewGame()
