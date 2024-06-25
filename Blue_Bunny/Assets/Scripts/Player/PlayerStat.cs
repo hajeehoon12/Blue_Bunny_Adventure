@@ -40,7 +40,7 @@ public class PlayerStat : MonoBehaviour
 
     public void AddGold(int additionalGold)
     {
-        DOTween.To(() => playerGold, x => playerGold = x, playerGold + additionalGold, 2f);
+        DOTween.To(() => playerGold, x => playerGold = x, playerGold + additionalGold, 0.5f);
     }
 
 }

@@ -9,7 +9,7 @@ public class PlayerGold : MonoBehaviour
 
     private void Update()
     {
-        goldText.text = CharacterManager.Instance.Player.stats.playerGold.ToString();
+        goldText.text = CharacterManager.Instance.Player.stats.playerGold.ToString("N0");
     }
 
 }
