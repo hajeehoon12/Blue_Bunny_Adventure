@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068d13ece2f7ef040a95ca222cd70d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
-  jumpPower: 15
+  maxSpeed: 4
+  jumpPower: 12
   isGrounded: 1
   enemyLayerMask:
     serializedVersion: 2
@@ -138,8 +138,8 @@ MonoBehaviour:
   ComboCount: 0
   _player: {fileID: 0}
   isBossDie: 0
-  bossMaxHP: 5
-  bossHP: 0
+  bossMaxHP: 300
+  bossHP: 300
 --- !u!50 &6313621975468925686
 Rigidbody2D:
   serializedVersion: 4

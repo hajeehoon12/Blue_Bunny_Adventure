@@ -303,6 +303,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: eb339c51a2ecb274a9d9eb5812beb64b, type: 3}
   - name: SceneChange
     clip: {fileID: 8300000, guid: bfef24712e1ebd64ba4587c4568806ff, type: 3}
+  - name: SwordAttack
+    clip: {fileID: 8300000, guid: bd14610b96a8ab84fbc392b00d94b45f, type: 3}
+  - name: SwordDrop
+    clip: {fileID: 8300000, guid: 4dfd54ac535ad704daccd10f97184f8a, type: 3}
   bgm:
   - name: SuperMario
     clip: {fileID: 8300000, guid: 2d985052ed40f0c4da687bd445319410, type: 3}
@@ -314,6 +318,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 44e08d3ae2a721645bec9a2ab07d1fc3, type: 3}
   - name: SuperMario3
     clip: {fileID: 8300000, guid: 87ee443b67bdfe94db9251d6940c6388, type: 3}
+  - name: Thema
+    clip: {fileID: 8300000, guid: a65419dc19b2fe645ba7fb73dbb73848, type: 3}
   bgmPlayer: {fileID: 1286800511}
   bgmPlayer2: {fileID: 619146554}
   sfxPlayer:
@@ -565,17 +571,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3304743241754844544, guid: a93f4a014cef6ae409924390d9984b08, type: 3}
   m_PrefabInstance: {fileID: 1946035930}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &264960028 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1198653104540595629, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-  m_PrefabInstance: {fileID: 818019940}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f29c197491b554746b1492639d1fed42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &277448496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,22 +2390,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1705522925015954382, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: m_fontAsset
+    - target: {fileID: 2225825072288514162, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
+      propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 11400000, guid: c6f43ff2fc5b21d439577ea8c1edeac3, type: 2}
-    - target: {fileID: 1705522925015954382, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2378279070156560092, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: ToolTip
-      value: 
-      objectReference: {fileID: 264960028}
-    - target: {fileID: 2974253870019784551, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: ToolTip
-      value: 
-      objectReference: {fileID: 264960028}
+      objectReference: {fileID: 21300000, guid: 14fc29ee9fafdd445a45f5130cf09007, type: 3}
     - target: {fileID: 3584065177848277302, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2607,10 +2590,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6801537901691970476, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: ToolTip
-      value: 
-      objectReference: {fileID: 264960028}
     - target: {fileID: 7167272292103299024, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2658,14 +2637,6 @@ PrefabInstance:
     - target: {fileID: 7461058421421380671, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7691993734761805600, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: c6f43ff2fc5b21d439577ea8c1edeac3, type: 2}
-    - target: {fileID: 7691993734761805600, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8462823211201741958, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2771,10 +2742,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9208742365391404001, guid: 29c3e4b645f35444891f6a3e99a9dfaf, type: 3}
-      propertyPath: ToolTip
-      value: 
-      objectReference: {fileID: 264960028}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2922,7 +2889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: stageIdx
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8017198119045122981, guid: 40b6402fb7a9358408451146d933b699, type: 3}
       propertyPath: spawnManager

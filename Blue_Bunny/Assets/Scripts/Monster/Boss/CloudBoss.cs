@@ -258,6 +258,7 @@ public class CloudBoss : MonoBehaviour
 
     void BossDie()
     {
+        CharacterManager.Instance.Player.stats.AddGold(20);
         BossHPManager.instance.HPBarUp();
         isDead = true;
         AudioManager.instance.StopBGM();
