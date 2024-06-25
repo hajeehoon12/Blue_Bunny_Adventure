@@ -17,15 +17,19 @@ public class DataPersistenceManager : MonoBehaviour
 {
     [Header("Debugging")]
     [SerializeField] private bool isNewGame = false;
-    public bool IsNewGame { get { return isNewGame; } set { isNewGame = value; } }
 
     [Header("File Storage Config")]
     [SerializeField] private string fileName;
+
+    [Header("Auto Saving Configuration")]
+    [SerializeField] private float autoSaveTimeSeconds = 60f;
+    private Coroutine autoSaveCoroutine;
 
     private GameData gameData;
     private List<IDataPersistence> dataPersistenceObjects;
     private FileDataHandler dataHandler;
     public static DataPersistenceManager Instance { get; private set; }
+    public bool IsNewGame { get { return isNewGame; } set { isNewGame = value; } }
 
     private void Awake()
     {
@@ -39,6 +43,7 @@ public class DataPersistenceManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+        Debug.Log(Application.persistentDataPath);
     }
 
     private void OnEnable()
@@ -64,8 +69,14 @@ public class DataPersistenceManager : MonoBehaviour
         }
 
         LoadGame();
-
         Debug.Log("Scene Loaded: " + scene.name);
+
+        /*// start up the auto saving coroutine
+        if (autoSaveCoroutine != null)
+        {
+            StopCoroutine(autoSaveCoroutine);
+        }
+        autoSaveCoroutine = StartCoroutine(AutoSave());*/
     }
 
     public void NewGame()
@@ -129,5 +140,15 @@ public class DataPersistenceManager : MonoBehaviour
             .OfType<IDataPersistence>();
 
         return new List<IDataPersistence>(dataPersistenceObjects);
+    }
+
+    private IEnumerator AutoSave()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(autoSaveTimeSeconds);
+            SaveGame();
+            Debug.Log("Auto Saved Game");
+        }
     }
 }

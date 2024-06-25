@@ -24,6 +24,7 @@ public class GameData
     public float playerMaxHP;
     public float playerMP;
     public float attackSpeed;
+    public float playerGold;
 
     // SpawnManager
     public int killedGroundCount;
@@ -46,6 +47,7 @@ public class GameData
         playerMaxHP = 100;
         playerMP = 50;
         attackSpeed = 0.2f;
+        playerGold = 0f;
 
         killedGroundCount = 0;
         killedAirCount = 0;

@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 700656858078429613, guid: 827bb6d4d9b7bac4cb4f3ae8e0e1dcbd, type: 3}
+      propertyPath: autoSaveTimeSeconds
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7303834157211715689, guid: 827bb6d4d9b7bac4cb4f3ae8e0e1dcbd, type: 3}
       propertyPath: m_Name
       value: DataPersistenceManager
