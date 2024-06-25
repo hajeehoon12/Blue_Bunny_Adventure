@@ -84,7 +84,8 @@ public class BossController : MonoBehaviour
         _player = CharacterManager.Instance.Player.transform;
 
         bossHP = bossMaxHP;
-
+        AudioManager.instance.StopBGM();
+        AudioManager.instance.PlayBGM("Thema", 0.2f);
     }
 
     private void FixedUpdate()
@@ -211,7 +212,8 @@ public class BossController : MonoBehaviour
     {
         //Debug.Log("I'm hitting!!");
         float CheckDir = 1f;
-        
+
+        AudioManager.instance.PlayPitchSFX("SwordAttack", 0.2f);
 
         if (spriteRenderer.flipX) CheckDir = -1f;
 
@@ -482,8 +484,11 @@ public class BossController : MonoBehaviour
 
         transform.DOScale(0, 1f).OnComplete(() =>
             {
-                
-
+                AudioManager.instance.PlaySFX("SwordDrop", 0.3f);
+                AudioManager.instance.StopBGM();
+                AudioManager.instance.PlayBGM("SuperMario3", 0.15f);
+                CharacterManager.Instance.Player.stats.AddGold(20);
+                gameObject.SetActive(false);
             }
         );
         
