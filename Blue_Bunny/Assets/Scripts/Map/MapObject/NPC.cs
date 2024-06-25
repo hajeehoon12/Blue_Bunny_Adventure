@@ -10,29 +10,30 @@ public class NPC : MonoBehaviour
     public Transform moveTr;
 
     bool isFirstConversationEnd = false;
+    bool isSecondConversationStart = false;
     bool isPlayerArrive = false;
 
     List<string> conversations = new List<string>();
-    Vector2 playerPos;
+    Vector2 playerPos => CharacterManager.Instance.Player.transform.position;
 
     private void Start()
     {
         npcsprite = GetComponentInChildren<SpriteRenderer>();
         DummyData_1();
         StartCoroutine(ReadText());
-
-        playerPos = CharacterManager.Instance.Player.transform.position;
     }
 
     private void Update()
     {
         npcsprite.flipX = CharacterManager.Instance.Player.transform.position.x < this.transform.position.x;
 
-        //// 첫번째 대화가 끝나고 토끼가 이동한 다음 플레이어가 도착했을 때 나와야한다.
-        //if(isFirstConversationEnd && )
-        //{
-        //    DummyData_2();
-        //}
+        // 첫번째 대화가 끝나고 토끼가 이동한 다음 플레이어가 도착했을 때 나와야한다.
+        if(isFirstConversationEnd && playerPos.x > 0 && !isSecondConversationStart)
+        {
+            isSecondConversationStart = true;
+            DummyData_2();
+            StartCoroutine(ReadText());
+        }
     }
 
     private void DummyData_1()

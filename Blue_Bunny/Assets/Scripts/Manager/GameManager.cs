@@ -42,13 +42,17 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
     public void ChangeMap()
     {
+        GameObject go;
+
+        // 튜토리얼 스테이지
         if (stageIdx == -1)
         {
-            Instantiate(tutorialMapPrefab);
+            go = Instantiate(tutorialMapPrefab);
+            spawnManager.nowMap = go.GetComponent<Map>();
         }
         else
         {
-            GameObject go = Instantiate(mapPrefabs[stageIdx]);
+            go = Instantiate(mapPrefabs[stageIdx]);
 
             if (spawnManager.nowMap != null)
             {
