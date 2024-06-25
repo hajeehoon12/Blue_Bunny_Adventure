@@ -16,12 +16,6 @@ public class Map : MonoBehaviour
 
     public bool isBossAlive = false;
 
-    public Transform playerSpawnPos;
-
-    private void Start()
-    {
-        CharacterManager.Instance.Player.transform.position = playerSpawnPos.position;
-    }
     public void SetRewardChestOn()
     {
         Instantiate(rewardChest, rewardChestTr);

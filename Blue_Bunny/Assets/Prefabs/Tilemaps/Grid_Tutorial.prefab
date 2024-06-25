@@ -391,6 +391,7 @@ GameObject:
   - component: {fileID: 5275807183670642871}
   - component: {fileID: 2803805949984326191}
   - component: {fileID: -7051873678630648448}
+  - component: {fileID: 2852018922898679823}
   m_Layer: 0
   m_Name: Grid_Tutorial
   m_TagString: Floor
@@ -453,9 +454,22 @@ MonoBehaviour:
   airMonsterSpawnTr: []
   portalPos:
   - {fileID: 803960830012086547}
+  - {fileID: 0}
   rewardChestTr: {fileID: 7792956628045030092}
   rewardChest: {fileID: 6366736423589511129, guid: 7cdb30040933477469763e8d782772ca, type: 3}
   isBossAlive: 0
+--- !u!114 &2852018922898679823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5311486081576766895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b6ef8cf5baaff2439ee9a2b2aa64c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   playerSpawnPos: {fileID: 8745904214818388104}
 --- !u!1 &5356630590888546988
 GameObject:
