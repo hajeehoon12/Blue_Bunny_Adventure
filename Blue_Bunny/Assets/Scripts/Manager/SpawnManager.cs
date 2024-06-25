@@ -39,7 +39,7 @@ public class SpawnManager : MonoBehaviour, IDataPersistence
             nowMap.isBossAlive = true;
             GameObject boss = PoolManager.Instance.Get(9);
             // 보스 타입을 air인지 ground 인지 정하면 좋을듯.
-            Transform bossSpawnPos = nowMap.airMonsterSpawnTr[0];
+            Transform bossSpawnPos = nowMap.groundmonsterSpawnTr[0];
             boss.transform.position = bossSpawnPos.position;
             return;
         }
