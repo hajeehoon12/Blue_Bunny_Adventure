@@ -22,7 +22,7 @@ public class DataPersistenceManager : MonoBehaviour
     [SerializeField] private string fileName;
 
     [Header("Auto Saving Configuration")]
-    [SerializeField] private float autoSaveTimeSeconds = 30f;
+    [SerializeField] private float autoSaveTimeSeconds = 10f;
     private Coroutine autoSaveCoroutine;
 
     private GameData gameData;
