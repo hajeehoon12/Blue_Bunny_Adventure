@@ -15,7 +15,7 @@ public class ItemUI : MonoBehaviour
     [Tooltip("아이템을 인덱스로 구분하기 위한 변수")]
     public ItemDataSO[] ItemsDataSo;
 
-    public ItemDataIndexData ItemsIndex;
+    public ItemDataIndexData ItemsIndex { get; private set; }
     private int slotIndex;
 
     private void Start()
