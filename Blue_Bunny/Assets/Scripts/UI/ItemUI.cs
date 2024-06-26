@@ -5,6 +5,7 @@ public class ItemUI : MonoBehaviour, IDataPersistence
 {
     private bool isOn = false;      //아이템UI On, Off
     private bool isMoving = false;  //아이템UI가 움직이고 있는 중인지
+    private bool IsLoaded = false;  //불러오기를 했는지
 
     public Slot[] slots;            //아이템 슬롯 배열
     public Transform slotPanel;     //슬롯 패널
@@ -26,6 +27,7 @@ public class ItemUI : MonoBehaviour, IDataPersistence
         slots = new Slot[slotPanel.childCount];
         for (int i = 0; i < slots.Length; i++) slots[i] = slotPanel.GetChild(i).GetComponent<Slot>();
 
+        if(IsLoaded) AddItemAsLoad();
     }
 
     private void Update()
@@ -104,16 +106,21 @@ public class ItemUI : MonoBehaviour, IDataPersistence
         return true;
     }
 
-    // TODO : 관엽님 추가 부탁드려요!
     private void AddItemAsLoad()
     {
-        
+        foreach(int index in ItemsData.ItemsIndex)
+        {
+            GetEmptySlot();
+            slots[slotIndex].Item = ItemsDataSo[index];
+            slots[slotIndex].Set();
+        }
+
     }
 
     public void LoadData(GameData data)
     {
         ItemsData.ItemsIndex = data.ItemsData;
-        AddItemAsLoad();
+        IsLoaded = true;
     }
 
     public void SaveData(GameData data)

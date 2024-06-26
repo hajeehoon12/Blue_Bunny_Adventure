@@ -11,6 +11,9 @@ public class MenuUI : MonoBehaviour
 
     public GameObject Blur;
 
+    public Text BGMText;
+    public Text SFXText;
+
     private bool isOn = false;
 
     private void Start()
@@ -32,11 +35,23 @@ public class MenuUI : MonoBehaviour
     public void ChangeBGM()
     {
         SetBGMVolume(bgm.value);
+        ChangeBGMText();
     }
 
     public void ChangeSFX()
     {
         SetSFXVolume(sfx.value);
+        ChangeSFXText();
+    }
+
+    private void ChangeBGMText()
+    {
+        BGMText.text = "BGM: " + ((int)(bgm.value * 100)).ToString() + "%";
+    }
+
+    private void ChangeSFXText()
+    {
+        SFXText.text = "SFX: " + ((int)(sfx.value * 100)).ToString() + "%";
     }
 
     public void PressExitMenu()
@@ -47,12 +62,12 @@ public class MenuUI : MonoBehaviour
     public void PressExitGame()
     {
         //매니저 더 생길 때마다 추가해줘야함
+        Time.timeScale = 1.0f;
         Destroy(GameManager.Instance.gameObject);
         Destroy(AudioManager.instance.gameObject);
-        Destroy(CameraManager.Instance.gameObject);
         Destroy(PoolManager.Instance.gameObject);
         Destroy(UIManager.Instance.gameObject);
-        Time.timeScale = 1.0f;
+        Destroy(CameraManager.Instance.gameObject);
 
         SceneManager.LoadScene(Define.StartScene);
     }
