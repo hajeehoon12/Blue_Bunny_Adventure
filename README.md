@@ -9,7 +9,7 @@ Chapter 3-3 유니티 게임개발 심화
 5. [팀원](#팀원)
 6. [구현 기능](#구현-기능)
 7. [회의록](#회의록)
-8. [PPT](#시PPT)
+8. [PPT](#PPT)
 
 ## 시연 영상
 https://youtu.be/NUNNsoQKPNc
