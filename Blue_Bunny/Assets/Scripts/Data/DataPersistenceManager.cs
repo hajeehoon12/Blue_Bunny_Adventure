@@ -7,12 +7,6 @@ using UnityEngine;
 using UnityEngine.Profiling;
 using UnityEngine.SceneManagement;
 
-public interface IDataPersistence
-{
-    void LoadData(GameData data);
-    void SaveData(GameData data);
-}
-
 public class DataPersistenceManager : MonoBehaviour
 {
     [Header("Debugging")]

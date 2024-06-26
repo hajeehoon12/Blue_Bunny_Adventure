@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GhostDash">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAAAAAQQAAhAAAAAAAQAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Player\GhostDash.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LightEffect">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAABAgCAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAkA=</HashCode>
+      <FileName>Assets\Scripts\Player\LightEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pet">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAABAAAAAAAIEEA=</HashCode>
+      <FileName>Assets\Scripts\Player\Pet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQACAQAAEAAAgAAAAQAAgAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Player\Player.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PlayerBattle">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAACBAAABAAgKAgAAAAAAAAAABACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerBattle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerController">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DWAAABRAQuBAADGAAAgBAAABAkBAgAAEAACFQBBAAmE=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerGold">
+    <Position X="15.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerGold.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerStat">
+    <Position X="17.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQKAAJAAAAAAABAAAAAEAAAEABMAAAAAAAAAAAACQA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerStat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Malgun Gothic" Size="9" />
+</ClassDiagram>
