@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MonsterBaseState">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAACABgCAAAAAAAEEAAAAAACEAAAAIAAAAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Monster\States\MonsterBaseState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MonsterChasingState">
+    <Position X="6.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAABAAAAAAAAEAQAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Monster\States\MonsterChasingState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterDeadState">
+    <Position X="9" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Monster\States\MonsterDeadState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterGetHitState">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Monster\States\MonsterGetHitState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterIdleState">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAgAAAAQAEAAAAIAAQAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Monster\States\MonsterIdleState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monster">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACIAAAoCAAAAAAAAEAAAAAEAEABAAAAAQAAQAKEA=</HashCode>
+      <FileName>Assets\Scripts\Monster\Monster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterAnimationData">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAggAAAAQAgAAAAAAAAAAAAEAAAAACAAAAQEAA=</HashCode>
+      <FileName>Assets\Scripts\Monster\MonsterAnimationData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterData">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAACAIAAAAAEAAAAAAAAAAAAAAAkEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Monster\MonsterData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterStateMachine">
+    <Position X="11" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACACAAECAAAAAAAAAAAgAARAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Monster\MonsterStateMachine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StateMachine">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAgAABAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Monster\StateMachine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IState">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAgAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Monster\States\MonsterBaseState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MonsterType">
+    <Position X="15" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Monster\MonsterData.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Malgun Gothic" Size="9" />
+</ClassDiagram>

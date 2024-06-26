@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TutorialMap">
+    <Position X="11" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Map\TutorialMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NPC">
+    <Position X="14.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAoAAACAAgAAEAAAAQAAAAEAAACAACAAAAAAIBAg=</HashCode>
+      <FileName>Assets\Scripts\Map\MapObject\NPC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Portal">
+    <Position X="3.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Map\MapObject\Portal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RewardChest">
+    <Position X="13" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAFACAAABAAAAEAAAAAAAAAEAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Map\MapObject\RewardChest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StorePortal">
+    <Position X="3.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Map\MapObject\StorePortal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BossMap">
+    <Position X="9.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAARAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Map\BossMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FloorToCameraData">
+    <Position X="16.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAIgAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Map\FloorToCameraData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map">
+    <Position X="5.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAQAAABAAAQAAAAQCABAAQA=</HashCode>
+      <FileName>Assets\Scripts\Map\Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMap">
+    <Position X="7.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAACMAAAAAAAAAAQAAAAAEE=</HashCode>
+      <FileName>Assets\Scripts\Map\StoreMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Malgun Gothic" Size="9" />
+</ClassDiagram>
