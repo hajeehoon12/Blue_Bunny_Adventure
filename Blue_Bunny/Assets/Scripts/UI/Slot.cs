@@ -61,4 +61,9 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             UIManager.Instance.Item.ToolTip.gameObject.SetActive(false);
         }
     }
+
+    public void Temp()
+    {
+        Debug.Log("Temp");
+    }
 }

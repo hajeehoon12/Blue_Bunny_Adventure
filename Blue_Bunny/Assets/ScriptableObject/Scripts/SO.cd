@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BossItemDataSO">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\ScriptableObject\Scripts\BossItemDataSO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemDataSO">
+    <Position X="6.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIABAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\ScriptableObject\Scripts\ItemDataSO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapData">
+    <Position X="10.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAABAAABAAAQAAAAAA=</HashCode>
+      <FileName>Assets\ScriptableObject\Scripts\MapData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreItemDataSO">
+    <Position X="6.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\ScriptableObject\Scripts\StoreItemDataSO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UpgradeItemDataSO">
+    <Position X="8.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\ScriptableObject\Scripts\UpgradeItemDataSO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Malgun Gothic" Size="9" />
+</ClassDiagram>

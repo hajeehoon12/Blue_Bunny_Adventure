@@ -17,12 +17,12 @@ public class SpawnManager : MonoBehaviour, IDataPersistence
     public GameObject[] itemPrefabs;
     public GameObject storePortal;
 
-    [SerializeField] private int killedGroundCount = 0;
-    [SerializeField] private int killedAirCount = 0;
+    public int KilledGroundCount = 0;
+    public int KilledAirCount  = 0;
 
     public void SpawnMonstertoMap()
     {
-        spawnCount = nowMap.data.ground_spawnCount + nowMap.data.air_spawnCount - killedAirCount - killedGroundCount;
+        spawnCount = nowMap.data.ground_spawnCount + nowMap.data.air_spawnCount - KilledAirCount - KilledGroundCount;
         aliveMonsterCount = spawnCount;
 
         if (nowMap.data.isBossStage && GameManager.Instance.stageIdx == 3) // not 0 and after 3stages
@@ -44,12 +44,12 @@ public class SpawnManager : MonoBehaviour, IDataPersistence
             return;
         }
 
-        for (int i = 0; i < nowMap.data.ground_spawnCount - killedGroundCount; i++)
+        for (int i = 0; i < nowMap.data.ground_spawnCount - KilledGroundCount; i++)
         {
             SpawnMonster(2, true);
         }
 
-        for(int i = 0; i < nowMap.data.air_spawnCount - killedAirCount; i++)
+        for(int i = 0; i < nowMap.data.air_spawnCount - KilledAirCount; i++)
         {
             int randomIdx = Random.Range(7, 9);
             SpawnMonster(randomIdx, false);
@@ -71,19 +71,22 @@ public class SpawnManager : MonoBehaviour, IDataPersistence
     public void ApplyAliveMonsterDeath(MonsterType monstertype)
     {
         aliveMonsterCount--;
+        
+        if (monstertype == MonsterType.Horizontal)
+        {
+            KilledGroundCount++;
+        }
+        else
+        {
+            KilledAirCount++;
+        }
+
         if (aliveMonsterCount <= 0 && !nowMap.isBossAlive)
         {
             SpawnPortal();
             SpawnRewardChest();
-        }
-
-        if (monstertype == MonsterType.Horizontal)
-        {
-            killedGroundCount++;
-        }
-        else
-        {
-            killedAirCount++;
+            KilledAirCount = 0;
+            KilledGroundCount = 0;
         }
     }
 
@@ -141,13 +144,13 @@ public class SpawnManager : MonoBehaviour, IDataPersistence
 
     public void SaveData(GameData data)
     {
-        data.killedGroundCount = killedGroundCount;
-        data.killedAirCount = killedAirCount;
+        data.killedGroundCount = KilledGroundCount;
+        data.killedAirCount = KilledAirCount;
     }
 
     public void LoadData(GameData data)
     {
-        killedGroundCount = data.killedGroundCount;
-        killedAirCount = data.killedAirCount;
+        KilledGroundCount = data.killedGroundCount;
+        KilledAirCount = data.killedAirCount;
     }
 }

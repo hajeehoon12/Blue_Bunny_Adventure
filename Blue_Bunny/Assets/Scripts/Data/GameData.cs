@@ -30,6 +30,8 @@ public class GameData
     public int killedGroundCount;
     public int killedAirCount;
 
+    // ItemUI
+    public List<int> ItemsData;
 
     /// <summary>
     /// 처음 만들어질 때 데이터 초기화
@@ -37,7 +39,7 @@ public class GameData
     public GameData()
     {
         playerPosition = Vector3.zero;
-        stageIdx = 0;
+        stageIdx = -1;
 
         playerSpeed = 5;
         jumpPower = 15;
@@ -52,5 +54,6 @@ public class GameData
         killedGroundCount = 0;
         killedAirCount = 0;
 
+        ItemsData = new List<int>();
     }
 }

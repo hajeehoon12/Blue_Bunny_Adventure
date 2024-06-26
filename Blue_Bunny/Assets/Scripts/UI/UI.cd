@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ConditionUI">
+    <Position X="6.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAEACCABAIAAAAAAAAAGwIAEBABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\ConditionUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HPBar">
+    <Position X="1.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACEAAAAAACIAAAAAAAAAAAgAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\UI\HPBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemUI" BaseTypeListCollapsed="true">
+    <Position X="8" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkwBBAAAACAQAAAQAAABAQgQgAQAAAAIAAADAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\ItemUI.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ItemUIData">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\ItemUIData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuUI">
+    <Position X="11.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAgAACgAAAIAAAAFAUAAAAAACgAAAAAAAAAAAUA=</HashCode>
+      <FileName>Assets\Scripts\UI\MenuUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MPBar">
+    <Position X="3.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAgAAACEAAAAAACAAAAAAAAAAAAgAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\UI\MPBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SlideBar">
+    <Position X="2.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAgAAAACSAAAAAAAAAAAgAAAAAAAAAAJA=</HashCode>
+      <FileName>Assets\Scripts\UI\SlideBar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Slot" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAABAAACAAACAAEAAAgAAAAAQAAAQBABAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Slot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ToolTip">
+    <Position X="9.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAARAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\ToolTip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIScene_Save">
+    <Position X="6.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIScene_Save.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIScene_StartScene">
+    <Position X="8" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAABAAAABACAAAAAAAAAAAAEAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIScene_StartScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIWorldSpace_MonsterHPBar">
+    <Position X="9.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACBAAAAAAAAAAAAAAAAAAAAAAAAEAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIWorldSpace_MonsterHPBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ISlideBar">
+    <Position X="1" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAACAAAAAAAAAAAAgAAAAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\UI\SlideBar.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Malgun Gothic" Size="9" />
+</ClassDiagram>

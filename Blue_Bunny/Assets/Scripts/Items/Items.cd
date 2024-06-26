@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SpeedUpItem">
+    <Position X="2" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAAAAAAAAAAAAAAEgAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\SpeedUpItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BossItem">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACCAAABAAAAAAAAAAAAAAEgAAQAKAAQABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\BossItem\BossItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BossItem_Mushroom">
+    <Position X="13.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\BossItem\BossItem_Mushroom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BossItem_RainDrop">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\BossItem\BossItem_RainDrop.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BossItem_SnowFlake">
+    <Position X="17.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\BossItem\BossItem_SnowFlake.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Store_Donation">
+    <Position X="2" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAABAAAAAAAAAAABAAAAAAAAAAAAAAAAUAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\StoreItem\Store_Donation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Store_FullHPSpeedUPItem">
+    <Position X="4.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAACAIAAAAAACAAAAAQAAAAAgAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\StoreItem\Store_FullHPSpeedUPItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store_MaxHPUpItem">
+    <Position X="6.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAACAAAAAAAAAAAAAAAAAAAAgAAAAAAACABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\StoreItem\Store_MaxHPUpItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StoreItem" Collapsed="true">
+    <Position X="4.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAEACAAABAAAAAAAAAAAAAAEAAAAACAAAAAAAQAEA=</HashCode>
+      <FileName>Assets\Scripts\Items\StoreItem\StoreItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreItemText">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAACAAAAAAAAAAAIAAAAAAAQAAAAEAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Items\StoreItem\StoreItemText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AttackUpgradeItem">
+    <Position X="4.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAgAAAAAAAAAAAAAAAEgAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\AttackUpgradeItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HealItem">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAQAAAAEAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\HealItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Item">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAEAAAAACAQAACAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Items\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JumpPowerUpItem">
+    <Position X="6.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAEgAAAAAAAAABACAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\JumpPowerUpItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ManaRecoverItem">
+    <Position X="11" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAQAAAAEAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\ManaRecoverItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="iHeal">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Item.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="iStatUpgrade">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Item.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Malgun Gothic" Size="9" />
+</ClassDiagram>

@@ -1,10 +1,11 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ItemUI : MonoBehaviour
+public class ItemUI : MonoBehaviour, IDataPersistence
 {
     private bool isOn = false;      //아이템UI On, Off
     private bool isMoving = false;  //아이템UI가 움직이고 있는 중인지
+    private bool IsLoaded = false;  //불러오기를 했는지
 
     public Slot[] slots;            //아이템 슬롯 배열
     public Transform slotPanel;     //슬롯 패널
@@ -26,6 +27,7 @@ public class ItemUI : MonoBehaviour
         slots = new Slot[slotPanel.childCount];
         for (int i = 0; i < slots.Length; i++) slots[i] = slotPanel.GetChild(i).GetComponent<Slot>();
 
+        if(IsLoaded) AddItemAsLoad();
     }
 
     private void Update()
@@ -55,13 +57,19 @@ public class ItemUI : MonoBehaviour
 
     public void AddItem(ItemDataSO itemData)
     {
+        Debug.Log($"ItemUI AddItem: {itemData.name}");
+
         GetEmptySlot();
         slots[slotIndex].Item = itemData;
         slots[slotIndex].Set();
 
         for (int i = 0; i < ItemsDataSo.Length; i++)
         {
-            if (ItemsDataSo[i].name == itemData.name) ItemsData.ItemsIndex.Add(i);
+            if (ItemsDataSo[i].name == itemData.name)
+            {
+                ItemsData.ItemsIndex.Add(i);
+                Debug.Log($"ItemUI AddItem: {ItemsData.ItemsIndex}");
+            }
         }
     }
 
@@ -96,5 +104,27 @@ public class ItemUI : MonoBehaviour
         }
 
         return true;
+    }
+
+    private void AddItemAsLoad()
+    {
+        foreach(int index in ItemsData.ItemsIndex)
+        {
+            GetEmptySlot();
+            slots[slotIndex].Item = ItemsDataSo[index];
+            slots[slotIndex].Set();
+        }
+
+    }
+
+    public void LoadData(GameData data)
+    {
+        ItemsData.ItemsIndex = data.ItemsData;
+        IsLoaded = true;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.ItemsData = ItemsData.ItemsIndex;
     }
 }
