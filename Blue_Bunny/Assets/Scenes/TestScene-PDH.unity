@@ -5428,6 +5428,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 700656858078429613, guid: 827bb6d4d9b7bac4cb4f3ae8e0e1dcbd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 700656858078429613, guid: 827bb6d4d9b7bac4cb4f3ae8e0e1dcbd, type: 3}
       propertyPath: autoSaveTimeSeconds
       value: 30
       objectReference: {fileID: 0}

@@ -62,6 +62,8 @@ public class LightEffect : MonoBehaviour
 
         while (distance > 0.2f || time < 2f)
         {
+            
+            transform.DOKill();
             time += 0.2f;
             float fraction = time / totalTime;
 
@@ -74,6 +76,7 @@ public class LightEffect : MonoBehaviour
 
             yield return new WaitForSeconds(interval);
         }
+        //transform.DOKill();
         CharacterManager.Instance.Player.stats.AddGold(2);
         yield return new WaitForSeconds(interval);
         LifeTimeEnd();  
