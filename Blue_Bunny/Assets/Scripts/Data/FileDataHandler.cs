@@ -3,6 +3,11 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Profiling;
 
+/// <summary>
+/// 실제 파일에 Save, Load 하는 클래스
+/// 저장경로, 파일이름, 암호화 등 처리
+/// JsonUtility 사용
+/// </summary>
 public class FileDataHandler
 {
     private string dataDirPath = "";
@@ -17,6 +22,10 @@ public class FileDataHandler
         this.useEncryption = useEncryption;
     }
 
+    /// <summary>
+    /// json string -> 복호화 -> GameData 클래스
+    /// </summary>
+    /// <returns></returns>
     public GameData Load()
     {
         // use Path.Combine to account for different OS's having different path separators
@@ -56,6 +65,10 @@ public class FileDataHandler
         return loadedData;
     }
 
+    /// <summary>
+    /// 게임 데이터 클래스 -> Json string -> 암호화 -> 파일로 저장
+    /// </summary>
+    /// <param name="data"></param>
     public void Save(GameData data)
     {
         // use Path.Combine to account for different OS's having different path separators
@@ -90,7 +103,11 @@ public class FileDataHandler
         }
     }
 
-    // the below is a simple implementation of XOR encryption
+    /// <summary>
+    /// XOR 암호화/복호화
+    /// </summary>
+    /// <param name="data"></param>
+    /// <returns></returns>
     private string EncryptDecrypt(string data)
     {
         string modifiedData = "";

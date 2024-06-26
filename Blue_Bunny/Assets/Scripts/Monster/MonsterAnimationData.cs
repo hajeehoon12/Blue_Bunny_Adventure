@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Monster의 애니메이션 파라미터 이름을 해시로 저장하는 클래스
+/// </summary>
 [SerializeField]
 public class MonsterAnimationData
 {

@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// MonsterBaseState 상속받은 상태 클래스 일단 다 갖고 있기
+/// 타겟 플레이어만 있다.
+/// </summary>
 public class MonsterStateMachine : StateMachine
 {
     public Monster Monster { get; private set; }

@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// StartScene에 배치된 모든 UI들을 관리하는 클래스
+/// </summary>
 public class UIScene_StartScene : MonoBehaviour
 {
     [SerializeField] Button GameStart_Button;

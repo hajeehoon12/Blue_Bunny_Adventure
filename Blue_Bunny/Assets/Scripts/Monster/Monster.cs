@@ -5,7 +5,8 @@ using DG.Tweening;
 using System;
 
 /// <summary>
-/// Monster Data / StateMachin 갖고있다
+/// Monster 전체적인 행동을 관리하는 클래스
+/// 갖고있는 statemachine에 있는 라이프사이클 함수 돌리기
 /// </summary>
 public class Monster : MonoBehaviour
 {

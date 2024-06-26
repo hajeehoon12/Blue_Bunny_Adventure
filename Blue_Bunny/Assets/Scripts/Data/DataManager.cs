@@ -2,6 +2,10 @@ using System;
 using System.IO;
 using UnityEngine;
 
+/// <summary>
+/// 사용 X
+/// 타입별로 json 파일 만들어서 저장하고 불러오는 클래스
+/// </summary>
 public class DataManager : MonoBehaviour
 {
     public static DataManager Instance;

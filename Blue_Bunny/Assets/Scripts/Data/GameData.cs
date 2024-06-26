@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 저장 필요한 데이터 모음
+/// json 파일 하나에 다 넣어서 저장한다
+/// </summary>
 [Serializable]
 public class GameData
 {

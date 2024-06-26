@@ -1,12 +1,18 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// 상하 or 좌우 움직이는 타입
+/// </summary>
 public enum MonsterType
 {
     Horizontal,
     Vertical,
 }
 
+/// <summary>
+/// Monster의 데이터를 관리하는 클래스
+/// </summary>
 [Serializable]
 public class MonsterData
 {
