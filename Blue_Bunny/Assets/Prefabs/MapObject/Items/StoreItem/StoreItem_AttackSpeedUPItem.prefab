@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8381276115018362029}
   - component: {fileID: 7872043418378933001}
-  - component: {fileID: 8006208202285664908}
+  - component: {fileID: -3344436789323318418}
   m_Layer: 0
   m_Name: StoreItem_AttackSpeedUPItem
   m_TagString: Untagged
@@ -80,7 +80,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6617133, y: 1.104399}
   m_EdgeRadius: 0
---- !u!114 &8006208202285664908
+--- !u!114 &-3344436789323318418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,12 +89,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1342911267116283509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d6da320a022574b8c82f248b2ba707, type: 3}
+  m_Script: {fileID: 11500000, guid: 98fb4db65d4c50a409f0199f84be4cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   costText: {fileID: 6925272141200915435}
   itemData: {fileID: 11400000, guid: 0172a385e3c8ff14b9b79753daa66cdf, type: 2}
-  maxHPUpgradeAmount: 10
 --- !u!1 &6551470374663123633
 GameObject:
   m_ObjectHideFlags: 0
