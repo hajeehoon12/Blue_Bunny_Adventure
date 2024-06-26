@@ -46,4 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNewGame: 0
   fileName: data.json
-  autoSaveTimeSeconds: 10
+  useEncryption: 1
+  autoSaveTimeSeconds: 30
