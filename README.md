@@ -6,6 +6,7 @@ Chapter 3-3 유니티 게임개발 심화
 2. 게임 소개
 3. 팀원
 4. 구현 기능
+5. PPT
 
 ## 시연 영상
 https://youtu.be/NUNNsoQKPNc
@@ -57,3 +58,6 @@ https://youtu.be/NUNNsoQKPNc
 - `사운드`
   - BGM, SFX 삽입
   - 오디오 믹서를 이용한 볼륨 조절 기능
+
+## PPT
+[TEAM B12조_블루 버니 어드벤처.pdf](https://github.com/user-attachments/files/15981906/TEAM.B12._.pdf)
