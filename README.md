@@ -15,6 +15,9 @@ Chapter 3-3 유니티 게임개발 심화
 https://youtu.be/NUNNsoQKPNc
 
 ## 게임 소개
+
+![image](https://github.com/hajeehoon12/Blue_Bunny_Adventure/assets/107660181/37c0be33-46ac-4c74-acaf-1d38e45b23dc)
+
 - `게임 명`
   - 블루 버니 어드벤처 🐰
 
